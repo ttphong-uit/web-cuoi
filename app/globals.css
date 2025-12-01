@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
+/* Local font files loaded from /public/fonts */
+@font-face {
+    font-family: "BelindaAvenue";
+    src: url("/fonts/BelindaAvenue-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "LaSignora";
+    src: url("/fonts/LaSignora-DemoVersion-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MadamGhea";
+    src: url("/fonts/MadamGheaPersonalUse-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Mallong";
+    src: url("/fonts/Mallong-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Faugllin-Balseyn font files (regular + italic, otf + ttf) */
+@font-face {
+    font-family: "FaugllinBalseyn";
+    src:
+        url("/fonts/Faugllin-Balseyn-BF65fe58663f431.ttf") format("truetype"),
+        url("/fonts/Faugllin-Balseyn-BF65fe58663f431.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "FaugllinBalseyn";
+    src:
+        url("/fonts/Faugllin-Balseyn-Italic-BF65fe586651b90.ttf") format("truetype"),
+        url("/fonts/Faugllin-Balseyn-Italic-BF65fe5866578bc.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* CSS variables for fonts. The Next font loader sets --font-primer in layout.tsx */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --font-belinda: "BelindaAvenue", system-ui, sans-serif;
+    --font-lasignora: "LaSignora", system-ui, sans-serif;
+    --font-madamghea: "MadamGhea", system-ui, sans-serif;
+    --font-mallong: "Mallong", system-ui, sans-serif;
+    --font-faugllin-balseyn: "FaugllinBalseyn", system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+    .font-belinda {
+        font-family: var(--font-belinda);
+    }
+    .font-lasignora {
+        font-family: var(--font-lasignora);
+    }
+    .font-madamghea {
+        font-family: var(--font-madamghea);
+    }
+    .font-mallong {
+        font-family: var(--font-mallong);
+    }
+    .font-faugllin {
+        font-family: var(--font-faugllin-balseyn);
+    }
+    .font-shadow2light {
+        font-family: var(--font-shadowToLight);
+    }
+    .font-quickSand {
+        font-family: var(--font-quickSand);
+    }
 }
