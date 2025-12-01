@@ -1,6 +1,6 @@
-'use client';
-import Image from 'next/image';
-import calendarHeart from '../_assets/images/calendar-heart.png';
+"use client";
+import Image from "next/image";
+import calendarHeart from "../_assets/images/calendar-heart.png";
 
 export const Calendar = () => {
   return (
@@ -18,24 +18,38 @@ export const Calendar = () => {
 
       {/* Dates */}
       <div className="grid grid-cols-7 gap-2 md:gap-4 mb-4">
-        <span className="text-white/60 font-quickSand text-sm md:text-base flex items-center justify-center">11</span>
-        <span className="text-white/60 font-quickSand text-sm md:text-base flex items-center justify-center">12</span>
-        <span className="text-white/60 font-quickSand text-sm md:text-base flex items-center justify-center">13</span>
-        <span className="text-white/60 font-quickSand text-sm md:text-base flex items-center justify-center">14</span>
-        <span className="text-white/60 font-quickSand text-sm md:text-base flex items-center justify-center">15</span>
+        <span className="text-white/60 font-quickSand text-sm md:text-base flex items-center justify-center">
+          12
+        </span>
+        <span className="text-white/60 font-quickSand text-sm md:text-base flex items-center justify-center">
+          13
+        </span>
+        <span className="text-white/60 font-quickSand text-sm md:text-base flex items-center justify-center">
+          14
+        </span>
+        <span className="text-white/60 font-quickSand text-sm md:text-base flex items-center justify-center">
+          15
+        </span>
+        <span className="text-white/60 font-quickSand text-sm md:text-base flex items-center justify-center">
+          16
+        </span>
+        <span className="text-white/60 font-quickSand text-sm md:text-base flex items-center justify-center">
+          17
+        </span>
         <div className="relative flex items-center justify-center">
           <div className="relative w-12 h-12 flex items-center justify-center">
             <Image
               src={calendarHeart}
               alt="Heart"
-              width={48}
-              height={48}
-              className="absolute inset-0 object-contain translate-x-[10%] -translate-y-[10%]"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="absolute inset-0 object-contain translate-x-[10%] -translate-y-[10%] scale-125"
             />
-            <span className="relative z-10 text-white font-quickSand font-bold text-sm md:text-base">18</span>
+            <span className="relative z-10 text-white font-quickSand font-bold text-sm md:text-base">
+              18
+            </span>
           </div>
         </div>
-        <span className="text-white/60 font-quickSand text-sm md:text-base flex items-center justify-center">19</span>
       </div>
 
       {/* Month */}

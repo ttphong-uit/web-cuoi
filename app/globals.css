@@ -1,29 +1,5 @@
 @import "tailwindcss";
 
-/* Local font files loaded from /public/fonts */
-@font-face {
-    font-family: "BelindaAvenue";
-    src: url("/fonts/BelindaAvenue-Regular.otf") format("opentype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "LaSignora";
-    src: url("/fonts/LaSignora-DemoVersion-Regular.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "MadamGhea";
-    src: url("/fonts/MadamGheaPersonalUse-Regular.otf") format("opentype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
 
 @font-face {
     font-family: "Mallong";
@@ -54,25 +30,24 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "Breathing";
+    src:
+        url("/fonts/Breathing.ttf") format("truetype"),
+        url("/fonts/Breathing.ttf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* CSS variables for fonts. The Next font loader sets --font-primer in layout.tsx */
 :root {
-    --font-belinda: "BelindaAvenue", system-ui, sans-serif;
-    --font-lasignora: "LaSignora", system-ui, sans-serif;
-    --font-madamghea: "MadamGhea", system-ui, sans-serif;
+    --font-breathing: "Breathing", system-ui, sans-serif;
     --font-mallong: "Mallong", system-ui, sans-serif;
     --font-faugllin-balseyn: "FaugllinBalseyn", system-ui, sans-serif;
 }
 
 @layer components {
-    .font-belinda {
-        font-family: var(--font-belinda);
-    }
-    .font-lasignora {
-        font-family: var(--font-lasignora);
-    }
-    .font-madamghea {
-        font-family: var(--font-madamghea);
-    }
     .font-mallong {
         font-family: var(--font-mallong);
     }
@@ -84,5 +59,11 @@
     }
     .font-quickSand {
         font-family: var(--font-quickSand);
+    }
+    .font-breathing {
+        font-family: var(--font-breathing);
+    }
+    .font-dancingScript {
+        font-family: var(--font-dancingScript);
     }
 }
