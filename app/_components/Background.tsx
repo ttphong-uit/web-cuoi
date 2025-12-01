@@ -55,7 +55,7 @@ export const BackgroundWrapper: React.FunctionComponent<IBackgroundProps> = (pro
                     loop
                 />
             </div>
-            <div className={`min-h-dvh relative overflow-auto ${loaded ? 'z-1000' : 'z-0'}`}>{props.children}</div>
+            <div className={`h-dvh relative overflow-auto ${loaded ? 'z-1000' : 'z-0'}`}>{props.children}</div>
         </>
     );
 };

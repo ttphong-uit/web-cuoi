@@ -24,8 +24,8 @@ export const Cover = ({ onClick, shouldShow }: CoverProps) => {
             <Image src={desktopImg} alt='cover' className='w-full h-full object-cover object-center' />
             <div className='absolute top-0 left-0 h-full w-full bg-[linear-gradient(to_bottom,rgba(0,0,0,0.7),rgba(0,0,0,0.7))] will-change-transform'>
                 <div className=' absolute top-[10%] left-0 w-full text-center'>
-                    <div className='text-white font-quickSand text-[30px] sm:text-[48px] tracking-[4px]'>
-                        Tiệc báo hỷ
+                    <div className='text-white font-quickSand text-[30px] sm:text-[48px] tracking-[1px]'>
+                        Welcome to our wedding
                     </div>
                     <div className='text-white font-faugllin text-[36px] sm:text-[72px] tracking-[2px] sm:tracking-[3px] mt-4'>
                         Thanh Phong & Hồng Viên
