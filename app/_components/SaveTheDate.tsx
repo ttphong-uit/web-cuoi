@@ -7,11 +7,11 @@ import iconPause from "../_assets/images/icon-pause.png";
 
 type Props = {};
 
-export const Section_1 = (props: Props) => {
+export const SaveTheDate = (props: Props) => {
   const { toggleMusic, isPlaying } = useMusicContext();
 
   return (
-    <section className="h-[60dvh] sm:h-[80dvh] mt-[10vh] flex items-center justify-center relative">
+    <section className="min-h-[80dvh] pt-[5vh] flex items-center justify-center relative">
       <div className="text-center relative z-10 p-8">
         {/* Play/Pause Button */}
         <button

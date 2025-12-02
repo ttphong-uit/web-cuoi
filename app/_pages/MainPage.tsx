@@ -3,12 +3,14 @@ import * as React from "react";
 import { Cover } from "../_components/Cover";
 import { BackgroundWrapper } from "../_components/Background";
 import { useMusicContext } from "../_context/MusicContext";
-import { Section_1 } from "../_components/Section_1";
-import { Section_2 } from "../_components/Section_2";
-import { Section_3 } from "../_components/Section_3";
-import { Section_4 } from "../_components/Section_4";
+import { SaveTheDate } from "../_components/SaveTheDate";
+import { CalendarGroup } from "../_components/CalendarGroup";
+import { Timeline2 } from "../_components/Timeline2";
+import { RestaurantLocation } from "../_components/RestaurantLocation";
 import { OurStory } from "../_components/OurStory";
 import { OurAlbum } from "../_components/OurAlbum";
+import TimeLine from "../_components/TimeLine";
+import { Footer } from "../_components/Footer";
 
 interface IMainPageProps {}
 
@@ -26,12 +28,14 @@ const MainPage: React.FunctionComponent<IMainPageProps> = (props) => {
       />
       {open && (
         <>
-          <Section_1 />
-          <Section_2 />
-          <Section_3 />
-          <Section_4 />
-          <OurStory />
+          <SaveTheDate />
+          <CalendarGroup />
+          <TimeLine />
+          {/* <Timeline2 /> */}
+          <RestaurantLocation />
+          {/* <OurStory /> */}
           <OurAlbum />
+          <Footer />
         </>
       )}
     </BackgroundWrapper>

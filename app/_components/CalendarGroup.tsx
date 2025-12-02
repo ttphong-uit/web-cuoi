@@ -3,10 +3,10 @@ import image1 from "../_assets/images/cover-mobile.jpg";
 import { PolaroidCard } from "./PolaroidCard";
 import { Calendar } from "./Calendar";
 
-export const Section_2 = () => {
+export const CalendarGroup = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center py-8 px-4">
-      <div className="relative bg-[#2a2a2a] rounded-2xl w-full max-w-[576px] flex flex-col items-center gap-8 p-4 md:p-16">
+    <section className="flex items-center justify-center py-8 sm:px-4">
+      <div className="relative bg-[#2a2a2a] sm:rounded-4xl w-full max-w-[600px] flex flex-col items-center gap-8 px-4 py-12 md:p-16">
         {/* Header Text */}
         <div className="text-center mt-1">
           <h2 className="text-white font-dancingScript text-4xl md:text-5xl mb-6">
@@ -24,8 +24,8 @@ export const Section_2 = () => {
           <Calendar />
         </div>
         {/* Polaroid Card */}
-        <div className="mt-1 w-[80%]">
-          <PolaroidCard imageSrc={image1.src} text={""} />
+        <div className="mt-1 w-full max-w-[482px]">
+          <PolaroidCard imageSrc={image1.src} text={"You're the chosen one"} />
         </div>
       </div>
     </section>

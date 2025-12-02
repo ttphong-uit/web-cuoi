@@ -40,21 +40,6 @@ const albumPhotos: AlbumPhoto[] = [
     text: "Ảnh 6",
     imageAlt: "Photo 6",
   },
-  {
-    imageSrc: image1.src,
-    text: "Ảnh 7",
-    imageAlt: "Photo 7",
-  },
-  {
-    imageSrc: image1.src,
-    text: "Ảnh 8",
-    imageAlt: "Photo 8",
-  },
-  {
-    imageSrc: image1.src,
-    text: "Ảnh 9",
-    imageAlt: "Photo 9",
-  },
 ];
 
 // Array of varied rotations for a more natural, scattered look
@@ -87,8 +72,8 @@ export const OurAlbum = () => {
       </h2>
 
       {/* Photo Grid */}
-      <div className="w-full max-w-[1200px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+      <div className="w-full max-w-[600px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {albumPhotos.map((photo, index) => (
             <div key={index} className="flex justify-center">
               <PolaroidCard

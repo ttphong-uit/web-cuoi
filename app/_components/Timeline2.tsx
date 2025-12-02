@@ -28,9 +28,9 @@ const events: TimelineEvent[] = [
   },
 ];
 
-export const Section_3 = () => {
+export const Timeline2 = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center py-8 px-4 bg-transparent">
+    <section className="flex items-center justify-center py-8 px-4 bg-transparent">
       <div className="w-full max-w-[800px]">
         {/* Title */}
         <h2 className="text-center font-dancingScript text-5xl md:text-6xl mb-16 text-[#333]">
