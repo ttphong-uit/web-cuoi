@@ -6,9 +6,9 @@ import "aos/dist/aos.css";
 export default function AOSInit() {
   useEffect(() => {
     AOS.init({
-      duration: 800,
+      duration: 500,
       once: true,
-      offset: 50,
+      offset: 30,
       easing: "ease-in-out",
       disable: false,
       startEvent: "DOMContentLoaded",

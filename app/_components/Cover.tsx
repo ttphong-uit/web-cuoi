@@ -23,7 +23,7 @@ export const Cover = ({ toggleShowContent }: CoverProps) => {
 
   return (
     <div
-      className={`w-full relative z-99999999 transition-opacity transition-height duration-100 ease-in-out
+      className={`relative w-full z-99999999 transition-all duration-500
                 ${!hidden ? "opacity-100 h-dvh" : "opacity-0 h-0"}
                 `}
       onTransitionEnd={(event) => {
