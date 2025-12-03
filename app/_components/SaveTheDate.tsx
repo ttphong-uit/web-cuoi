@@ -29,6 +29,7 @@ export const SaveTheDate = (props: Props) => {
             alt={isPlaying ? "Play" : "Pause"}
             width={60}
             height={60}
+            placeholder="blur"
           />
         </button>
 

@@ -49,7 +49,7 @@ export const BackgroundWrapper: React.FunctionComponent<IBackgroundProps> = ({
                 ${loaded ? "hidden" : "block"}
                 `}
       >
-        <Image src={loadingPlaceholder} alt="loading" />
+        <Image src={loadingPlaceholder} alt="loading" priority />
       </div>
       <div className="absolute top-0 left-0 bottom-0 right-0 z-0">
         <video

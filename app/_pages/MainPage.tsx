@@ -13,6 +13,7 @@ import { OurAlbum } from "../_components/OurAlbum";
 import TimeLine from "../_components/TimeLine";
 import { Footer } from "../_components/Footer";
 import { RestaurantLocation2 } from "../_components/RestaurantLocation2";
+import { WidgetMessage } from "../_components/WidgetMessage";
 
 interface IMainPageProps {}
 
@@ -35,18 +36,17 @@ const MainPage: React.FunctionComponent<IMainPageProps> = (props) => {
         }}
         shouldShow={open === false}
       />
-      {open && (
-        <>
-          <SaveTheDate />
-          <CalendarGroup />
-          <TimeLine />
-          {/* <Timeline2 /> */}
-          <RestaurantLocation2 />
-          {/* <OurStory /> */}
-          <OurAlbum />
-          <Footer />
-        </>
-      )}
+      <div className={`${open ? "block" : "hidden"}`}>
+        <SaveTheDate />
+        <CalendarGroup />
+        <TimeLine />
+        {/* <Timeline2 /> */}
+        <RestaurantLocation2 />
+        {/* <OurStory /> */}
+        <OurAlbum />
+        <Footer />
+      </div>
+      <WidgetMessage shouldShow={open} />
     </BackgroundWrapper>
   );
 };

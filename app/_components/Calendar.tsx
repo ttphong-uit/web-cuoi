@@ -44,6 +44,7 @@ export const Calendar = () => {
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="absolute inset-0 object-contain translate-x-[10%] -translate-y-[10%] scale-125"
+              placeholder="blur"
             />
             <span className="relative z-10 text-white font-quickSand font-bold text-sm md:text-base">
               18

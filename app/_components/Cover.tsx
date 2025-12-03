@@ -25,6 +25,8 @@ export const Cover = ({ onClick, shouldShow }: CoverProps) => {
         src={desktopImg}
         alt="cover"
         className="w-full h-full object-cover object-center"
+        priority
+        placeholder="blur"
       />
       <div className="absolute top-0 left-0 h-full w-full bg-[linear-gradient(to_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5))] will-change-transform">
         <div className=" absolute top-[10%] left-0 w-full text-center">

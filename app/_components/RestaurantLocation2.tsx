@@ -37,6 +37,7 @@ export const RestaurantLocation2 = () => {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             fill
             className="object-contain"
+            placeholder="blur"
           />
         </div>
 
