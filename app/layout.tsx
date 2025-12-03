@@ -32,6 +32,22 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
   },
+  openGraph: {
+    title: "Thiệp cưới Thanh Phong & Hồng Viên",
+    description:
+      "Mời quý vị xem thiệp báo hỷ của tụi mình nhé Thanh Phong & Hồng Viên",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  other: {
+    image: "/og-image.jpg",
+    thumbnail: "/og-image.jpg",
+  },
 };
 
 export default function RootLayout({
@@ -42,7 +58,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${shadowToLight.variable} ${quickSand.variable} ${dancingScript.variable}`}
+        className={`${shadowToLight.variable} ${quickSand.variable} ${dancingScript.variable} max-h-dvh`}
+        style={{ overflow: "hidden" }}
       >
         <AOSInit />
         {children}

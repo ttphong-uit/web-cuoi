@@ -12,15 +12,6 @@ type CoverProps = {
 export const Cover = ({ toggleShowContent }: CoverProps) => {
   const handler = useMusicContext();
   const [hidden, setHidden] = React.useState(false);
-  useEffect(() => {
-    document.body.setAttribute("style", "overflow: hidden");
-    document.documentElement.scrollTop = 0;
-    return () => {
-      document.documentElement.scrollTop = 0;
-      document.body.removeAttribute("style");
-    };
-  }, []);
-
   return (
     <div
       className={`relative w-full z-99999999 transition-all duration-500
@@ -28,7 +19,7 @@ export const Cover = ({ toggleShowContent }: CoverProps) => {
                 `}
       onTransitionEnd={(event) => {
         if (event.propertyName === "opacity") {
-          document.body.removeAttribute("style");
+          document.body.style.overflow = "auto";
           Aos.refresh();
         }
       }}

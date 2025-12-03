@@ -13,6 +13,10 @@ export const BackgroundWrapper: React.FunctionComponent<IBackgroundProps> = ({
 
   const [loaded, setLoaded] = React.useState(false);
   React.useEffect(() => {
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+    window.scrollTo(0, 0);
     const video = videoRef.current;
     if (!video) return;
     if (video.readyState >= 3) {
