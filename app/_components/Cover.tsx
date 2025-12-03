@@ -19,7 +19,11 @@ export const Cover = ({ toggleShowContent }: CoverProps) => {
                 `}
       onTransitionEnd={(event) => {
         if (event.propertyName === "opacity") {
-          document.body.style.overflow = "auto";
+          const scrollContainer: HTMLDivElement | null =
+            document.querySelector("#aos-scroller");
+          if (scrollContainer) {
+            scrollContainer.style.overflow = "auto";
+          }
           Aos.refresh();
         }
       }}

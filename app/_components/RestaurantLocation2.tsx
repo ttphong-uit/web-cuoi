@@ -17,20 +17,12 @@ export const RestaurantLocation2 = () => {
         }}
       >
         {/* Title */}
-        <h2
-          className="text-center font-dancingScript text-5xl sm:text-6xl mb-6 text-white"
-          data-aos="fade-down"
-          data-aos-delay="200"
-        >
+        <h2 className="text-center font-dancingScript text-5xl sm:text-6xl mb-6 text-white">
           Địa điểm
         </h2>
 
         {/* Restaurant Icon/Illustration */}
-        <div
-          className="w-48 h-32 sm:w-56 sm:h-36 mb-6 relative"
-          data-aos="zoom-in"
-          data-aos-delay="400"
-        >
+        <div className="w-48 h-32 sm:w-56 sm:h-36 mb-6 relative">
           <Image
             src={restaurantIcon}
             alt="Restaurant illustration"
@@ -42,34 +34,18 @@ export const RestaurantLocation2 = () => {
         </div>
 
         {/* Venue Name */}
-        <h3
-          className="text-white/80 font-quickSand text-xs sm:text-sm text-center mb-2 uppercase tracking-wider"
-          data-aos="fade-up"
-          data-aos-delay="600"
-        >
+        <h3 className="text-white/80 font-quickSand text-xs sm:text-sm text-center mb-2 uppercase tracking-wider">
           Trung Tâm Hội Nghị & Tiệc Cưới
         </h3>
-        <h3
-          className="text-white font-quickSand text-xl sm:text-2xl text-center mb-4 font-semibold"
-          data-aos="fade-up"
-          data-aos-delay="700"
-        >
+        <h3 className="text-white font-quickSand text-xl sm:text-2xl text-center mb-4 font-semibold">
           Le Jardin
         </h3>
-        <h4
-          className="text-white font-quickSand text-base sm:text-lg text-center mb-4"
-          data-aos="fade-up"
-          data-aos-delay="800"
-        >
+        <h4 className="text-white font-quickSand text-base sm:text-lg text-center mb-4">
           Sảnh FUCHSIA A5
         </h4>
 
         {/* Address */}
-        <p
-          className="text-white/90 font-quickSand text-sm sm:text-base text-center mb-6 max-w-xs"
-          data-aos="fade-up"
-          data-aos-delay="900"
-        >
+        <p className="text-white/90 font-quickSand text-sm sm:text-base text-center mb-6 max-w-xs">
           195 QL13, Hiệp Bình Chánh, Thủ Đức, Thành phố Hồ Chí Minh
         </p>
 
@@ -78,8 +54,6 @@ export const RestaurantLocation2 = () => {
           href="https://maps.app.goo.gl/dSkaBAJDc9rSQgNbA"
           target="_blank"
           rel="noopener noreferrer"
-          data-aos="fade-up"
-          data-aos-delay="1000"
         >
           <Button
             color="white"

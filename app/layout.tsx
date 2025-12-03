@@ -58,8 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${shadowToLight.variable} ${quickSand.variable} ${dancingScript.variable} max-h-dvh`}
-        style={{ overflow: "hidden" }}
+        className={`${shadowToLight.variable} ${quickSand.variable} ${dancingScript.variable}`}
       >
         <AOSInit />
         {children}

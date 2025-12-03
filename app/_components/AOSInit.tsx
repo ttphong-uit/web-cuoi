@@ -6,9 +6,9 @@ import "aos/dist/aos.css";
 export default function AOSInit() {
   useEffect(() => {
     AOS.init({
-      duration: 500,
+      duration: 300,
       once: true,
-      offset: 30,
+      offset: 80,
       easing: "ease-in-out",
       disable: false,
       startEvent: "DOMContentLoaded",
@@ -23,7 +23,7 @@ export default function AOSInit() {
     }, 100);
 
     // Handle scroll on custom container
-    const scrollContainer = document.querySelector(".aos-scroll-container");
+    const scrollContainer = document.querySelector("#aos-scroller");
     if (scrollContainer) {
       const handleScroll = () => {
         AOS.refresh();

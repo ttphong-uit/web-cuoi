@@ -2,7 +2,6 @@
 import Image from "next/image";
 import * as React from "react";
 import loadingPlaceholder from "../_assets/images/loading.svg";
-import { useRef } from "react";
 
 interface IBackgroundProps extends React.PropsWithChildren {}
 
@@ -12,19 +11,18 @@ export const BackgroundWrapper: React.FunctionComponent<IBackgroundProps> = ({
   const videoRef = React.useRef<HTMLVideoElement | null>(null);
 
   const [loaded, setLoaded] = React.useState(false);
+  const [scrollHeight, setScrollHeight] = React.useState<number | undefined>(
+    undefined
+  );
   React.useEffect(() => {
-    if ("scrollRestoration" in history) {
-      history.scrollRestoration = "manual";
-    }
-    window.scrollTo(0, 0);
     const video = videoRef.current;
+    setScrollHeight(window.innerHeight);
     if (!video) return;
     if (video.readyState >= 3) {
       setLoaded(true);
       return;
     }
     const handle = () => {
-      console.log("READY from event");
       setLoaded(true);
     };
     video.addEventListener("loadeddata", handle);
@@ -52,7 +50,7 @@ export const BackgroundWrapper: React.FunctionComponent<IBackgroundProps> = ({
       >
         <Image src={loadingPlaceholder} alt="loading" priority />
       </div>
-      <div className="absolute top-0 left-0 bottom-0 right-0 z-0">
+      <div className="fixed top-0 left-0 bottom-0 right-0 z-0">
         <video
           className="object-cover w-full h-full"
           ref={videoRef}
@@ -63,7 +61,14 @@ export const BackgroundWrapper: React.FunctionComponent<IBackgroundProps> = ({
           loop
         />
       </div>
-      <div className={`min-h-dvh relative ${loaded ? "z-1000" : "z-0"}`}>
+      <div
+        id="aos-scroller"
+        style={{
+          overflow: "hidden",
+          height: `${scrollHeight ?? 0}px`,
+        }}
+        className={`relative ${loaded ? "z-1000" : "z-0"}`}
+      >
         {children}
       </div>
     </>

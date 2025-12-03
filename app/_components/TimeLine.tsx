@@ -47,15 +47,11 @@ const TimeLine: React.FC = () => {
 
         <div className="space-y-8">
           {events.map((event, index) => (
-            <div
-              key={index}
-              className="relative"
-              data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
-            >
+            <div key={index} className="relative" data-aos="fade-up">
               {/* Timeline Event */}
               <div className="flex items-center gap-6 mb-6">
                 {/* Icon */}
-                <div className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 flex items-center justify-center">
+                <div className="shrink-0 w-20 h-20 md:w-24 md:h-24 flex items-center justify-center">
                   <Image
                     src={event.icon}
                     alt={event.title}
