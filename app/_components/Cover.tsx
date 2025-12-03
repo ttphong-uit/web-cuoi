@@ -1,23 +1,35 @@
 import desktopImg from "../_assets/images/cover-desktop-2.jpg";
 import Image from "next/image";
 import Button from "./Button";
-import React from "react";
+import React, { useEffect } from "react";
+import { useMusicContext } from "../_context/MusicContext";
+import Aos from "aos";
 
 type CoverProps = {
-  onClick?: () => void;
-  shouldShow?: boolean;
+  toggleShowContent?: () => void;
 };
 
-export const Cover = ({ onClick, shouldShow }: CoverProps) => {
-  const [hidden, setHidden] = React.useState(!shouldShow);
+export const Cover = ({ toggleShowContent }: CoverProps) => {
+  const handler = useMusicContext();
+  const [hidden, setHidden] = React.useState(false);
+  useEffect(() => {
+    document.body.setAttribute("style", "overflow: hidden");
+    document.documentElement.scrollTop = 0;
+    return () => {
+      document.documentElement.scrollTop = 0;
+      document.body.removeAttribute("style");
+    };
+  }, []);
+
   return (
     <div
-      className={`w-full h-dvh transition-opacity duration-100 ease-in-out
-                ${shouldShow ? "opacity-100" : "opacity-0"}
-                ${hidden ? "hidden" : "flex"}`}
+      className={`w-full relative z-99999999 transition-opacity transition-height duration-100 ease-in-out
+                ${!hidden ? "opacity-100 h-dvh" : "opacity-0 h-0"}
+                `}
       onTransitionEnd={(event) => {
-        if (event.propertyName === "opacity" && !shouldShow) {
-          setHidden(true);
+        if (event.propertyName === "opacity") {
+          document.body.removeAttribute("style");
+          Aos.refresh();
         }
       }}
     >
@@ -50,7 +62,10 @@ export const Cover = ({ onClick, shouldShow }: CoverProps) => {
           shape="square"
           variant="outlined"
           className="min-w-[250px] absolute bottom-[10%] left-[50%] translate-x-[-50%]"
-          onClick={onClick}
+          onClick={() => {
+            setHidden(true);
+            handler.playMusic();
+          }}
         >
           Bấm để xem...
         </Button>

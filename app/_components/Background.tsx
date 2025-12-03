@@ -4,12 +4,9 @@ import * as React from "react";
 import loadingPlaceholder from "../_assets/images/loading.svg";
 import { useRef } from "react";
 
-interface IBackgroundProps extends React.PropsWithChildren {
-  scrollRef: React.RefObject<HTMLDivElement | null>;
-}
+interface IBackgroundProps extends React.PropsWithChildren {}
 
 export const BackgroundWrapper: React.FunctionComponent<IBackgroundProps> = ({
-  scrollRef,
   children,
 }) => {
   const videoRef = React.useRef<HTMLVideoElement | null>(null);
@@ -62,12 +59,7 @@ export const BackgroundWrapper: React.FunctionComponent<IBackgroundProps> = ({
           loop
         />
       </div>
-      <div
-        ref={scrollRef}
-        className={`h-dvh relative overflow-auto aos-scroll-container ${
-          loaded ? "z-1000" : "z-0"
-        }`}
-      >
+      <div className={`min-h-dvh relative ${loaded ? "z-1000" : "z-0"}`}>
         {children}
       </div>
     </>

@@ -68,6 +68,8 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
         onClick={() => setIsOpen(true)}
         className="fixed bottom-3 right-3 md:bottom-4 md:right-4 z-50 bg-linear-to-r from-pink-500 to-red-500 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-quickSand font-semibold text-sm md:text-base"
         aria-label="Open messages"
+        data-aos="fade-up"
+        data-aos-duration="300"
       >
         💌 Gửi lời chúc ({messages.length})
       </button>

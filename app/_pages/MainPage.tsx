@@ -18,35 +18,16 @@ import { WidgetMessage } from "../_components/WidgetMessage";
 interface IMainPageProps {}
 
 const MainPage: React.FunctionComponent<IMainPageProps> = (props) => {
-  const [open, setOpen] = React.useState(false);
-  const handler = useMusicContext();
-  const aosScrollRef = React.useRef<HTMLDivElement | null>(null);
-
-  // Trigger AOS animations after Cover transition completes
-
   return (
-    <BackgroundWrapper scrollRef={aosScrollRef}>
-      <Cover
-        onClick={() => {
-          setOpen(true);
-          handler.playMusic();
-          setTimeout(() => {
-            aosScrollRef.current?.scrollTo({ top: 10, behavior: "smooth" });
-          }, 150);
-        }}
-        shouldShow={open === false}
-      />
-      <div className={`${open ? "block" : "hidden"}`}>
-        <SaveTheDate />
-        <CalendarGroup />
-        <TimeLine />
-        {/* <Timeline2 /> */}
-        <RestaurantLocation2 />
-        {/* <OurStory /> */}
-        <OurAlbum />
-        <Footer />
-      </div>
-      <WidgetMessage shouldShow={open} />
+    <BackgroundWrapper>
+      <Cover />
+      <SaveTheDate />
+      <CalendarGroup />
+      <TimeLine />
+      <RestaurantLocation2 />
+      <OurAlbum />
+      <Footer />
+      <WidgetMessage />
     </BackgroundWrapper>
   );
 };
