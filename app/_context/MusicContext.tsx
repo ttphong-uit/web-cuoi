@@ -42,7 +42,7 @@ export const MusicContextProvider: React.FC<React.PropsWithChildren> = (
     playMusic: () => {
       const audio = audioRef.current;
       if (audio) {
-        audio.volume = 0.05;
+        audio.volume = 0.5;
         audio.play();
       }
     },

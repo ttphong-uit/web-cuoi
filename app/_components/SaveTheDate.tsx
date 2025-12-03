@@ -30,6 +30,7 @@ export const SaveTheDate = (props: Props) => {
             width={60}
             height={60}
             placeholder="blur"
+            loading="eager"
           />
         </button>
 
