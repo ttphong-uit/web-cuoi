@@ -65,9 +65,16 @@ const getRotationClass = (index: number): string => {
 
 export const OurAlbum = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center py-16 px-4 bg-transparent">
+    <section
+      className="min-h-screen flex flex-col items-center justify-center py-16 px-4 bg-transparent"
+      data-aos="fade-up"
+    >
       {/* Section Title */}
-      <h2 className="text-center font-dancingScript text-5xl md:text-6xl mb-16 text-[#333]">
+      <h2
+        className="text-center font-dancingScript text-5xl md:text-6xl mb-16 text-[#333]"
+        data-aos="fade-down"
+        data-aos-delay="200"
+      >
         Album của chúng mình
       </h2>
 
@@ -75,12 +82,23 @@ export const OurAlbum = () => {
       <div className="w-full max-w-[600px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {albumPhotos.map((photo, index) => (
-            <div key={index} className="flex justify-center">
+            <div
+              key={index}
+              className="flex justify-center"
+              data-aos={
+                index % 3 === 0
+                  ? "zoom-in"
+                  : index % 3 === 1
+                  ? "flip-left"
+                  : "flip-right"
+              }
+              data-aos-delay={`${200 + index * 100}`}
+            >
               <PolaroidCard
                 imageSrc={photo.imageSrc}
                 text={photo.text}
                 imageAlt={photo.imageAlt}
-                className={`w-full max-w-[280px] ${getRotationClass(index)}`}
+                className={`w-full max-w-[320px] ${getRotationClass(index)}`}
               />
             </div>
           ))}

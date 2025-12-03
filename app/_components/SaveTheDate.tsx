@@ -11,13 +11,18 @@ export const SaveTheDate = (props: Props) => {
   const { toggleMusic, isPlaying } = useMusicContext();
 
   return (
-    <section className="min-h-[80dvh] pt-[5vh] flex items-center justify-center relative">
+    <section
+      className="min-h-[80dvh] pt-[5vh] flex items-center justify-center relative"
+      data-aos="fade-up"
+    >
       <div className="text-center relative z-10 p-8">
         {/* Play/Pause Button */}
         <button
           className="bg-transparent border-none cursor-pointer mb-[5vh] sm:mb-[10vh] p-0 transition-transform duration-300 hover:scale-110 active:scale-95"
           onClick={toggleMusic}
           aria-label={isPlaying ? "Pause music" : "Play music"}
+          data-aos="fade-down"
+          data-aos-delay="200"
         >
           <Image
             src={isPlaying ? iconPlay : iconPause}
@@ -28,7 +33,11 @@ export const SaveTheDate = (props: Props) => {
         </button>
 
         {/* Save the Date Text */}
-        <div className="flex flex-col gap-0 mb-[5vh] sm:mb-[10vh] font-quickSand">
+        <div
+          className="flex flex-col gap-0 mb-[5vh] sm:mb-[10vh] font-quickSand"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
           <span className="text-2xl font-thin text-[#333] leading-none">
             SAVE
           </span>
@@ -41,7 +50,11 @@ export const SaveTheDate = (props: Props) => {
         </div>
 
         {/* Names */}
-        <div className="mb-[5vh] sm:mb-[7vh] font-dancingScript">
+        <div
+          className="mb-[5vh] sm:mb-[7vh] font-dancingScript"
+          data-aos="zoom-in"
+          data-aos-delay="600"
+        >
           <h1 className="text-[48px] sm:text-[82px] font-light italic text-[#333] leading-none">
             Thanh Phong
           </h1>
@@ -54,7 +67,11 @@ export const SaveTheDate = (props: Props) => {
         </div>
 
         {/* Date */}
-        <div className="text-[1.3rem] font-normal tracking-[0.2em] text-[#333] mt-8 font-faugllin">
+        <div
+          className="text-[1.3rem] font-normal tracking-[0.2em] text-[#333] mt-8 font-faugllin"
+          data-aos="fade-up"
+          data-aos-delay="800"
+        >
           18.01.2026
         </div>
       </div>

@@ -40,14 +40,18 @@ const TimeLine: React.FC = () => {
 
   return (
     <section className="flex items-center justify-center bg-transparent">
-      <div className="w-full max-w-[600px] rounded-[24px] p-4 px-2 md:p-8 md:px-4">
+      <div className="w-full max-w-[600px] overflow-hidden rounded-[24px] p-4 px-2 md:p-8 md:px-4">
         <h2 className="text-center text-5xl md:text-6xl font-dancingScript text-[#272727] mb-12">
           Chương trình
         </h2>
 
         <div className="space-y-8">
           {events.map((event, index) => (
-            <div key={index} className="relative">
+            <div
+              key={index}
+              className="relative"
+              data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+            >
               {/* Timeline Event */}
               <div className="flex items-center gap-6 mb-6">
                 {/* Icon */}
@@ -83,6 +87,7 @@ const TimeLine: React.FC = () => {
                     alt="arrow"
                     width={60}
                     height={80}
+                    style={{ width: "auto", height: "auto" }}
                     className="object-contain"
                   />
                 </div>

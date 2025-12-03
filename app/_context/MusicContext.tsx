@@ -65,7 +65,7 @@ export const MusicContextProvider: React.FC<React.PropsWithChildren> = (
   return (
     <MusicContext.Provider value={value}>
       {props.children}
-      <audio ref={audioRef} src="/music/music-background-2.mp3" loop />
+      <audio ref={audioRef} src="/music/Canon_in_D.mp3" loop />
     </MusicContext.Provider>
   );
 };

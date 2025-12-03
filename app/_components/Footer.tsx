@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer
-      className="relative min-h-screen flex items-center justify-center py-16 px-4 bg-[#272727] overflow-hidden"
+      className="relative flex items-center justify-center py-8 px-4 bg-[#272727] overflow-hidden"
       style={{
         backgroundImage: `url(${backgroundHeart.src})`,
         backgroundSize: "cover",
@@ -59,20 +59,35 @@ export const Footer: React.FC = () => {
       {/* Dark overlay for better text visibility */}
       <div className="absolute inset-0 bg-[#272727]/80"></div>
 
-      <div className="relative z-10 w-full max-w-4xl text-center">
+      <div
+        className="relative z-10 w-full max-w-4xl text-center"
+        data-aos="fade-up"
+      >
         {/* Title */}
-        <h2 className="font-dancingScript text-5xl md:text-7xl text-[#F5EFE7] mb-4">
-          Mùa chung "ĐÔI"
+        <h2
+          className="font-dancingScript text-4xl md:text-5xl text-[#F5EFE7] mb-2"
+          data-aos="fade-down"
+          data-aos-delay="200"
+        >
+          Ngày chung "ĐÔI"
         </h2>
-        <p className="font-quickSand text-lg md:text-xl text-[#F5EFE7]/80 mb-12">
+        <p
+          className="font-quickSand text-lg md:text-xl text-[#F5EFE7]/80 mb-6"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
           Còn lại...
         </p>
 
         {/* Countdown Timer */}
-        <div className="flex justify-center gap-4 md:gap-8 mb-12">
-          <div className="flex flex-col items-center">
-            <div className="bg-[#F5EFE7] rounded-2xl w-20 h-20 md:w-28 md:h-28 flex items-center justify-center mb-2">
-              <span className="font-dancingScript text-3xl md:text-5xl text-[#272727]">
+        <div className="flex justify-center gap-4 md:gap-8 mb-6">
+          <div
+            className="flex flex-col items-center"
+            data-aos="flip-up"
+            data-aos-delay="500"
+          >
+            <div className="bg-[#F5EFE7] rounded-2xl w-15 h-15 md:w-20 md:h-20 flex items-center justify-center mb-2">
+              <span className="font-dancingScript text-3xl md:text-4xl text-[#272727]">
                 {timeLeft.days}
               </span>
             </div>
@@ -81,9 +96,13 @@ export const Footer: React.FC = () => {
             </span>
           </div>
 
-          <div className="flex flex-col items-center">
-            <div className="bg-[#F5EFE7] rounded-2xl w-20 h-20 md:w-28 md:h-28 flex items-center justify-center mb-2">
-              <span className="font-dancingScript text-3xl md:text-5xl text-[#272727]">
+          <div
+            className="flex flex-col items-center"
+            data-aos="flip-up"
+            data-aos-delay="600"
+          >
+            <div className="bg-[#F5EFE7] rounded-2xl w-15 h-15 md:w-20 md:h-20 flex items-center justify-center mb-2">
+              <span className="font-dancingScript text-3xl md:text-4xl text-[#272727]">
                 {timeLeft.hours}
               </span>
             </div>
@@ -92,9 +111,13 @@ export const Footer: React.FC = () => {
             </span>
           </div>
 
-          <div className="flex flex-col items-center">
-            <div className="bg-[#F5EFE7] rounded-2xl w-20 h-20 md:w-28 md:h-28 flex items-center justify-center mb-2">
-              <span className="font-dancingScript text-3xl md:text-5xl text-[#272727]">
+          <div
+            className="flex flex-col items-center"
+            data-aos="flip-up"
+            data-aos-delay="700"
+          >
+            <div className="bg-[#F5EFE7] rounded-2xl w-15 h-15 md:w-20 md:h-20 flex items-center justify-center mb-2">
+              <span className="font-dancingScript text-3xl md:text-4xl text-[#272727]">
                 {timeLeft.minutes}
               </span>
             </div>
@@ -103,9 +126,13 @@ export const Footer: React.FC = () => {
             </span>
           </div>
 
-          <div className="flex flex-col items-center">
-            <div className="bg-[#F5EFE7] rounded-2xl w-20 h-20 md:w-28 md:h-28 flex items-center justify-center mb-2">
-              <span className="font-dancingScript text-3xl md:text-5xl text-[#272727]">
+          <div
+            className="flex flex-col items-center"
+            data-aos="flip-up"
+            data-aos-delay="800"
+          >
+            <div className="bg-[#F5EFE7] rounded-2xl w-15 h-15 md:w-20 md:h-20 flex items-center justify-center mb-2">
+              <span className="font-dancingScript text-3xl md:text-4xl text-[#272727]">
                 {timeLeft.seconds}
               </span>
             </div>
@@ -116,22 +143,35 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Message with Cake Icon */}
-        <div className="flex flex-col items-center gap-6">
-          <p className="font-dancingScript text-3xl md:text-5xl text-[#F5EFE7]">
+        <div
+          className="flex flex-col items-center gap-3"
+          data-aos="zoom-in"
+          data-aos-delay="1000"
+        >
+          <p className="font-dancingScript text-3xl md:text-4xl text-[#F5EFE7]">
             Với tình yêu,
           </p>
-          <p className="font-dancingScript text-3xl md:text-5xl text-[#F5EFE7]">
+          <p className="font-dancingScript text-3xl md:text-4xl text-[#F5EFE7]">
             Thanh Phong & Hồng Viên!
           </p>
 
-          {/* Cake Icon */}
-          <div className="mt-8">
+          {/* Cake Icons - Decorative corners */}
+          <div className="absolute bottom-[8%] left-[2%] sm:bottom-[10%] sm:left-[5%] -rotate-12">
             <Image
               src={cakeIcon}
               alt="Wedding Cake"
               width={150}
               height={200}
-              className="w-32 h-auto md:w-40 opacity-90"
+              className="w-16 h-auto sm:w-20 md:w-24 opacity-80"
+            />
+          </div>
+          <div className="absolute bottom-[8%] right-[2%] sm:bottom-[10%] sm:right-[5%] rotate-12">
+            <Image
+              src={cakeIcon}
+              alt="Wedding Cake"
+              width={150}
+              height={200}
+              className="w-16 h-auto sm:w-20 md:w-24 opacity-80"
             />
           </div>
         </div>

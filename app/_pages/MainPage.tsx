@@ -1,5 +1,6 @@
 "use client";
 import * as React from "react";
+import AOS from "aos";
 import { Cover } from "../_components/Cover";
 import { BackgroundWrapper } from "../_components/Background";
 import { useMusicContext } from "../_context/MusicContext";
@@ -11,18 +12,26 @@ import { OurStory } from "../_components/OurStory";
 import { OurAlbum } from "../_components/OurAlbum";
 import TimeLine from "../_components/TimeLine";
 import { Footer } from "../_components/Footer";
+import { RestaurantLocation2 } from "../_components/RestaurantLocation2";
 
 interface IMainPageProps {}
 
 const MainPage: React.FunctionComponent<IMainPageProps> = (props) => {
   const [open, setOpen] = React.useState(false);
   const handler = useMusicContext();
+  const aosScrollRef = React.useRef<HTMLDivElement | null>(null);
+
+  // Trigger AOS animations after Cover transition completes
+
   return (
-    <BackgroundWrapper>
+    <BackgroundWrapper scrollRef={aosScrollRef}>
       <Cover
         onClick={() => {
           setOpen(true);
           handler.playMusic();
+          setTimeout(() => {
+            aosScrollRef.current?.scrollTo({ top: 10, behavior: "smooth" });
+          }, 150);
         }}
         shouldShow={open === false}
       />
@@ -32,7 +41,7 @@ const MainPage: React.FunctionComponent<IMainPageProps> = (props) => {
           <CalendarGroup />
           <TimeLine />
           {/* <Timeline2 /> */}
-          <RestaurantLocation />
+          <RestaurantLocation2 />
           {/* <OurStory /> */}
           <OurAlbum />
           <Footer />
