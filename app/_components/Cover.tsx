@@ -14,7 +14,7 @@ export const Cover = ({ toggleShowContent }: CoverProps) => {
   const [hidden, setHidden] = React.useState(false);
   return (
     <div
-      className={`relative w-full z-99999999 transition-all duration-500
+      className={`relative w-full z-99999999 transition-all overflow-hidden duration-500
                 ${!hidden ? "opacity-100 h-dvh" : "opacity-0 h-0"}
                 `}
       onTransitionEnd={(event) => {

@@ -23,72 +23,71 @@ export const BackgroundWrapper: React.FunctionComponent<IBackgroundProps> = ({
     let fontsLoaded = false;
 
     const checkAllLoaded = () => {
+      console.log("Checking loaded state:", { videoLoaded, fontsLoaded });
       if (videoLoaded && fontsLoaded) {
+        console.log("All loaded! Showing content");
         setLoaded(true);
       }
     };
 
     // Check if video is loaded
     if (!video) {
+      console.log("No video element found");
+      videoLoaded = true;
+      checkAllLoaded();
+    } else if (video.readyState >= 3) {
+      console.log("Video already loaded");
       videoLoaded = true;
       checkAllLoaded();
     } else {
-      if (video.readyState >= 3) {
+      console.log("Waiting for video to load");
+      const handleVideoLoad = () => {
+        console.log("Video loaded");
         videoLoaded = true;
         checkAllLoaded();
-      } else {
-        const handleVideoLoad = () => {
-          videoLoaded = true;
-          checkAllLoaded();
-        };
-        video.addEventListener("loadeddata", handleVideoLoad);
-
-        // Cleanup
-        return () => {
-          video.removeEventListener("loadeddata", handleVideoLoad);
-        };
-      }
+      };
+      video.addEventListener("loadeddata", handleVideoLoad);
     }
 
     // Check if fonts are loaded
+    // Add a maximum timeout to prevent infinite loading
+    const maxWaitTime = 3000; // 3 seconds max
+    const fontTimeout = setTimeout(() => {
+      console.warn("Font loading timeout - proceeding anyway");
+      fontsLoaded = true;
+      checkAllLoaded();
+    }, maxWaitTime);
+
     if (document.fonts) {
       // Wait for all fonts to be ready
-      document.fonts.ready.then(() => {
-        // Double-check that our specific fonts are loaded
-        const fontsToCheck = [
-          '400 16px "Mallong"',
-          '400 16px "FaugllinBalseyn"',
-          '400 16px "Breathing"',
-          '400 16px "Shadows Into Light"',
-          '400 16px "Quicksand"',
-          '400 16px "Dancing Script"',
-        ];
-
-        const allFontsLoaded = fontsToCheck.every((font) => {
-          try {
-            return document.fonts.check(font);
-          } catch (e) {
-            // If check fails, assume font is loaded
-            return true;
-          }
-        });
-
-        if (allFontsLoaded) {
+      document.fonts.ready
+        .then(() => {
+          clearTimeout(fontTimeout);
+          console.log("Fonts ready");
           fontsLoaded = true;
           checkAllLoaded();
-        } else {
-          // Fallback: wait a bit more and try again
-          setTimeout(() => {
-            fontsLoaded = true;
-            checkAllLoaded();
-          }, 500);
-        }
-      });
+        })
+        .catch((error) => {
+          console.error("Font loading error:", error);
+          clearTimeout(fontTimeout);
+          fontsLoaded = true;
+          checkAllLoaded();
+        });
     } else {
       // Fallback if Font Loading API is not supported
+      clearTimeout(fontTimeout);
+      console.log("Font Loading API not supported");
       fontsLoaded = true;
       checkAllLoaded();
     }
+
+    // Cleanup function
+    return () => {
+      if (video) {
+        video.removeEventListener("loadeddata", () => {});
+      }
+      clearTimeout(fontTimeout);
+    };
   }, []);
 
   return (
