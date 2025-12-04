@@ -19,13 +19,23 @@ export const MusicContextProvider: React.FC<React.PropsWithChildren> = (
   const [isPlaying, setIsPlaying] = React.useState(false);
 
   // Listen to audio element events to update state and trigger re-renders
+  // This syncs with external controls (dynamic island, browser controls, system media controls)
   React.useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    const handlePlay = () => setIsPlaying(true);
-    const handlePause = () => setIsPlaying(false);
-    const handleEnded = () => setIsPlaying(false);
+    const handlePlay = () => {
+      console.log("Music playing");
+      setIsPlaying(true);
+    };
+    const handlePause = () => {
+      console.log("Music paused");
+      setIsPlaying(false);
+    };
+    const handleEnded = () => {
+      console.log("Music ended");
+      setIsPlaying(false);
+    };
 
     audio.addEventListener("play", handlePlay);
     audio.addEventListener("pause", handlePause);

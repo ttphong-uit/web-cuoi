@@ -2,6 +2,7 @@
 import Image from "next/image";
 import * as React from "react";
 import loadingPlaceholder from "../_assets/images/loading.svg";
+import fallbackBg from "../_assets/images/video-fallback.jpg";
 
 interface IBackgroundProps extends React.PropsWithChildren {}
 
@@ -11,6 +12,7 @@ export const BackgroundWrapper: React.FunctionComponent<IBackgroundProps> = ({
   const videoRef = React.useRef<HTMLVideoElement | null>(null);
 
   const [loaded, setLoaded] = React.useState(false);
+  const [videoFailed, setVideoFailed] = React.useState(false);
   const [scrollHeight, setScrollHeight] = React.useState<number | undefined>(
     undefined
   );
@@ -30,36 +32,58 @@ export const BackgroundWrapper: React.FunctionComponent<IBackgroundProps> = ({
       }
     };
 
-    // Check if video is loaded
-    if (!video) {
-      console.log("No video element found");
+    // Video loading timeout - more aggressive for chat apps
+    const videoTimeout = setTimeout(() => {
+      console.warn("Video loading timeout - using fallback background");
+      setVideoFailed(true);
       videoLoaded = true;
       checkAllLoaded();
-    } else if (video.readyState >= 3) {
+    }, 2000); // 2 seconds max for video
+
+    // Check if video is loaded
+    if (!video) {
+      console.log("No video element found - using fallback");
+      setVideoFailed(true);
+      clearTimeout(videoTimeout);
+      videoLoaded = true;
+      checkAllLoaded();
+    } else if (video.readyState >= 2) {
+      // readyState 2 = HAVE_CURRENT_DATA (enough to start playing)
       console.log("Video already loaded");
+      clearTimeout(videoTimeout);
       videoLoaded = true;
       checkAllLoaded();
     } else {
       console.log("Waiting for video to load");
-      const handleVideoLoad = () => {
-        console.log("Video loaded");
+
+      const handleVideoCanPlay = () => {
+        console.log("Video can play");
+        clearTimeout(videoTimeout);
         videoLoaded = true;
         checkAllLoaded();
       };
-      video.addEventListener("loadeddata", handleVideoLoad);
+
+      const handleVideoError = () => {
+        console.error("Video failed to load - using fallback background");
+        setVideoFailed(true);
+        clearTimeout(videoTimeout);
+        videoLoaded = true;
+        checkAllLoaded();
+      };
+
+      video.addEventListener("canplay", handleVideoCanPlay);
+      video.addEventListener("error", handleVideoError);
+      video.addEventListener("loadeddata", handleVideoCanPlay);
     }
 
     // Check if fonts are loaded
-    // Add a maximum timeout to prevent infinite loading
-    const maxWaitTime = 3000; // 3 seconds max
     const fontTimeout = setTimeout(() => {
       console.warn("Font loading timeout - proceeding anyway");
       fontsLoaded = true;
       checkAllLoaded();
-    }, maxWaitTime);
+    }, 3000); // 3 seconds max for fonts
 
     if (document.fonts) {
-      // Wait for all fonts to be ready
       document.fonts.ready
         .then(() => {
           clearTimeout(fontTimeout);
@@ -74,7 +98,6 @@ export const BackgroundWrapper: React.FunctionComponent<IBackgroundProps> = ({
           checkAllLoaded();
         });
     } else {
-      // Fallback if Font Loading API is not supported
       clearTimeout(fontTimeout);
       console.log("Font Loading API not supported");
       fontsLoaded = true;
@@ -83,15 +106,19 @@ export const BackgroundWrapper: React.FunctionComponent<IBackgroundProps> = ({
 
     // Cleanup function
     return () => {
-      if (video) {
-        video.removeEventListener("loadeddata", () => {});
-      }
+      clearTimeout(videoTimeout);
       clearTimeout(fontTimeout);
+      if (video) {
+        video.removeEventListener("canplay", () => {});
+        video.removeEventListener("loadeddata", () => {});
+        video.removeEventListener("error", () => {});
+      }
     };
   }, []);
 
   return (
     <>
+      {/* Loading Screen */}
       <div
         className={`
                 fixed
@@ -109,17 +136,34 @@ export const BackgroundWrapper: React.FunctionComponent<IBackgroundProps> = ({
       >
         <Image src={loadingPlaceholder} alt="loading" loading="eager" />
       </div>
+
+      {/* Background - Video or Fallback Image */}
       <div className="fixed top-0 left-0 bottom-0 right-0 z-0">
-        <video
-          className="object-cover w-full h-full"
-          ref={videoRef}
-          src="/video/white-background.mp4"
-          autoPlay
-          muted
-          playsInline
-          loop
-        />
+        {videoFailed ? (
+          // Fallback static image for chat apps
+          <Image
+            src={fallbackBg}
+            alt="background"
+            fill
+            className="object-cover"
+            priority
+            quality={85}
+          />
+        ) : (
+          // Video background for regular browsers
+          <video
+            className="object-cover w-full h-full"
+            ref={videoRef}
+            src="/video/white-background.mp4"
+            autoPlay
+            muted
+            playsInline
+            loop
+          />
+        )}
       </div>
+
+      {/* Main Content */}
       <div
         id="aos-scroller"
         style={{
