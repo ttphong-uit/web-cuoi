@@ -18,70 +18,70 @@ const storyYears: StoryYear[] = [
     title: "Khởi đầu",
     description: "Câu chuyện của chúng mình bắt đầu...",
     image: image1.src,
-    imageText: "Ảnh 1",
+    imageText: "",
   },
   {
     year: "2017",
     title: "Năm thứ hai",
     description: "Những kỷ niệm đáng nhớ...",
     image: image1.src,
-    imageText: "Ảnh 2",
+    imageText: "",
   },
   {
     year: "2018",
     title: "Năm thứ ba",
     description: "Hành trình tiếp tục...",
     image: image1.src,
-    imageText: "Ảnh 3",
+    imageText: "",
   },
   {
     year: "2019",
     title: "Năm thứ tư",
     description: "Những ngày tháng bên nhau...",
     image: image1.src,
-    imageText: "Ảnh 4",
+    imageText: "",
   },
   {
     year: "2020",
     title: "Năm thứ năm",
     description: "Cùng nhau vượt qua mọi thử thách...",
     image: image1.src,
-    imageText: "Ảnh 5",
+    imageText: "",
   },
   {
     year: "2021",
     title: "Năm thứ sáu",
     description: "Tình yêu ngày càng bền chặt...",
     image: image1.src,
-    imageText: "Ảnh 6",
+    imageText: "",
   },
   {
     year: "2022",
     title: "Năm thứ bảy",
     description: "Những khoảnh khắc hạnh phúc...",
     image: image1.src,
-    imageText: "Ảnh 7",
+    imageText: "",
   },
   {
     year: "2023",
     title: "Năm thứ tám",
     description: "Cùng nhau trưởng thành...",
     image: image1.src,
-    imageText: "Ảnh 8",
+    imageText: "",
   },
   {
     year: "2024",
     title: "Năm thứ chín",
     description: "Chuẩn bị cho một chương mới...",
     image: image1.src,
-    imageText: "Ảnh 9",
+    imageText: "",
   },
   {
     year: "2025",
     title: "Chương mới",
     description: "Bắt đầu hành trình làm vợ chồng...",
     image: image1.src,
-    imageText: "Ảnh 10",
+    imageText: "",
   },
 ];
 
@@ -121,7 +121,7 @@ export const OurStory = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center py-16 px-4 bg-transparent">
+    <section className="min-h-screen max-w-[800px] mx-auto flex flex-col items-center justify-center py-8 px-4 bg-transparent overflow-hidden">
       {/* Section Title */}
       <h2
         className="text-center font-dancingScript text-5xl md:text-6xl mb-4 text-[#333]"
@@ -221,6 +221,7 @@ export const OurStory = () => {
                           </p>
                           <div className="flex justify-end">
                             <div
+                              className="w-full"
                               data-aos="fade-up"
                               data-aos-duration="600"
                               data-aos-delay={Math.min(index * 50 + 100, 300)}
@@ -257,6 +258,7 @@ export const OurStory = () => {
                           </p>
                           <div className="flex justify-start">
                             <div
+                              className="w-full"
                               data-aos="fade-up"
                               data-aos-duration="600"
                               data-aos-delay={Math.min(index * 50 + 100, 300)}

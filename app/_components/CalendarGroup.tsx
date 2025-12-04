@@ -6,7 +6,7 @@ import { Calendar } from "./Calendar";
 export const CalendarGroup = () => {
   return (
     <section
-      className="flex items-center justify-center py-12 px-4 bg-transparent"
+      className="flex items-center justify-center py-6 px-4 bg-transparent"
       data-aos="fade-up"
       data-aos-delay="100"
     >

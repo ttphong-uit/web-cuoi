@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer
-      className="relative flex items-center justify-center py-8 px-4 pb-20 md:pb-8 bg-[#272727] overflow-hidden"
+      className="relative flex items-center justify-center py-6 px-4 pb-20 md:pb-6 bg-[#272727] overflow-hidden"
       style={{
         backgroundImage: `url(${backgroundHeart.src})`,
         backgroundSize: "cover",

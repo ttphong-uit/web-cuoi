@@ -6,10 +6,10 @@ import groomImg from "@/app/_assets/images/groom-portrait.png";
 
 export const BrideAndGroom = () => {
   return (
-    <section className="min-h-screen py-16 px-4 bg-transparent overflow-hidden">
+    <section className="min-h-screen py-8 px-4 bg-transparent overflow-hidden">
       {/* Bride Section */}
       <div
-        className="max-w-7xl mx-auto mb-16"
+        className="max-w-[800px] mx-auto mb-12"
         data-aos="fade-in"
         data-aos-once="true"
         data-aos-duration="600"
@@ -32,13 +32,13 @@ export const BrideAndGroom = () => {
               data-aos-duration="600"
               data-aos-delay="800"
             >
-              <h2 className="font-dancingScript text-5xl md:text-6xl mb-6 text-[#F5EFE7]">
+              <h2 className="font-dancingScript text-4xl md:text-5xl mb-4 text-[#F5EFE7]">
                 Cô Dâu
               </h2>
 
               <div className="space-y-4 font-quickSand">
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-semibold mb-2 text-[#F5EFE7]">
+                  <h3 className="text-xl md:text-2xl font-semibold mb-2 text-[#F5EFE7]">
                     Huỳnh Thị Hồng Viên
                   </h3>
                   <p className="text-sm md:text-base text-[#D4C5B9]">
@@ -105,7 +105,7 @@ export const BrideAndGroom = () => {
 
       {/* Groom Section */}
       <div
-        className="max-w-7xl mx-auto"
+        className="max-w-[800px] mx-auto"
         data-aos="fade-in"
         data-aos-once="true"
         data-aos-duration="600"
@@ -147,13 +147,13 @@ export const BrideAndGroom = () => {
               data-aos-duration="600"
               data-aos-delay="800"
             >
-              <h2 className="font-dancingScript text-5xl md:text-6xl mb-6 text-[#F5EFE7]">
+              <h2 className="font-dancingScript text-4xl md:text-5xl mb-4 text-[#F5EFE7]">
                 Chú Rể
               </h2>
 
               <div className="space-y-4 font-quickSand">
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-semibold mb-2 text-[#F5EFE7]">
+                  <h3 className="text-xl md:text-2xl font-semibold mb-2 text-[#F5EFE7]">
                     Trần Thanh Phong
                   </h3>
                   <p className="text-sm md:text-base text-[#D4C5B9]">

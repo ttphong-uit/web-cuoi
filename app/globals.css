@@ -1,69 +1,87 @@
 @import "tailwindcss";
 
+/* Prevent horizontal scrolling caused by animations */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
 
 @font-face {
-    font-family: "Mallong";
-    src: url("/fonts/Mallong-Regular.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Mallong";
+  src: url("/fonts/Mallong-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* Faugllin-Balseyn font files (regular + italic, otf + ttf) */
 @font-face {
-    font-family: "FaugllinBalseyn";
-    src:
-        url("/fonts/Faugllin-Balseyn-BF65fe58663f431.ttf") format("truetype"),
-        url("/fonts/Faugllin-Balseyn-BF65fe58663f431.otf") format("opentype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-family: "FaugllinBalseyn";
+  src: url("/fonts/Faugllin-Balseyn-BF65fe58663f431.ttf") format("truetype"),
+    url("/fonts/Faugllin-Balseyn-BF65fe58663f431.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "FaugllinBalseyn";
-    src:
-        url("/fonts/Faugllin-Balseyn-Italic-BF65fe586651b90.ttf") format("truetype"),
-        url("/fonts/Faugllin-Balseyn-Italic-BF65fe5866578bc.otf") format("opentype");
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
+  font-family: "FaugllinBalseyn";
+  src: url("/fonts/Faugllin-Balseyn-Italic-BF65fe586651b90.ttf")
+      format("truetype"),
+    url("/fonts/Faugllin-Balseyn-Italic-BF65fe5866578bc.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: "Breathing";
-    src:
-        url("/fonts/Breathing.ttf") format("truetype"),
-        url("/fonts/Breathing.ttf") format("opentype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Breathing";
+  src: url("/fonts/Breathing.ttf") format("truetype"),
+    url("/fonts/Breathing.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* CSS variables for fonts. The Next font loader sets --font-primer in layout.tsx */
 :root {
-    --font-breathing: "Breathing", system-ui, sans-serif;
-    --font-mallong: "Mallong", system-ui, sans-serif;
-    --font-faugllin-balseyn: "FaugllinBalseyn", system-ui, sans-serif;
+  --font-breathing: "Breathing", system-ui, sans-serif;
+  --font-mallong: "Mallong", system-ui, sans-serif;
+  --font-faugllin-balseyn: "FaugllinBalseyn", system-ui, sans-serif;
 }
 
 @layer components {
-    .font-mallong {
-        font-family: var(--font-mallong);
+  .font-mallong {
+    font-family: var(--font-mallong);
+  }
+  .font-faugllin {
+    font-family: var(--font-faugllin-balseyn);
+  }
+  .font-shadow2light {
+    font-family: var(--font-shadowToLight);
+  }
+  .font-quickSand {
+    font-family: var(--font-quickSand);
+  }
+  .font-breathing {
+    font-family: var(--font-breathing);
+  }
+  .font-dancingScript {
+    font-family: var(--font-dancingScript);
+  }
+}
+
+/* Custom animations */
+@keyframes bounce-slow {
+    0%, 100% {
+        transform: translateY(0);
     }
-    .font-faugllin {
-        font-family: var(--font-faugllin-balseyn);
+    50% {
+        transform: translateY(10px);
     }
-    .font-shadow2light {
-        font-family: var(--font-shadowToLight);
-    }
-    .font-quickSand {
-        font-family: var(--font-quickSand);
-    }
-    .font-breathing {
-        font-family: var(--font-breathing);
-    }
-    .font-dancingScript {
-        font-family: var(--font-dancingScript);
-    }
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
 }

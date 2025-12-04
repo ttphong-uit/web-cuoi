@@ -4,6 +4,7 @@ import { PolaroidCard } from "./PolaroidCard";
 import image1 from "@/app/_assets/images/cover-desktop.jpg";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import Button from "./Button";
 
 type AlbumPhoto = {
   imageSrc: string;
@@ -92,7 +93,7 @@ export const OurAlbum = () => {
 
   return (
     <section
-      className="min-h-screen flex flex-col items-center justify-center py-16 px-4 bg-transparent"
+      className="min-h-screen flex flex-col items-center justify-center py-8 px-4 bg-transparent"
       data-aos="fade-up"
     >
       {/* Section Title */}
@@ -105,7 +106,7 @@ export const OurAlbum = () => {
       </h2>
 
       {/* Photo Grid */}
-      <div className="w-full max-w-[1000px]">
+      <div className="w-full max-w-[800px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {displayedPhotos.map((photo, index) => (
             <div
@@ -129,14 +130,17 @@ export const OurAlbum = () => {
 
         {/* View More Button */}
         <div className="flex justify-center mt-12">
-          <button
-            onClick={handleViewMore}
-            className="px-8 py-3 bg-[#2a2a2a] text-white font-quickSand text-base md:text-lg rounded-full hover:bg-[#1a1a1a] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+          <Button
             data-aos="zoom-in"
             data-aos-delay="600"
+            variant="filled"
+            color="white"
+            shape="rounded"
+            className="sm:min-w-[250px] hover:scale-105"
+            onClick={handleViewMore}
           >
             Xem thêm
-          </button>
+          </Button>
         </div>
       </div>
 

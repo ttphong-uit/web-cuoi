@@ -7,7 +7,7 @@ import restaurantIcon from "../_assets/images/restaurant.webp";
 export const RestaurantLocation2 = () => {
   return (
     <section
-      className="flex items-center justify-center py-12 px-4 bg-transparent"
+      className="flex items-center justify-center py-6 px-4 bg-transparent"
       data-aos="zoom-in"
     >
       <div

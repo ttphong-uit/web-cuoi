@@ -121,3 +121,22 @@ export async function POST(request: Request) {
     );
   }
 }
+
+// DELETE endpoint to reset messages to default
+export async function DELETE() {
+  try {
+    writeMessages(defaultMessages);
+    return NextResponse.json(
+      {
+        message: "Messages reset to default successfully",
+        messages: defaultMessages,
+      },
+      { status: 200 }
+    );
+  } catch (error) {
+    return NextResponse.json(
+      { error: "Failed to reset messages" },
+      { status: 500 }
+    );
+  }
+}

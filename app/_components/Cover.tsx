@@ -1,6 +1,6 @@
 import desktopImg from "../_assets/images/cover-desktop-2.jpg";
 import Image from "next/image";
-import Button from "./Button";
+import { DoubleChevronDown } from "./DoubleChevronDown";
 import React, { useEffect } from "react";
 import { useMusicContext } from "../_context/MusicContext";
 import Aos from "aos";
@@ -12,11 +12,43 @@ type CoverProps = {
 export const Cover = ({ toggleShowContent }: CoverProps) => {
   const handler = useMusicContext();
   const [hidden, setHidden] = React.useState(false);
+  const [touchStart, setTouchStart] = React.useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = React.useState<number | null>(null);
+
+  // Minimum distance for a swipe (in pixels)
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientY);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientY);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isSwipeUp = distance > minSwipeDistance;
+
+    if (isSwipeUp) {
+      // Call playMusic synchronously within the event handler
+      // to satisfy browser autoplay policy
+      // handler.playMusic();
+      // setHidden(true);
+    }
+  };
+
   return (
     <div
       className={`relative w-full z-99999999 transition-all overflow-hidden duration-500
                 ${!hidden ? "opacity-100 h-dvh" : "opacity-0 h-0"}
                 `}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
       onTransitionEnd={(event) => {
         if (event.propertyName === "opacity") {
           const scrollContainer: HTMLDivElement | null =
@@ -53,18 +85,18 @@ export const Cover = ({ toggleShowContent }: CoverProps) => {
             18.01.2026
           </div>
         </div>
-        <Button
-          color="white"
-          shape="square"
-          variant="outlined"
-          className="min-w-[250px] absolute bottom-[10%] left-[50%] translate-x-[-50%]"
-          onClick={() => {
-            setHidden(true);
-            handler.playMusic();
-          }}
-        >
-          Bấm để xem...
-        </Button>
+        <div className="absolute bottom-[5%] h-[10vh] w-full">
+          <div className="text-white text-center font-quickSand font-thin text-[14px] sm:text-[24px] tracking-[2px]">
+            Bấm để xem
+          </div>
+          <DoubleChevronDown
+            className="flex justify-center items-center"
+            onClick={() => {
+              setHidden(true);
+              handler.playMusic();
+            }}
+          />
+        </div>
       </div>
     </div>
   );

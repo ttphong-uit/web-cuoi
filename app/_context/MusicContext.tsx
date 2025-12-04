@@ -53,7 +53,10 @@ export const MusicContextProvider: React.FC<React.PropsWithChildren> = (
       const audio = audioRef.current;
       if (audio) {
         audio.volume = 0.5;
-        audio.play();
+        audio.play().catch((error) => {
+          console.warn("Autoplay was prevented:", error);
+          // Silently fail - user will need to manually start music
+        });
       }
     },
     pauseMusic: () => {
