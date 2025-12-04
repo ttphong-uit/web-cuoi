@@ -12,13 +12,13 @@ export const BrideAndGroom = () => {
         className="max-w-7xl mx-auto mb-16"
         data-aos="fade-in"
         data-aos-once="true"
-        data-aos-duration="1000"
+        data-aos-duration="600"
       >
         <div
           className="bg-[#2a2a2a] rounded-[24px] p-8 md:p-12 overflow-hidden"
           data-aos="fade-right"
           data-aos-once="true"
-          data-aos-duration="1200"
+          data-aos-duration="800"
           style={{
             boxShadow: "4px 4px 20px 0px rgba(43,43,43,0.36)",
           }}
@@ -29,8 +29,8 @@ export const BrideAndGroom = () => {
               className="md:col-span-6 text-white order-2 md:order-1"
               data-aos="fade-in"
               data-aos-once="true"
-              data-aos-duration="1000"
-              data-aos-delay="1200"
+              data-aos-duration="600"
+              data-aos-delay="800"
             >
               <h2 className="font-dancingScript text-5xl md:text-6xl mb-6 text-[#F5EFE7]">
                 Cô Dâu
@@ -41,28 +41,28 @@ export const BrideAndGroom = () => {
                   <h3 className="text-2xl md:text-3xl font-semibold mb-2 text-[#F5EFE7]">
                     Huỳnh Thị Hồng Viên
                   </h3>
-                  <p className="text-lg text-[#D4C5B9]">
+                  <p className="text-sm md:text-base text-[#D4C5B9]">
                     Con gái của ông <strong>Huỳnh Văn Bốn</strong> và bà{" "}
                     <strong>Ngô Thị Minh</strong>
                   </p>
                 </div>
 
                 <div className="space-y-2 text-[#D4C5B9]">
-                  <p className="text-lg">
+                  <p className="text-sm md:text-base">
                     <span className="font-semibold text-[#F5EFE7]">Tuổi:</span>{" "}
                     26 tuổi
                   </p>
-                  <p className="text-lg">
+                  <p className="text-sm md:text-base">
                     <span className="font-semibold text-[#F5EFE7]">
                       Nghề nghiệp:
                     </span>{" "}
                     Tester
                   </p>
-                  <p className="text-lg">
+                  <p className="text-sm md:text-base">
                     <span className="font-semibold text-[#F5EFE7]">Là:</span> Út
                     nữ
                   </p>
-                  <p className="text-lg">
+                  <p className="text-sm md:text-base">
                     <span className="font-semibold text-[#F5EFE7]">
                       Sở thích:
                     </span>{" "}
@@ -71,7 +71,7 @@ export const BrideAndGroom = () => {
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-[#4a4a4a]">
-                  <p className="text-base md:text-lg leading-relaxed text-[#D4C5B9] italic">
+                  <p className="text-sm md:text-base leading-relaxed text-[#D4C5B9] italic">
                     "Một người phụ nữ dịu dàng, hiền lành với trái tim nhân hậu.
                     Luôn mang đến niềm vui và sự ấm áp cho mọi người xung quanh.
                     Yêu thích sự giản dị và trân trọng những khoảnh khắc nhỏ bé
@@ -86,8 +86,8 @@ export const BrideAndGroom = () => {
               className="md:col-span-4 order-1 md:order-2"
               data-aos="fade-left"
               data-aos-once="true"
-              data-aos-duration="1000"
-              data-aos-delay="800"
+              data-aos-duration="600"
+              data-aos-delay="500"
             >
               <div className="relative w-full aspect-3/4 rounded-2xl overflow-hidden shadow-2xl">
                 <Image
@@ -108,13 +108,13 @@ export const BrideAndGroom = () => {
         className="max-w-7xl mx-auto"
         data-aos="fade-in"
         data-aos-once="true"
-        data-aos-duration="1000"
+        data-aos-duration="600"
       >
         <div
           className="bg-[#2a2a2a] rounded-[24px] p-8 md:p-12 overflow-hidden"
           data-aos="fade-left"
           data-aos-once="true"
-          data-aos-duration="1200"
+          data-aos-duration="800"
           style={{
             boxShadow: "4px 4px 20px 0px rgba(43,43,43,0.36)",
           }}
@@ -125,8 +125,8 @@ export const BrideAndGroom = () => {
               className="md:col-span-4 order-1"
               data-aos="fade-right"
               data-aos-once="true"
-              data-aos-duration="1000"
-              data-aos-delay="800"
+              data-aos-duration="600"
+              data-aos-delay="500"
             >
               <div className="relative w-full aspect-3/4 rounded-2xl overflow-hidden shadow-2xl">
                 <Image
@@ -144,8 +144,8 @@ export const BrideAndGroom = () => {
               className="md:col-span-6 text-white order-2"
               data-aos="fade-in"
               data-aos-once="true"
-              data-aos-duration="1000"
-              data-aos-delay="1200"
+              data-aos-duration="600"
+              data-aos-delay="800"
             >
               <h2 className="font-dancingScript text-5xl md:text-6xl mb-6 text-[#F5EFE7]">
                 Chú Rể
@@ -156,28 +156,28 @@ export const BrideAndGroom = () => {
                   <h3 className="text-2xl md:text-3xl font-semibold mb-2 text-[#F5EFE7]">
                     Trần Thanh Phong
                   </h3>
-                  <p className="text-lg text-[#D4C5B9]">
+                  <p className="text-sm md:text-base text-[#D4C5B9]">
                     Con trai của ông <strong>Trần Thanh Lịch</strong> và bà{" "}
                     <strong>Trần Thị Thùy Linh</strong>
                   </p>
                 </div>
 
                 <div className="space-y-2 text-[#D4C5B9]">
-                  <p className="text-lg">
+                  <p className="text-sm md:text-base">
                     <span className="font-semibold text-[#F5EFE7]">Tuổi:</span>{" "}
                     26 tuổi
                   </p>
-                  <p className="text-lg">
+                  <p className="text-sm md:text-base">
                     <span className="font-semibold text-[#F5EFE7]">
                       Nghề nghiệp:
                     </span>{" "}
                     Developer quèn
                   </p>
-                  <p className="text-lg">
+                  <p className="text-sm md:text-base">
                     <span className="font-semibold text-[#F5EFE7]">Là:</span> Út
                     nam
                   </p>
-                  <p className="text-lg">
+                  <p className="text-sm md:text-base">
                     <span className="font-semibold text-[#F5EFE7]">
                       Sở thích:
                     </span>{" "}
@@ -186,7 +186,7 @@ export const BrideAndGroom = () => {
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-[#4a4a4a]">
-                  <p className="text-base md:text-lg leading-relaxed text-[#D4C5B9] italic">
+                  <p className="text-sm md:text-base leading-relaxed text-[#D4C5B9] italic">
                     "Một người đàn ông trách nhiệm, chín chắn với tính cách hài
                     hước. Luôn nỗ lực hết mình trong công việc và quan tâm đến
                     gia đình. Yêu thích công nghệ và luôn tìm kiếm những điều

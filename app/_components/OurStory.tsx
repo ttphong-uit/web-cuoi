@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { PolaroidCard } from "./PolaroidCard";
 import image1 from "@/app/_assets/images/cover-mobile.jpg";
 
@@ -7,10 +7,8 @@ type StoryYear = {
   year: string;
   title: string;
   description: string;
-  leftImage: string;
-  leftImageText: string;
-  rightImage: string;
-  rightImageText: string;
+  image: string;
+  imageText: string;
 };
 
 // Placeholder data - you can fill this in later
@@ -19,158 +17,280 @@ const storyYears: StoryYear[] = [
     year: "2016",
     title: "Khởi đầu",
     description: "Câu chuyện của chúng mình bắt đầu...",
-    leftImage: image1.src,
-    leftImageText: "Ảnh 1",
-    rightImage: image1.src,
-    rightImageText: "Ảnh 2",
+    image: image1.src,
+    imageText: "Ảnh 1",
   },
   {
     year: "2017",
     title: "Năm thứ hai",
     description: "Những kỷ niệm đáng nhớ...",
-    leftImage: image1.src,
-    leftImageText: "Ảnh 3",
-    rightImage: image1.src,
-    rightImageText: "Ảnh 4",
+    image: image1.src,
+    imageText: "Ảnh 2",
   },
   {
     year: "2018",
     title: "Năm thứ ba",
     description: "Hành trình tiếp tục...",
-    leftImage: image1.src,
-    leftImageText: "Ảnh 5",
-    rightImage: image1.src,
-    rightImageText: "Ảnh 6",
+    image: image1.src,
+    imageText: "Ảnh 3",
   },
   {
     year: "2019",
     title: "Năm thứ tư",
     description: "Những ngày tháng bên nhau...",
-    leftImage: image1.src,
-    leftImageText: "Ảnh 7",
-    rightImage: image1.src,
-    rightImageText: "Ảnh 8",
+    image: image1.src,
+    imageText: "Ảnh 4",
   },
   {
     year: "2020",
     title: "Năm thứ năm",
     description: "Cùng nhau vượt qua mọi thử thách...",
-    leftImage: image1.src,
-    leftImageText: "Ảnh 9",
-    rightImage: image1.src,
-    rightImageText: "Ảnh 10",
+    image: image1.src,
+    imageText: "Ảnh 5",
   },
   {
     year: "2021",
     title: "Năm thứ sáu",
     description: "Tình yêu ngày càng bền chặt...",
-    leftImage: image1.src,
-    leftImageText: "Ảnh 11",
-    rightImage: image1.src,
-    rightImageText: "Ảnh 12",
+    image: image1.src,
+    imageText: "Ảnh 6",
   },
   {
     year: "2022",
     title: "Năm thứ bảy",
     description: "Những khoảnh khắc hạnh phúc...",
-    leftImage: image1.src,
-    leftImageText: "Ảnh 13",
-    rightImage: image1.src,
-    rightImageText: "Ảnh 14",
+    image: image1.src,
+    imageText: "Ảnh 7",
   },
   {
     year: "2023",
     title: "Năm thứ tám",
     description: "Cùng nhau trưởng thành...",
-    leftImage: image1.src,
-    leftImageText: "Ảnh 15",
-    rightImage: image1.src,
-    rightImageText: "Ảnh 16",
+    image: image1.src,
+    imageText: "Ảnh 8",
   },
   {
     year: "2024",
     title: "Năm thứ chín",
     description: "Chuẩn bị cho một chương mới...",
-    leftImage: image1.src,
-    leftImageText: "Ảnh 17",
-    rightImage: image1.src,
-    rightImageText: "Ảnh 18",
+    image: image1.src,
+    imageText: "Ảnh 9",
   },
   {
     year: "2025",
     title: "Chương mới",
     description: "Bắt đầu hành trình làm vợ chồng...",
-    leftImage: image1.src,
-    leftImageText: "Ảnh 19",
-    rightImage: image1.src,
-    rightImageText: "Ảnh 20",
+    image: image1.src,
+    imageText: "Ảnh 10",
   },
 ];
 
 export const OurStory = () => {
+  const [journeyDuration, setJourneyDuration] = useState({
+    years: 0,
+    months: 0,
+    days: 0,
+  });
+
+  useEffect(() => {
+    const startDate = new Date("2016-12-21");
+    const currentDate = new Date();
+
+    let years = currentDate.getFullYear() - startDate.getFullYear();
+    let months = currentDate.getMonth() - startDate.getMonth();
+    let days = currentDate.getDate() - startDate.getDate();
+
+    // Adjust for negative days
+    if (days < 0) {
+      months--;
+      const prevMonth = new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth(),
+        0
+      );
+      days += prevMonth.getDate();
+    }
+
+    // Adjust for negative months
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+
+    setJourneyDuration({ years, months, days });
+  }, []);
+
   return (
     <section className="min-h-screen flex flex-col items-center justify-center py-16 px-4 bg-transparent">
       {/* Section Title */}
-      <h2 className="text-center font-dancingScript text-5xl md:text-6xl mb-16 text-[#333]">
-        Câu chuyện của chúng mình
+      <h2
+        className="text-center font-dancingScript text-5xl md:text-6xl mb-4 text-[#333]"
+        data-aos="fade-down"
+        data-aos-duration="800"
+      >
+        Hành trình {journeyDuration.years} năm {journeyDuration.months} tháng{" "}
+        {journeyDuration.days} ngày
       </h2>
+      <p
+        className="text-center font-quickSand text-sm md:text-base text-[#666] mb-16 italic"
+        data-aos="fade-up"
+        data-aos-duration="800"
+        data-aos-delay="200"
+      >
+        Từ ngày 21/12/2016
+      </p>
 
       {/* Timeline */}
-      <div className="w-full max-w-[1200px] space-y-16 md:space-y-24">
-        {storyYears.map((story, index) => (
-          <div key={story.year} className="relative">
-            {/* Title and Description */}
-            <div className="text-center mb-8">
-              <h3 className="font-dancingScript text-3xl md:text-4xl text-[#333] mb-3">
-                {story.title}
-              </h3>
-              <p className="font-quickSand text-sm md:text-base text-[#666] max-w-2xl mx-auto">
-                {story.description}
-              </p>
-            </div>
+      <div className="w-full max-w-[900px] relative">
+        {/* Vertical Timeline Line - Hidden on mobile */}
+        <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-[#333] transform -translate-x-1/2" />
 
-            {/* Images and Stepper Row */}
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-8 items-center">
-              {/* Left Polaroid */}
-              <div className="flex justify-center md:justify-end">
-                <PolaroidCard
-                  imageSrc={story.leftImage}
-                  text={story.leftImageText}
-                  className="w-full max-w-[250px] rotate-[-3deg]"
-                />
-              </div>
+        <div className="space-y-12 md:space-y-16">
+          {storyYears.map((story, index) => {
+            const isLeft = index % 2 === 0;
 
-              {/* Center Stepper */}
-              <div className="flex flex-col items-center">
-                {/* Connector Line from Previous */}
-                {index > 0 && <div className="w-[2px] h-12 bg-[#333] mb-2" />}
-
-                {/* Year Circle */}
-                <div className="relative flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-[#2a2a2a] border-4 border-white shadow-lg flex items-center justify-center">
+            return (
+              <div
+                key={story.year}
+                className="relative"
+                data-aos="fade-up"
+                data-aos-duration="600"
+                data-aos-delay={Math.min(index * 50, 200)}
+              >
+                {/* Mobile Layout */}
+                <div className="md:hidden flex flex-col items-center gap-4">
+                  {/* Year Circle */}
+                  <div
+                    className="w-16 h-16 rounded-full bg-[#2a2a2a] border-4 border-white shadow-lg flex items-center justify-center z-10"
+                    data-aos="zoom-in"
+                    data-aos-duration="600"
+                    data-aos-delay={Math.min(index * 50, 200)}
+                  >
                     <span className="font-faugllin text-white text-sm font-bold">
                       {story.year}
                     </span>
                   </div>
+
+                  {/* Title and Description */}
+                  <div className="text-center">
+                    <h3 className="font-dancingScript text-2xl md:text-3xl text-[#333] mb-2">
+                      {story.title}
+                    </h3>
+                    <p className="font-quickSand text-sm text-[#666] max-w-md mx-auto mb-4">
+                      {story.description}
+                    </p>
+                  </div>
+
+                  {/* Image */}
+                  <div
+                    className="w-full px-4"
+                    data-aos="fade-up"
+                    data-aos-duration="600"
+                    data-aos-delay={Math.min(index * 50 + 100, 300)}
+                  >
+                    <PolaroidCard
+                      imageSrc={story.image}
+                      text={story.imageText}
+                      className="w-full"
+                    />
+                  </div>
+
+                  {/* Connector to next (mobile) */}
+                  {index < storyYears.length - 1 && (
+                    <div className="w-[2px] h-8 bg-[#333]" />
+                  )}
                 </div>
 
-                {/* Connector Line to Next */}
-                {index < storyYears.length - 1 && (
-                  <div className="w-[2px] h-12 bg-[#333] mt-2" />
-                )}
-              </div>
+                {/* Desktop Layout - Alternating */}
+                <div className="hidden md:block">
+                  <div className="grid grid-cols-2 gap-8 items-center">
+                    {isLeft ? (
+                      <>
+                        {/* Left Side - Content */}
+                        <div
+                          className="text-right pr-8"
+                          data-aos="fade-right"
+                          data-aos-duration="600"
+                          data-aos-delay={Math.min(index * 50, 200)}
+                        >
+                          <h3 className="font-dancingScript text-3xl md:text-4xl text-[#333] mb-2">
+                            {story.title}
+                          </h3>
+                          <p className="font-quickSand text-sm md:text-base text-[#666] mb-4">
+                            {story.description}
+                          </p>
+                          <div className="flex justify-end">
+                            <div
+                              data-aos="fade-up"
+                              data-aos-duration="600"
+                              data-aos-delay={Math.min(index * 50 + 100, 300)}
+                            >
+                              <PolaroidCard
+                                imageSrc={story.image}
+                                text={story.imageText}
+                                className="max-w-[400px] w-full"
+                              />
+                            </div>
+                          </div>
+                        </div>
 
-              {/* Right Polaroid */}
-              <div className="flex justify-center md:justify-start">
-                <PolaroidCard
-                  imageSrc={story.rightImage}
-                  text={story.rightImageText}
-                  className="w-full max-w-[250px] rotate-[3deg]"
-                />
+                        {/* Right Side - Empty */}
+                        <div />
+                      </>
+                    ) : (
+                      <>
+                        {/* Left Side - Empty */}
+                        <div />
+
+                        {/* Right Side - Content */}
+                        <div
+                          className="text-left pl-8"
+                          data-aos="fade-left"
+                          data-aos-duration="600"
+                          data-aos-delay={Math.min(index * 50, 200)}
+                        >
+                          <h3 className="font-dancingScript text-3xl md:text-4xl text-[#333] mb-2">
+                            {story.title}
+                          </h3>
+                          <p className="font-quickSand text-sm md:text-base text-[#666] mb-4">
+                            {story.description}
+                          </p>
+                          <div className="flex justify-start">
+                            <div
+                              data-aos="fade-up"
+                              data-aos-duration="600"
+                              data-aos-delay={Math.min(index * 50 + 100, 300)}
+                            >
+                              <PolaroidCard
+                                imageSrc={story.image}
+                                text={story.imageText}
+                                className="max-w-[400px] w-full"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                  </div>
+
+                  {/* Year Circle - Center */}
+                  <div
+                    className="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-2"
+                    data-aos="zoom-in"
+                    data-aos-duration="600"
+                    data-aos-delay={Math.min(index * 50, 200)}
+                  >
+                    <div className="w-20 h-20 rounded-full bg-[#2a2a2a] border-4 border-white shadow-lg flex items-center justify-center">
+                      <span className="font-faugllin text-white text-base font-bold">
+                        {story.year}
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+            );
+          })}
+        </div>
       </div>
     </section>
   );

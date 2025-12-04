@@ -4361,6 +4361,7 @@ __metadata:
     react-dom: "npm:19.2.0"
     tailwindcss: "npm:^4"
     typescript: "npm:^5"
+    yet-another-react-lightbox: "npm:^3.25.0"
   languageName: unknown
   linkType: soft
 
@@ -4447,6 +4448,23 @@ __metadata:
   version: 3.1.1
   resolution: "yallist@npm:3.1.1"
   checksum: 10c0/c66a5c46bc89af1625476f7f0f2ec3653c1a1791d2f9407cfb4c2ba812a1e1c9941416d71ba9719876530e3340a99925f697142989371b72d93b9ee628afd8c1
+  languageName: node
+  linkType: hard
+
+"yet-another-react-lightbox@npm:^3.25.0":
+  version: 3.25.0
+  resolution: "yet-another-react-lightbox@npm:3.25.0"
+  peerDependencies:
+    "@types/react": ^16 || ^17 || ^18 || ^19
+    "@types/react-dom": ^16 || ^17 || ^18 || ^19
+    react: ^16.8.0 || ^17 || ^18 || ^19
+    react-dom: ^16.8.0 || ^17 || ^18 || ^19
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    "@types/react-dom":
+      optional: true
+  checksum: 10c0/c2e41c19e4cf3bd1d762c8f135e2f72fc0e6355628e6e2604d11f19286c03f44bac44fee3fc9fd42ff7105f464b28c147979bb5e9cd445999bf7417f6d55d39d
   languageName: node
   linkType: hard
 

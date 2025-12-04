@@ -25,6 +25,7 @@ const MainPage: React.FunctionComponent<IMainPageProps> = (props) => {
       <SaveTheDate />
       <CalendarGroup />
       <BrideAndGroom />
+      <OurStory />
       <TimeLine />
       <RestaurantLocation2 />
       <OurAlbum />
