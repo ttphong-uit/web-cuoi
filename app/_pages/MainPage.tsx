@@ -14,6 +14,7 @@ import TimeLine from "../_components/TimeLine";
 import { Footer } from "../_components/Footer";
 import { RestaurantLocation2 } from "../_components/RestaurantLocation2";
 import { WidgetMessage } from "../_components/WidgetMessage";
+import { BrideAndGroom } from "../_components/BrideAndGroom";
 
 interface IMainPageProps {}
 
@@ -23,6 +24,7 @@ const MainPage: React.FunctionComponent<IMainPageProps> = (props) => {
       <Cover />
       <SaveTheDate />
       <CalendarGroup />
+      <BrideAndGroom />
       <TimeLine />
       <RestaurantLocation2 />
       <OurAlbum />

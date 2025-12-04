@@ -66,7 +66,7 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-3 right-3 md:bottom-4 md:right-4 z-50 bg-linear-to-r from-pink-500 to-red-500 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-quickSand font-semibold text-sm md:text-base cursor-pointer"
+        className="fixed bottom-3 right-3 md:bottom-4 md:right-4 z-50 bg-linear-to-r from-rose-400 to-pink-500 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-lg hover:shadow-xl hover:from-rose-500 hover:to-pink-600 transition-all duration-300 font-quickSand font-semibold text-sm md:text-base cursor-pointer"
         aria-label="Open messages"
       >
         💌 Gửi lời chúc ({messages.length})
@@ -77,9 +77,9 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
   return (
     <>
       {/* Widget Container */}
-      <div className="fixed bottom-3 right-3 md:bottom-4 md:right-4 z-50 w-[85vw] max-w-[320px] md:max-w-[360px] bg-linear-to-br from-red-50 to-pink-50 rounded-2xl shadow-2xl overflow-hidden border-2 border-red-200">
+      <div className="fixed bottom-3 right-3 md:bottom-4 md:right-4 z-50 w-[85vw] max-w-[320px] md:max-w-[360px] bg-linear-to-br from-rose-50 to-pink-100 rounded-2xl shadow-2xl overflow-hidden border-2 border-rose-200">
         {/* Header */}
-        <div className="bg-linear-to-r from-pink-500 to-red-500 text-white p-3 md:p-4 flex justify-between items-center">
+        <div className="bg-linear-to-r from-rose-400 to-pink-500 text-white p-3 md:p-4 flex justify-between items-center">
           <h3 className="font-dancingScript text-xl md:text-2xl">Lời chúc</h3>
           <button
             onClick={() => setIsOpen(false)}
@@ -99,10 +99,10 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
             {[...messages, ...messages].map((message, index) => (
               <div
                 key={`${message.id}-${index}`}
-                className="bg-white/80 backdrop-blur-sm rounded-lg p-2 md:p-3 shadow-sm border border-red-100 animate-fade-in"
+                className="bg-white/90 backdrop-blur-sm rounded-lg p-2 md:p-3 shadow-sm border border-rose-200 animate-fade-in"
               >
                 <p className="font-quickSand text-xs md:text-sm text-gray-800">
-                  <span className="font-semibold text-red-600">
+                  <span className="font-semibold text-rose-600">
                     {message.name}:
                   </span>{" "}
                   {message.content}
@@ -113,10 +113,10 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
         </div>
 
         {/* Input Section */}
-        <div className="p-3 md:p-4 bg-white border-t border-red-200">
+        <div className="p-3 md:p-4 bg-white border-t border-rose-200">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="w-full bg-linear-to-r from-pink-500 to-red-500 text-white py-2 md:py-3 rounded-lg font-quickSand font-semibold hover:shadow-lg transition-all duration-300 text-sm md:text-base cursor-pointer"
+            className="w-full bg-linear-to-r from-rose-400 to-pink-500 text-white py-2 md:py-3 rounded-lg font-quickSand font-semibold hover:from-rose-500 hover:to-pink-600 hover:shadow-lg transition-all duration-300 text-sm md:text-base cursor-pointer"
           >
             Gửi lời chúc
           </button>
@@ -134,7 +134,7 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-6">
-              <h2 className="font-dancingScript text-3xl text-red-600">
+              <h2 className="font-dancingScript text-3xl text-rose-600">
                 Gửi lời chúc
               </h2>
               <button
@@ -152,14 +152,14 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
                   htmlFor="name"
                   className="block font-quickSand font-semibold text-gray-700 mb-2"
                 >
-                  Tên của bạn <span className="text-red-500">*</span>
+                  Tên của bạn <span className="text-rose-500">*</span>
                 </label>
                 <input
                   id="name"
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-400 focus:outline-none font-quickSand transition-colors"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-rose-400 focus:outline-none font-quickSand transition-colors"
                   placeholder="Nhập tên của bạn"
                   required
                 />
@@ -170,13 +170,13 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
                   htmlFor="content"
                   className="block font-quickSand font-semibold text-gray-700 mb-2"
                 >
-                  Lời chúc <span className="text-red-500">*</span>
+                  Lời chúc <span className="text-rose-500">*</span>
                 </label>
                 <textarea
                   id="content"
                   value={content}
                   onChange={(e) => setContent(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-400 focus:outline-none font-quickSand transition-colors resize-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-rose-400 focus:outline-none font-quickSand transition-colors resize-none"
                   placeholder="Gửi lời chúc"
                   rows={4}
                   required
@@ -186,7 +186,7 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-linear-to-r from-pink-500 to-red-500 text-white py-3 rounded-lg font-quickSand font-semibold hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-linear-to-r from-rose-400 to-pink-500 text-white py-3 rounded-lg font-quickSand font-semibold hover:from-rose-500 hover:to-pink-600 hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Đang gửi..." : "Gửi lời chúc"}
               </button>

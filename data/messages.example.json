@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "name": "Tuấn Anh",
+    "content": "🎊 Một hành trình hạnh phúc đang chờ đón hai bạn!",
+    "createdAt": "2025-12-04T05:12:10.000Z"
+  },
+  {
+    "id": "2",
+    "name": "Ngọc Anh",
+    "content": "🎉 Chúc hai bạn luôn vui vẻ, thấu hiểu và nâng đỡ nhau!",
+    "createdAt": "2025-12-04T05:12:10.000Z"
+  },
+  {
+    "id": "3",
+    "name": "Nam",
+    "content": "💕💕 Chúc hai bạn trăm năm hạnh phúc!",
+    "createdAt": "2025-12-04T05:12:10.000Z"
+  },
+  {
+    "id": "4",
+    "name": "Thu Hà",
+    "content": "🎊 Chúc cho tình yêu của hai bạn mỗi ngày một lớn mạnh!",
+    "createdAt": "2025-12-04T05:12:10.000Z"
+  },
+  {
+    "id": "5",
+    "name": "Trang",
+    "content": "⭐ Chúc mừng hạnh phúc lứa đôi!",
+    "createdAt": "2025-12-04T05:12:10.000Z"
+  }
+]
