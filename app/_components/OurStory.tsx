@@ -2,12 +2,12 @@
 import React, { useState, useEffect } from "react";
 import { PolaroidCard } from "./PolaroidCard";
 import image2016 from "@/app/_assets/images/our-story/2016.webp";
-import image2017 from "@/app/_assets/images/our-story/2017.webp";
-import image2018 from "@/app/_assets/images/our-story/2018.webp";
-import image2019 from "@/app/_assets/images/our-story/2019.webp";
-import image2020 from "@/app/_assets/images/our-story/2020.webp";
+import image2017 from "@/app/_assets/images/our-story/2017.jpg";
+import image2018 from "@/app/_assets/images/our-story/2018.jpg";
+import image2019 from "@/app/_assets/images/our-story/2019.jpg";
+import image2020 from "@/app/_assets/images/our-story/2020.jpg";
 import image2021 from "@/app/_assets/images/our-story/2021.webp";
-import image2022 from "@/app/_assets/images/our-story/2022.webp";
+import image2022 from "@/app/_assets/images/our-story/2022.jpg";
 import image2023 from "@/app/_assets/images/our-story/2023.webp";
 import image2024 from "@/app/_assets/images/our-story/2024.webp";
 import image2025 from "@/app/_assets/images/our-story/2025.webp";

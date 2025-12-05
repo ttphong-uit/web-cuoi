@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import brideImg from "@/app/_assets/images/bride-portrait.png";
-import groomImg from "@/app/_assets/images/groom-portrait.png";
+import brideImg from "@/app/_assets/images/bride-portrait.webp";
+import groomImg from "@/app/_assets/images/groom-portrait.webp";
 
 export const BrideAndGroom = () => {
   return (
