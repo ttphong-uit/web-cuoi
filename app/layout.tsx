@@ -38,15 +38,15 @@ export const metadata: Metadata = {
       "Mời quý vị xem thiệp báo hỷ của tụi mình nhé Thanh Phong & Hồng Viên",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://baohyphongvien.vercel.app/thumbnail.png",
         width: 1200,
-        height: 630,
+        height: 675,
       },
     ],
   },
   other: {
-    image: "/og-image.jpg",
-    thumbnail: "/og-image.jpg",
+    image: "https://baohyphongvien.vercel.app/thumbnail.png",
+    thumbnail: "https://baohyphongvien.vercel.app/thumbnail.png",
   },
 };
 

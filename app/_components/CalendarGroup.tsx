@@ -1,5 +1,5 @@
 "use client";
-import image1 from "../_assets/images/cover-mobile.jpg";
+import image1 from "../_assets/images/our-album/2.jpg";
 import { PolaroidCard } from "./PolaroidCard";
 import { Calendar } from "./Calendar";
 

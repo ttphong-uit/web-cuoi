@@ -1,4 +1,4 @@
-import desktopImg from "../_assets/images/cover-desktop-2.jpg";
+import desktopImg from "../_assets/images/cover-bg.jpg";
 import Image from "next/image";
 import { DoubleChevronDown } from "./DoubleChevronDown";
 import React, { useEffect } from "react";

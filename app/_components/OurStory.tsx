@@ -1,7 +1,16 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { PolaroidCard } from "./PolaroidCard";
-import image1 from "@/app/_assets/images/cover-mobile.jpg";
+import image2016 from "@/app/_assets/images/our-story/2016.webp";
+import image2017 from "@/app/_assets/images/our-story/2017.webp";
+import image2018 from "@/app/_assets/images/our-story/2018.webp";
+import image2019 from "@/app/_assets/images/our-story/2019.webp";
+import image2020 from "@/app/_assets/images/our-story/2020.webp";
+import image2021 from "@/app/_assets/images/our-story/2021.webp";
+import image2022 from "@/app/_assets/images/our-story/2022.webp";
+import image2023 from "@/app/_assets/images/our-story/2023.webp";
+import image2024 from "@/app/_assets/images/our-story/2024.webp";
+import image2025 from "@/app/_assets/images/our-story/2025.webp";
 
 type StoryYear = {
   year: string;
@@ -11,76 +20,75 @@ type StoryYear = {
   imageText: string;
 };
 
-// Placeholder data - you can fill this in later
 const storyYears: StoryYear[] = [
   {
     year: "2016",
     title: "Khởi đầu",
     description: "Câu chuyện của chúng mình bắt đầu...",
-    image: image1.src,
+    image: image2016.src,
     imageText: "",
   },
   {
     year: "2017",
     title: "Năm thứ hai",
     description: "Những kỷ niệm đáng nhớ...",
-    image: image1.src,
+    image: image2017.src,
     imageText: "",
   },
   {
     year: "2018",
     title: "Năm thứ ba",
     description: "Hành trình tiếp tục...",
-    image: image1.src,
+    image: image2018.src,
     imageText: "",
   },
   {
     year: "2019",
     title: "Năm thứ tư",
     description: "Những ngày tháng bên nhau...",
-    image: image1.src,
+    image: image2019.src,
     imageText: "",
   },
   {
     year: "2020",
     title: "Năm thứ năm",
     description: "Cùng nhau vượt qua mọi thử thách...",
-    image: image1.src,
+    image: image2020.src,
     imageText: "",
   },
   {
     year: "2021",
     title: "Năm thứ sáu",
     description: "Tình yêu ngày càng bền chặt...",
-    image: image1.src,
+    image: image2021.src,
     imageText: "",
   },
   {
     year: "2022",
     title: "Năm thứ bảy",
     description: "Những khoảnh khắc hạnh phúc...",
-    image: image1.src,
+    image: image2022.src,
     imageText: "",
   },
   {
     year: "2023",
     title: "Năm thứ tám",
     description: "Cùng nhau trưởng thành...",
-    image: image1.src,
+    image: image2023.src,
     imageText: "",
   },
   {
     year: "2024",
     title: "Năm thứ chín",
     description: "Chuẩn bị cho một chương mới...",
-    image: image1.src,
+    image: image2024.src,
     imageText: "",
   },
   {
     year: "2025",
     title: "Chương mới",
     description: "Bắt đầu hành trình làm vợ chồng...",
-    image: image1.src,
+    image: image2025.src,
     imageText: "",
   },
 ];

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { PolaroidCard } from "./PolaroidCard";
-import image1 from "@/app/_assets/images/cover-desktop.jpg";
+import image1 from "@/app/_assets/images/our-album/3.jpg";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Button from "./Button";
