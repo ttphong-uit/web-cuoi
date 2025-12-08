@@ -19,14 +19,14 @@ const TimeLine: React.FC = () => {
       title: "Đón khách",
       time: "17:30",
       description:
-        "Những phút giây đầu tiên thật nhẹ nhàng để quý vị chụp hình, trò chuyện và chia sẻ niềm vui cùng chúng mình.",
+        "Những phút giây đầu tiên thật nhẹ nhàng để mọi người chụp hình, trò chuyện và chia sẻ niềm vui cùng chúng mình.",
       icon: timeline1,
     },
     {
       title: "Nghi thức báo hỷ",
       time: "18:30",
       description:
-        "Quý vị sẽ cùng chúng mình ghi dấu khoảnh khắc ý nghĩa, đánh dấu một chặng đường mới của hai đứa mình.",
+        "Mọi người sẽ cùng chúng mình ghi dấu khoảnh khắc ý nghĩa, đánh dấu một chặng đường mới của hai đứa mình.",
       icon: timeline2,
     },
     {

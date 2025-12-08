@@ -102,7 +102,7 @@ export const OurAlbum = () => {
         data-aos="fade-down"
         data-aos-delay="200"
       >
-        Hình cưới
+        Hình cưới của "chúng mình"
       </h2>
 
       {/* Photo Grid */}

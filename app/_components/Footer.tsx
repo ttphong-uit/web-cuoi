@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer
-      className="relative flex items-center justify-center py-6 px-4 pb-20 md:pb-6 bg-[#272727] overflow-hidden"
+      className="relative flex items-center justify-center py-6 px-4 pb-25 md:pb-6 bg-[#272727] overflow-hidden"
       style={{
         backgroundImage: `url(${backgroundHeart.src})`,
         backgroundSize: "cover",
@@ -69,7 +69,7 @@ export const Footer: React.FC = () => {
           data-aos="fade-down"
           data-aos-delay="200"
         >
-          Đếm ngược đến ngày hai đứa về chung một nhà…
+          Ngày hai đứa về chung một nhà…
         </h2>
         <p
           className="font-quickSand text-lg md:text-xl text-[#F5EFE7]/80 mb-6"

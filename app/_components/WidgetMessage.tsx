@@ -91,7 +91,7 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
       ) : (
         <>
           {/* Widget Container */}
-          <div className="fixed bottom-[16px] right-[16px] z-999 w-[85vw] max-w-[320px] md:max-w-[360px] bg-linear-to-br from-rose-50 to-pink-100 rounded-2xl shadow-2xl overflow-hidden border-2 border-rose-200">
+          <div className="fixed bottom-[16px] left-[16px] sm:left-[unset] right-[16px] z-999 md:max-w-[360px] bg-linear-to-br from-rose-50 to-pink-100 rounded-2xl shadow-2xl overflow-hidden border-2 border-rose-200">
             {/* Header */}
             <div className="bg-linear-to-r from-rose-400 to-pink-500 text-white p-3 md:p-4 flex justify-between items-center">
               <h3 className="font-dancingScript text-xl md:text-2xl">

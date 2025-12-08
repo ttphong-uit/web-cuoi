@@ -12,7 +12,7 @@ const events: TimelineEvent[] = [
     time: "17:30",
     title: "Đón khách",
     description:
-      "Những phút giây đầu tiên thật nhẹ nhàng để quý vị chụp hình, trò chuyện và chia sẻ niềm vui cùng chúng mình.",
+      "Những phút giây đầu tiên thật nhẹ nhàng để mọi người chụp hình, trò chuyện và chia sẻ niềm vui cùng chúng mình.",
   },
   {
     time: "18:30",
