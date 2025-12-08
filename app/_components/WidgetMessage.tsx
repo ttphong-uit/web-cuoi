@@ -139,7 +139,7 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
           {/* Modal */}
           {isModalOpen && (
             <div
-              className="fixed inset-0 z-60 flex items-end md:items-center justify-center bg-black/50 backdrop-blur-sm"
+              className="fixed inset-0 z-1000 flex items-end md:items-center justify-center bg-black/50 backdrop-blur-sm"
               onClick={() => setIsModalOpen(false)}
             >
               <div
