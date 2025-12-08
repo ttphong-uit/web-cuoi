@@ -16,32 +16,32 @@ type AlbumPhoto = {
 const albumPhotos: AlbumPhoto[] = [
   {
     imageSrc: image1.src,
-    text: "Ảnh 1",
+    text: "",
     imageAlt: "Photo 1",
   },
   {
     imageSrc: image1.src,
-    text: "Ảnh 2",
+    text: "",
     imageAlt: "Photo 2",
   },
   {
     imageSrc: image1.src,
-    text: "Ảnh 3",
+    text: "",
     imageAlt: "Photo 3",
   },
   {
     imageSrc: image1.src,
-    text: "Ảnh 4",
+    text: "",
     imageAlt: "Photo 4",
   },
   {
     imageSrc: image1.src,
-    text: "Ảnh 5",
+    text: "",
     imageAlt: "Photo 5",
   },
   {
     imageSrc: image1.src,
-    text: "Ảnh 6",
+    text: "",
     imageAlt: "Photo 6",
   },
 ];

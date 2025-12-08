@@ -69,14 +69,14 @@ export const Footer: React.FC = () => {
           data-aos="fade-down"
           data-aos-delay="200"
         >
-          Ngày chung "ĐÔI"
+          Đếm ngược đến ngày hai đứa về chung một nhà…
         </h2>
         <p
           className="font-quickSand text-lg md:text-xl text-[#F5EFE7]/80 mb-6"
           data-aos="fade-up"
           data-aos-delay="400"
         >
-          Còn lại...
+          chỉ còn…
         </p>
 
         {/* Countdown Timer */}
@@ -149,14 +149,14 @@ export const Footer: React.FC = () => {
           data-aos-delay="1000"
         >
           <p className="font-dancingScript text-3xl md:text-4xl text-[#F5EFE7]">
-            Với tình yêu,
+            Với tất cả yêu thương,
           </p>
           <p className="font-dancingScript text-3xl md:text-4xl text-[#F5EFE7]">
             Thanh Phong & Hồng Viên!
           </p>
 
           {/* Cake Icons - Decorative corners */}
-          <div className="absolute bottom-[8%] left-[2%] sm:bottom-[10%] sm:left-[5%] -rotate-12">
+          <div className="absolute bottom-0 -left-[8%] sm:bottom-0 sm:left-0 -rotate-12">
             <Image
               src={cakeIcon}
               alt="Wedding Cake"
@@ -165,7 +165,7 @@ export const Footer: React.FC = () => {
               className="w-16 h-auto sm:w-20 md:w-24 opacity-80"
             />
           </div>
-          <div className="absolute bottom-[8%] right-[2%] sm:bottom-[10%] sm:right-[5%] rotate-12">
+          <div className="absolute bottom-[0%] -right-[8%] sm:bottom-[0%] sm:right-0 rotate-12">
             <Image
               src={cakeIcon}
               alt="Wedding Cake"

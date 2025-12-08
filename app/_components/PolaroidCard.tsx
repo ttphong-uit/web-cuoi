@@ -26,7 +26,7 @@ export const PolaroidCard = ({
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
-      <div className="text-center font-quickSand text-xl sm:text-2xl text-[#333] px-2 py-4">
+      <div className="text-center font-dancingScript text-xl sm:text-2xl text-[#333333a4] px-1 pt-2 pb-1">
         {text}
       </div>
     </div>

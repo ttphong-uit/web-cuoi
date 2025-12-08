@@ -1,30 +1,16 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import { useMusicContext } from "../_context/MusicContext";
-import iconPlay from "../_assets/images/icon-play.png";
+import { useEffect } from "react";
 import iconPause from "../_assets/images/icon-pause.png";
-import { useAOSScroller } from "../_context/AOSScroller";
+import iconPlay from "../_assets/images/icon-play.png";
+import { useMusicContext } from "../_context/MusicContext";
+import { useToggleElementByScroll } from "../_hook/useToggleElementByScroll";
 
 type Props = {};
 
 export const SaveTheDate = (props: Props) => {
   const { toggleMusic, isPlaying, pauseMusic } = useMusicContext();
-  const [isFixed, setIsFixed] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-  const { registerScrollFn } = useAOSScroller();
-
-  useEffect(() => {
-    const unRegisterScrollFn = registerScrollFn((event) => {
-      if (sectionRef.current) {
-        const sectionBottom = sectionRef.current.getBoundingClientRect().bottom;
-        // When section scrolls out of view, fix the button
-        setIsFixed(sectionBottom < 300);
-      }
-    });
-    return unRegisterScrollFn;
-  }, []);
-
+  const { isShow, sectionRef } = useToggleElementByScroll();
   // Handle tab visibility - pause music when tab is inactive
   useEffect(() => {
     const handleVisibilityChange = () => {
@@ -115,8 +101,8 @@ export const SaveTheDate = (props: Props) => {
 
       {/* Fixed Music Button - Shows when scrolled past section */}
       <button
-        className={`fixed bottom-16 right-4 md:right-4 bg-white/90 backdrop-blur-sm border-none cursor-pointer p-2 rounded-full shadow-lg transition-all duration-500 hover:scale-110 active:scale-95 z-55 ${
-          isFixed
+        className={`fixed bottom-[calc(16px+8px+32px)] md:bottom-[calc(16px+8px+48px)]  right-[16px] bg-white/90 backdrop-blur-sm border-none cursor-pointer p-2 rounded-full shadow-lg transition-all duration-500 hover:scale-110 active:scale-95 z-55 ${
+          isShow
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 translate-y-10 pointer-events-none"
         }`}
@@ -132,7 +118,7 @@ export const SaveTheDate = (props: Props) => {
             placeholder="blur"
             loading="eager"
             className={`relative z-10 ${
-              isFixed && isPlaying ? "animate-spin" : ""
+              isShow && isPlaying ? "animate-spin" : ""
             }`}
           />
         </div>

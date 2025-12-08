@@ -174,7 +174,7 @@ export const OurStory = () => {
                     data-aos-duration="600"
                     data-aos-delay={Math.min(index * 50, 200)}
                   >
-                    <span className="font-faugllin text-white text-sm font-bold">
+                    <span className="font-faugllin mt-1 text-white text-sm font-bold">
                       {story.year}
                     </span>
                   </div>
@@ -291,7 +291,7 @@ export const OurStory = () => {
                     data-aos-delay={Math.min(index * 50, 200)}
                   >
                     <div className="w-20 h-20 rounded-full bg-[#2a2a2a] border-4 border-white shadow-lg flex items-center justify-center">
-                      <span className="font-faugllin text-white text-base font-bold">
+                      <span className="font-faugllin mt-1 text-white text-base font-bold">
                         {story.year}
                       </span>
                     </div>

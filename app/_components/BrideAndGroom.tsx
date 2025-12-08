@@ -42,7 +42,7 @@ export const BrideAndGroom = () => {
                     Huỳnh Thị Hồng Viên
                   </h3>
                   <p className="text-sm md:text-base text-[#D4C5B9]">
-                    Con gái của ông <strong>Huỳnh Văn Bốn</strong> và bà{" "}
+                    Con gái của ba <strong>Huỳnh Văn Bốn</strong>, mẹ{" "}
                     <strong>Ngô Thị Minh</strong>
                   </p>
                 </div>
@@ -66,7 +66,7 @@ export const BrideAndGroom = () => {
                     <span className="font-semibold text-[#F5EFE7]">
                       Sở thích:
                     </span>{" "}
-                    Cầu lông, Nấu ăn, Làm đẹp...
+                    Cầu lông, nấu ăn, làm đẹp...
                   </p>
                 </div>
 
@@ -157,7 +157,7 @@ export const BrideAndGroom = () => {
                     Trần Thanh Phong
                   </h3>
                   <p className="text-sm md:text-base text-[#D4C5B9]">
-                    Con trai của ông <strong>Trần Thanh Lịch</strong> và bà{" "}
+                    Con trai của ba <strong>Trần Thanh Lịch</strong>, mẹ{" "}
                     <strong>Trần Thị Thùy Linh</strong>
                   </p>
                 </div>

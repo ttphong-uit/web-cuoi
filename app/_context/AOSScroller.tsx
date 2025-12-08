@@ -5,12 +5,14 @@ import "aos/dist/aos.css";
 type AOSScrollerContextType = {
   scrollContainer: HTMLElement | null;
   registerScrollFn: (fn: (event?: Event | undefined) => void) => () => void;
+  registerResizeFn: (fn: (event?: Event | undefined) => void) => () => void;
   AOS: typeof AOS;
 };
 
 const AOSScrollerContext = React.createContext<AOSScrollerContextType>({
   scrollContainer: null,
   registerScrollFn: (fn: (event?: Event | undefined) => void) => () => {},
+  registerResizeFn: (fn: (event?: Event | undefined) => void) => () => {},
   AOS,
 });
 
@@ -28,11 +30,22 @@ export const AOSScrollerProvider = ({
   const scrollFnRegistered = React.useRef<{
     [key: string]: (event?: Event) => void;
   }>({});
+  const resizeFnRegistered = React.useRef<{
+    [key: string]: (event?: Event) => void;
+  }>({});
   const registerScrollFn = React.useCallback((fn: (event?: Event) => void) => {
-    const name = fn.name || "fn_" + Math.random().toString(36).slice(2);
+    const name = "fn_" + Math.random().toString(36).slice(2);
     scrollFnRegistered.current[name] = fn;
     return () => {
       delete scrollFnRegistered.current[name];
+    };
+  }, []);
+
+  const registerResizeFn = React.useCallback((fn: (event?: Event) => void) => {
+    const name = "fn_" + Math.random().toString(36).slice(2);
+    resizeFnRegistered.current[name] = fn;
+    return () => {
+      delete resizeFnRegistered.current[name];
     };
   }, []);
 
@@ -64,8 +77,26 @@ export const AOSScrollerProvider = ({
         });
       };
       scrollContainer.addEventListener("scroll", handleScroll);
+
+      // Handle window resize with debounce
+      let resizeTimeout: NodeJS.Timeout;
+      const handleResize = (event: Event) => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          setScrollHeight(window.innerHeight);
+          AOS.refresh();
+          Object.values(resizeFnRegistered.current).forEach((fn) => {
+            fn(event);
+          });
+        }, 150); // 150ms debounce delay
+      };
+
+      window.addEventListener("resize", handleResize);
+
       return () => {
         scrollContainer.removeEventListener("scroll", handleScroll);
+        window.removeEventListener("resize", handleResize);
+        clearTimeout(resizeTimeout);
       };
     }
   }, []);
@@ -74,6 +105,7 @@ export const AOSScrollerProvider = ({
       value={{
         scrollContainer: scrollContainerRef.current,
         registerScrollFn,
+        registerResizeFn,
         AOS,
       }}
     >

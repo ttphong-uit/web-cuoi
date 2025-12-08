@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { Message } from "@/app/_types/message";
+import { useToggleElementByScroll } from "../_hook/useToggleElementByScroll";
 
 type WidgetMessageProps = {
   shouldShow?: boolean;
@@ -15,7 +16,9 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
   const [name, setName] = useState("");
   const [content, setContent] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const messageListRef = useRef<HTMLDivElement>(null);
+  const { isShow } = useToggleElementByScroll<HTMLButtonElement>({
+    threshold: 200,
+  });
 
   // Fetch messages
   useEffect(() => {
@@ -71,137 +74,140 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
     return null;
   }
 
-  if (!isOpen) {
-    return (
-      <button
-        onClick={() => setIsOpen(true)}
-        className="fixed bottom-3 right-3 md:bottom-4 md:right-4 z-50 bg-linear-to-r from-rose-400 to-pink-500 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-lg hover:shadow-xl hover:from-rose-500 hover:to-pink-600 transition-all duration-300 font-quickSand font-semibold text-sm md:text-base cursor-pointer"
-        aria-label="Open messages"
-      >
-        💌 Gửi lời chúc ({messages.length})
-      </button>
-    );
-  }
-
   return (
     <>
-      {/* Widget Container */}
-      <div className="fixed bottom-3 right-3 md:bottom-4 md:right-4 z-50 w-[85vw] max-w-[320px] md:max-w-[360px] bg-linear-to-br from-rose-50 to-pink-100 rounded-2xl shadow-2xl overflow-hidden border-2 border-rose-200">
-        {/* Header */}
-        <div className="bg-linear-to-r from-rose-400 to-pink-500 text-white p-3 md:p-4 flex justify-between items-center">
-          <h3 className="font-dancingScript text-xl md:text-2xl">Lời chúc</h3>
-          <button
-            onClick={() => setIsOpen(false)}
-            className="text-white hover:bg-white/20 rounded-full w-8 h-8 flex items-center justify-center transition-colors"
-            aria-label="Close messages"
-          >
-            ✕
-          </button>
-        </div>
-
-        {/* Message List */}
-        <div
-          ref={messageListRef}
-          className="h-[180px] md:h-[220px] overflow-hidden relative bg-white/50 p-3 md:p-4"
+      {!isOpen ? (
+        <button
+          onClick={() => setIsOpen(true)}
+          className={`fixed bottom-3 right-3 md:bottom-4 md:right-4 z-50 bg-linear-to-r from-rose-400 to-pink-500 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-lg hover:shadow-xl hover:from-rose-500 hover:to-pink-600 transition-all duration-300 font-quickSand font-semibold text-sm md:text-base cursor-pointer animate-ping-slow ${
+            isShow
+              ? "opacity-100 translate-y-0 pointer-events-auto"
+              : "opacity-0 translate-y-10 pointer-events-none"
+          }`}
+          aria-label="Open messages"
         >
-          <div className="animate-scroll-up space-y-2 md:space-y-3">
-            {[...messages, ...messages].map((message, index) => (
-              <div
-                key={`${message.id}-${index}`}
-                className="bg-white/90 backdrop-blur-sm rounded-lg p-2 md:p-3 shadow-sm border border-rose-200 animate-fade-in"
-              >
-                <p className="font-quickSand text-xs md:text-sm text-gray-800">
-                  <span className="font-semibold text-rose-600">
-                    {message.name}:
-                  </span>{" "}
-                  {message.content}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Input Section */}
-        <div className="p-3 md:p-4 bg-white border-t border-rose-200">
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="w-full bg-linear-to-r from-rose-400 to-pink-500 text-white py-2 md:py-3 rounded-lg font-quickSand font-semibold hover:from-rose-500 hover:to-pink-600 hover:shadow-lg transition-all duration-300 text-sm md:text-base cursor-pointer"
-          >
-            Gửi lời chúc
-          </button>
-        </div>
-      </div>
-
-      {/* Modal */}
-      {isModalOpen && (
-        <div
-          className="fixed inset-0 z-60 flex items-end md:items-center justify-center bg-black/50 backdrop-blur-sm"
-          onClick={() => setIsModalOpen(false)}
-        >
-          <div
-            className="bg-white w-full md:max-w-[576px] md:rounded-2xl rounded-t-2xl p-6 shadow-2xl animate-slide-up"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="font-dancingScript text-3xl text-rose-600">
-                Gửi lời chúc
-              </h2>
+          💌 Gửi lời chúc ({messages.length})
+        </button>
+      ) : (
+        <>
+          {/* Widget Container */}
+          <div className="fixed bottom-[16px] right-[16px] z-999 w-[85vw] max-w-[320px] md:max-w-[360px] bg-linear-to-br from-rose-50 to-pink-100 rounded-2xl shadow-2xl overflow-hidden border-2 border-rose-200">
+            {/* Header */}
+            <div className="bg-linear-to-r from-rose-400 to-pink-500 text-white p-3 md:p-4 flex justify-between items-center">
+              <h3 className="font-dancingScript text-xl md:text-2xl">
+                Lời chúc
+              </h3>
               <button
-                onClick={() => setIsModalOpen(false)}
-                className="text-gray-500 hover:text-gray-700 text-2xl"
-                aria-label="Close modal"
+                onClick={() => setIsOpen(false)}
+                className="text-white hover:bg-white/20 rounded-full w-8 h-8 flex items-center justify-center transition-colors"
+                aria-label="Close messages"
               >
                 ✕
               </button>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block font-quickSand font-semibold text-gray-700 mb-2"
-                >
-                  Tên của bạn <span className="text-rose-500">*</span>
-                </label>
-                <input
-                  id="name"
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-rose-400 focus:outline-none font-quickSand transition-colors"
-                  placeholder="Nhập tên của bạn"
-                  required
-                />
+            {/* Message List */}
+            <div className="h-[180px] md:h-[220px] overflow-hidden relative bg-white/50 p-3 md:p-4">
+              <div className="animate-scroll-up space-y-2 md:space-y-3">
+                {[...messages, ...messages].map((message, index) => (
+                  <div
+                    key={`${message.id}-${index}`}
+                    className="bg-white/90 backdrop-blur-sm rounded-lg p-2 md:p-3 shadow-sm border border-rose-200 animate-fade-in"
+                  >
+                    <p className="font-quickSand text-xs md:text-sm text-gray-800">
+                      <span className="font-semibold text-rose-600">
+                        {message.name}:
+                      </span>{" "}
+                      {message.content}
+                    </p>
+                  </div>
+                ))}
               </div>
+            </div>
 
-              <div>
-                <label
-                  htmlFor="content"
-                  className="block font-quickSand font-semibold text-gray-700 mb-2"
-                >
-                  Lời chúc <span className="text-rose-500">*</span>
-                </label>
-                <textarea
-                  id="content"
-                  value={content}
-                  onChange={(e) => setContent(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-rose-400 focus:outline-none font-quickSand transition-colors resize-none"
-                  placeholder="Gửi lời chúc"
-                  rows={4}
-                  required
-                />
-              </div>
-
+            {/* Input Section */}
+            <div className="p-3 md:p-4 bg-white border-t border-rose-200">
               <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-linear-to-r from-rose-400 to-pink-500 text-white py-3 rounded-lg font-quickSand font-semibold hover:from-rose-500 hover:to-pink-600 hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                onClick={() => setIsModalOpen(true)}
+                className="w-full bg-linear-to-r from-rose-400 to-pink-500 text-white py-2 md:py-3 rounded-lg font-quickSand font-semibold hover:from-rose-500 hover:to-pink-600 hover:shadow-lg transition-all duration-300 text-sm md:text-base cursor-pointer relative"
               >
-                {isSubmitting ? "Đang gửi..." : "Gửi lời chúc"}
+                Gửi lời chúc
               </button>
-            </form>
+            </div>
           </div>
-        </div>
+
+          {/* Modal */}
+          {isModalOpen && (
+            <div
+              className="fixed inset-0 z-60 flex items-end md:items-center justify-center bg-black/50 backdrop-blur-sm"
+              onClick={() => setIsModalOpen(false)}
+            >
+              <div
+                className="bg-white w-full md:max-w-[576px] md:rounded-2xl rounded-t-2xl p-6 shadow-2xl animate-slide-up"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="flex justify-between items-center mb-6">
+                  <h2 className="font-dancingScript text-3xl text-rose-600">
+                    Gửi lời chúc
+                  </h2>
+                  <button
+                    onClick={() => setIsModalOpen(false)}
+                    className="text-gray-500 hover:text-gray-700 text-2xl"
+                    aria-label="Close modal"
+                  >
+                    ✕
+                  </button>
+                </div>
+
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block font-quickSand font-semibold text-gray-700 mb-2"
+                    >
+                      Tên của bạn <span className="text-rose-500">*</span>
+                    </label>
+                    <input
+                      id="name"
+                      type="text"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-rose-400 focus:outline-none font-quickSand transition-colors"
+                      placeholder="Nhập tên của bạn"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="content"
+                      className="block font-quickSand font-semibold text-gray-700 mb-2"
+                    >
+                      Lời chúc <span className="text-rose-500">*</span>
+                    </label>
+                    <textarea
+                      id="content"
+                      value={content}
+                      onChange={(e) => setContent(e.target.value)}
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-rose-400 focus:outline-none font-quickSand transition-colors resize-none"
+                      placeholder="Gửi lời chúc"
+                      rows={4}
+                      required
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-linear-to-r from-rose-400 to-pink-500 text-white py-3 rounded-lg font-quickSand font-semibold hover:from-rose-500 hover:to-pink-600 hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? "Đang gửi..." : "Gửi lời chúc"}
+                  </button>
+                </form>
+              </div>
+            </div>
+          )}
+        </>
       )}
 
       <style jsx>{`
@@ -234,6 +240,18 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
           }
         }
 
+        @keyframes ping-slow {
+          0% {
+            box-shadow: 0 0 0 0 rgba(244, 114, 182, 0.7);
+          }
+          50% {
+            box-shadow: 0 0 0 10px rgba(244, 114, 182, 0);
+          }
+          100% {
+            box-shadow: 0 0 0 0 rgba(244, 114, 182, 0);
+          }
+        }
+
         .animate-scroll-up {
           animation: scroll-up 30s linear infinite;
         }
@@ -244,6 +262,10 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
 
         .animate-slide-up {
           animation: slide-up 0.3s ease-out;
+        }
+
+        .animate-ping-slow {
+          animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
         }
       `}</style>
     </>

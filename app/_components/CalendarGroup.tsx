@@ -32,8 +32,8 @@ export const CalendarGroup = () => {
           >
             Ngày đặc biệt này sẽ mở ra hành trình xây dựng một gia đình hạnh
             phúc của chúng mình. Chúng mình háo hức muốn chia sẻ niềm vui ấy và
-            trân trọng kính mời quý vị đến chung vui cùng chúng mình trong ngày
-            thật ý nghĩa này.
+            trân trọng kính mời mọi người đến chung vui cùng chúng mình trong
+            ngày thật ý nghĩa này.
           </p>
         </div>
         {/* Calendar */}
@@ -46,7 +46,10 @@ export const CalendarGroup = () => {
           data-aos="flip-up"
           data-aos-delay="800"
         >
-          <PolaroidCard imageSrc={image1.src} text={"You're the chosen one"} />
+          <PolaroidCard
+            imageSrc={image1.src}
+            text={`Some souls just understand each other.`}
+          />
         </div>
       </div>
     </section>
