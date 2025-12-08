@@ -1,9 +1,9 @@
-import desktopImg from "../_assets/images/cover-bg.jpg";
 import Image from "next/image";
-import { DoubleChevronDown } from "./DoubleChevronDown";
-import React, { useEffect } from "react";
+import React from "react";
+import desktopImg from "../_assets/images/cover-bg.jpg";
+import { useAOSScroller } from "../_context/AOSScroller";
 import { useMusicContext } from "../_context/MusicContext";
-import Aos from "aos";
+import { DoubleChevronDown } from "./DoubleChevronDown";
 
 type CoverProps = {
   toggleShowContent?: () => void;
@@ -14,7 +14,7 @@ export const Cover = ({ toggleShowContent }: CoverProps) => {
   const [hidden, setHidden] = React.useState(false);
   const [touchStart, setTouchStart] = React.useState<number | null>(null);
   const [touchEnd, setTouchEnd] = React.useState<number | null>(null);
-
+  const { scrollContainer, AOS } = useAOSScroller();
   // Minimum distance for a swipe (in pixels)
   const minSwipeDistance = 50;
 
@@ -51,12 +51,10 @@ export const Cover = ({ toggleShowContent }: CoverProps) => {
       onTouchEnd={onTouchEnd}
       onTransitionEnd={(event) => {
         if (event.propertyName === "opacity") {
-          const scrollContainer: HTMLDivElement | null =
-            document.querySelector("#aos-scroller");
           if (scrollContainer) {
             scrollContainer.style.overflow = "auto";
+            AOS.refresh();
           }
-          Aos.refresh();
         }
       }}
     >

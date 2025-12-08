@@ -3,6 +3,7 @@ import Image from "next/image";
 import * as React from "react";
 import loadingPlaceholder from "../_assets/images/loading.svg";
 import fallbackBg from "../_assets/images/video-fallback.jpg";
+import { AOSScrollerProvider } from "../_context/AOSScroller";
 
 interface IBackgroundProps extends React.PropsWithChildren {}
 
@@ -13,13 +14,9 @@ export const BackgroundWrapper: React.FunctionComponent<IBackgroundProps> = ({
 
   const [loaded, setLoaded] = React.useState(false);
   const [videoFailed, setVideoFailed] = React.useState(false);
-  const [scrollHeight, setScrollHeight] = React.useState<number | undefined>(
-    undefined
-  );
 
   React.useEffect(() => {
     const video = videoRef.current;
-    setScrollHeight(window.innerHeight);
 
     let videoLoaded = false;
     let fontsLoaded = false;
@@ -162,18 +159,9 @@ export const BackgroundWrapper: React.FunctionComponent<IBackgroundProps> = ({
           />
         )}
       </div>
-
-      {/* Main Content */}
-      <div
-        id="aos-scroller"
-        style={{
-          overflow: "hidden",
-          height: `${scrollHeight ?? 0}px`,
-        }}
-        className={`relative ${loaded ? "z-1000" : "z-0"}`}
-      >
+      <AOSScrollerProvider isBackgroundReady={loaded}>
         {children}
-      </div>
+      </AOSScrollerProvider>
     </>
   );
 };

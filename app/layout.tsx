@@ -5,7 +5,6 @@ import {
   Dancing_Script,
 } from "next/font/google";
 import "./globals.css";
-import AOSInit from "./_components/AOSInit";
 
 const shadowToLight = Shadows_Into_Light({
   variable: "--font-shadowToLight",
@@ -91,7 +90,6 @@ export default function RootLayout({
       <body
         className={`${shadowToLight.variable} ${quickSand.variable} ${dancingScript.variable}`}
       >
-        <AOSInit />
         {children}
       </body>
     </html>
