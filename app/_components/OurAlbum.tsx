@@ -1,7 +1,10 @@
 "use client";
 import { useState } from "react";
 import { PolaroidCard } from "./PolaroidCard";
-import image1 from "@/app/_assets/images/our-album/3.jpg";
+import image1 from "@/app/_assets/images/our-album/1.jpg";
+import image2 from "@/app/_assets/images/our-album/2.jpg";
+import image3 from "@/app/_assets/images/our-album/3.jpg";
+import image4 from "@/app/_assets/images/our-album/4.jpg";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Button from "./Button";
@@ -20,29 +23,19 @@ const albumPhotos: AlbumPhoto[] = [
     imageAlt: "Photo 1",
   },
   {
-    imageSrc: image1.src,
+    imageSrc: image2.src,
     text: "",
     imageAlt: "Photo 2",
   },
   {
-    imageSrc: image1.src,
+    imageSrc: image3.src,
     text: "",
     imageAlt: "Photo 3",
   },
   {
-    imageSrc: image1.src,
+    imageSrc: image4.src,
     text: "",
     imageAlt: "Photo 4",
-  },
-  {
-    imageSrc: image1.src,
-    text: "",
-    imageAlt: "Photo 5",
-  },
-  {
-    imageSrc: image1.src,
-    text: "",
-    imageAlt: "Photo 6",
   },
 ];
 
@@ -102,7 +95,7 @@ export const OurAlbum = () => {
         data-aos="fade-down"
         data-aos-delay="200"
       >
-        Hình cưới của "chúng mình"
+        Album của "chúng mình"
       </h2>
 
       {/* Photo Grid */}

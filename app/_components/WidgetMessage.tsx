@@ -27,9 +27,7 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
 
   const fetchMessages = async () => {
     try {
-      const response = await fetch(
-        "https://62a6ec0ebedc4ca6d7bd21af.mockapi.io/api/message"
-      );
+      const response = await fetch("/api/message");
       const data = await response.json();
       setMessages(data || []);
     } catch (error) {
@@ -43,18 +41,15 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
 
     setIsSubmitting(true);
     try {
-      const response = await fetch(
-        "https://62a6ec0ebedc4ca6d7bd21af.mockapi.io/api/message",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: name.trim(),
-            content: content.trim(),
-            createdAt: Math.floor(Date.now() / 1000), // Unix timestamp in seconds
-          }),
-        }
-      );
+      const response = await fetch("/api/message", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name.trim(),
+          content: content.trim(),
+          createdAt: Math.floor(Date.now() / 1000), // Unix timestamp in seconds
+        }),
+      });
 
       if (response.ok) {
         setName("");
