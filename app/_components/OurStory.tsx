@@ -24,71 +24,89 @@ const storyYears: StoryYear[] = [
   {
     year: "2016",
     title: "Khởi đầu",
-    description: "Câu chuyện của chúng mình bắt đầu...",
+    description:
+      "Tụi mình quen nhau trong những năm cấp 3, khi được thầy cô xếp chỗ ngồi chung. Ai ngờ đâu, chỗ ngồi nhỏ bé ấy lại là khởi đầu cho một câu chuyện dài...",
     image: image2016.src,
     imageText: "",
   },
   {
     year: "2017",
-    title: "Năm thứ hai",
-    description: "Những kỷ niệm đáng nhớ...",
+    title: "Bỡ ngỡ nhưng hạnh phúc",
+    description:
+      "Trải qua năm đầu tiên còn bỡ ngỡ, chập chững bước vào giảng đường đại học cùng nhau. Mỗi ngày đi học đều có nhau ở bên, thế là đủ rồi.",
     image: image2017.src,
     imageText: "",
   },
   {
     year: "2018",
-    title: "Năm thứ ba",
-    description: "Hành trình tiếp tục...",
+    title: "Tuổi trẻ đáng nhớ",
+    description:
+      "Cùng tận hưởng những ngày tháng sinh viên tươi đẹp. Từ những buổi học tới đêm, những chuyến đi chơi cuối tuần, đến cả những lần cãi nhau rồi lại hoà...",
     image: image2018.src,
     imageText: "",
   },
   {
     year: "2019",
-    title: "Năm thứ tư",
-    description: "Những ngày tháng bên nhau...",
+    title: "Yêu sâu đậm hơn",
+    description:
+      "Tình yêu ngày càng gắn kết, hiểu nhau hơn. Từ hai người xa lạ ngày nào, giờ đã trở thành điểm tựa vững chắc cho nhau trong cuộc sống.",
     image: image2019.src,
     imageText: "",
   },
   {
     year: "2020",
-    title: "Năm thứ năm",
-    description: "Cùng nhau vượt qua mọi thử thách...",
+    title: "Vượt qua sóng gió",
+    description:
+      "Năm của những thử thách, nhưng cũng là năm tụi mình học được cách vượt qua khó khăn bên nhau. Mỗi khó khăn qua đi, tình yêu lại thêm bền vững.",
     image: image2020.src,
     imageText: "",
   },
   {
     year: "2021",
-    title: "Năm thứ sáu",
-    description: "Tình yêu ngày càng bền chặt...",
+    title: "Trưởng thành cùng nhau",
+    description:
+      "Cùng nhau trưởng thành, bước vào giai đoạn đi làm, cùng chia sẻ những câu chuyện trong công việc, cuộc sống",
     image: image2021.src,
     imageText: "",
   },
   {
     year: "2022",
-    title: "Năm thứ bảy",
-    description: "Những khoảnh khắc hạnh phúc...",
+    title: "Những khoảnh khắc bình yên",
+    description:
+      "Tìm thấy hạnh phúc trong những điều giản dị nhất. Cùng nhau nuôi con (mèo) 'Nhẽo' và 'Cám' ",
     image: image2022.src,
     imageText: "",
   },
   {
     year: "2023",
-    title: "Năm thứ tám",
-    description: "Cùng nhau trưởng thành...",
+    title: "Định hình tương lai",
+    description:
+      "Năm của những chuyến đi, những khoảnh khắc chill, và cùng nhau tận hưởng cuộc sống bình yên.",
     image: image2023.src,
     imageText: "",
   },
   {
     year: "2024",
-    title: "Năm thứ chín",
-    description: "Chuẩn bị cho một chương mới...",
+    title: "Sẵn sàng cho bước mới",
+    description:
+      "Cảm nhận tình yêu đã đủ chắc chắn, đủ trưởng thành để bước vào một chương mới. Mỗi ngày trôi qua đều là sự chuẩn bị cho một quyết định quan trọng...",
     image: image2024.src,
     imageText: "",
   },
   {
     year: "2025",
-    title: "Chương mới",
-    description: "Bắt đầu hành trình làm vợ chồng...",
+    title: "Lời hứa trọn đời",
+    description:
+      "Cảm thấy tình yêu đã đủ, chú rể đã ngỏ lời cầu hôn. Và cô dâu đã gật đầu đồng ý, sẵn sàng bước vào hành trình mới với tư cách là vợ chồng.",
     image: image2025.src,
+    imageText: "",
+  },
+  {
+    year: "2026",
+    title: "Ngày về chung một nhà",
+    description:
+      "Ngày chúng mình chính thức về chung một nhà, cùng nhau xây dựng tổ ấm và viết tiếp câu chuyện tình yêu.",
+    image: image2025.src, // Placeholder, có thể thay bằng ảnh cưới sau
     imageText: "",
   },
 ];

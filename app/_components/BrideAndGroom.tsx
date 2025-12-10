@@ -36,10 +36,10 @@ export const BrideAndGroom = () => {
                 Cô Dâu
               </h2>
 
-              <div className="space-y-4 font-quickSand">
+              <div className="space-y-4 font-dancingScript">
                 <div>
                   <h3 className="text-xl md:text-2xl font-semibold mb-2 text-[#F5EFE7]">
-                    Huỳnh Thị Hồng Viên
+                    Hồng Viên
                   </h3>
                   <p className="text-sm md:text-base text-[#D4C5B9]">
                     Con gái của ba <strong>Huỳnh Văn Bốn</strong>, mẹ{" "}
@@ -49,8 +49,12 @@ export const BrideAndGroom = () => {
 
                 <div className="space-y-2 text-[#D4C5B9]">
                   <p className="text-sm md:text-base">
+                    <span className="font-semibold text-[#F5EFE7]">Là:</span> Út
+                    nữ
+                  </p>
+                  <p className="text-sm md:text-base">
                     <span className="font-semibold text-[#F5EFE7]">Tuổi:</span>{" "}
-                    26 tuổi
+                    26
                   </p>
                   <p className="text-sm md:text-base">
                     <span className="font-semibold text-[#F5EFE7]">
@@ -59,23 +63,19 @@ export const BrideAndGroom = () => {
                     Tester
                   </p>
                   <p className="text-sm md:text-base">
-                    <span className="font-semibold text-[#F5EFE7]">Là:</span> Út
-                    nữ
-                  </p>
-                  <p className="text-sm md:text-base">
                     <span className="font-semibold text-[#F5EFE7]">
                       Sở thích:
                     </span>{" "}
-                    Cầu lông, nấu ăn, làm đẹp...
+                    Làm đẹp, nấu ăn, cầu lông...
                   </p>
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-[#4a4a4a]">
                   <p className="text-sm md:text-base leading-relaxed text-[#D4C5B9] italic">
-                    "Một người phụ nữ dịu dàng, hiền lành với trái tim nhân hậu.
-                    Luôn mang đến niềm vui và sự ấm áp cho mọi người xung quanh.
-                    Yêu thích sự giản dị và trân trọng những khoảnh khắc nhỏ bé
-                    trong cuộc sống."
+                    "Cô dâu của chúng ta là một cô gái vui tươi, dí dỏm, luôn
+                    mang đến tiếng cười và sự ấm áp cho mọi người. Nàng yêu
+                    thích nấu ăn, làm đẹp và biết cách biến những điều nhỏ bé
+                    trong cuộc sống thành niềm vui bất tận."
                   </p>
                 </div>
               </div>
@@ -153,8 +153,8 @@ export const BrideAndGroom = () => {
 
               <div className="space-y-4 font-quickSand">
                 <div>
-                  <h3 className="text-xl md:text-2xl font-semibold mb-2 text-[#F5EFE7]">
-                    Trần Thanh Phong
+                  <h3 className="text-xl font-dancingScript md:text-2xl font-semibold mb-2 text-[#F5EFE7]">
+                    Thanh Phong
                   </h3>
                   <p className="text-sm md:text-base text-[#D4C5B9]">
                     Con trai của ba <strong>Trần Thanh Lịch</strong>, mẹ{" "}
@@ -164,18 +164,18 @@ export const BrideAndGroom = () => {
 
                 <div className="space-y-2 text-[#D4C5B9]">
                   <p className="text-sm md:text-base">
+                    <span className="font-semibold text-[#F5EFE7]">Là:</span> Út
+                    nam
+                  </p>
+                  <p className="text-sm md:text-base">
                     <span className="font-semibold text-[#F5EFE7]">Tuổi:</span>{" "}
-                    26 tuổi
+                    26
                   </p>
                   <p className="text-sm md:text-base">
                     <span className="font-semibold text-[#F5EFE7]">
                       Nghề nghiệp:
                     </span>{" "}
-                    Developer quèn
-                  </p>
-                  <p className="text-sm md:text-base">
-                    <span className="font-semibold text-[#F5EFE7]">Là:</span> Út
-                    nam
+                    Dev quèn
                   </p>
                   <p className="text-sm md:text-base">
                     <span className="font-semibold text-[#F5EFE7]">

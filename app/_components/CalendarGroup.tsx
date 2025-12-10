@@ -30,10 +30,11 @@ export const CalendarGroup = () => {
             data-aos="fade-left"
             data-aos-delay="400"
           >
-            Ngày đặc biệt này sẽ mở ra hành trình xây dựng một gia đình hạnh
-            phúc của chúng mình. Chúng mình háo hức muốn chia sẻ niềm vui ấy và
-            trân trọng kính mời mọi người đến chung vui cùng chúng mình trong
-            ngày thật ý nghĩa này.
+            Ngày đặc biệt này không chỉ là dấu mốc, mà còn là khởi đầu cho hành
+            trình xây dựng tổ ấm hạnh phúc 'có 1 không 2' của chúng mình! Chúng
+            mình đang háo hức cực kỳ, chỉ mong được cùng mọi người 'bung lụa' và
+            chia sẻ niềm vui lớn lao này. Rất mong được đón tiếp các bạn đến
+            chung vui trong ngày ý nghĩa này nhé!
           </p>
         </div>
         {/* Calendar */}
