@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Message } from "@/app/_types/message";
 import { useToggleElementByScroll } from "../_hook/useToggleElementByScroll";
+import { useTranslation } from "@/lib/LanguageProvider";
 
 type WidgetMessageProps = {
   shouldShow?: boolean;
@@ -10,6 +11,7 @@ type WidgetMessageProps = {
 export const WidgetMessage: React.FC<WidgetMessageProps> = ({
   shouldShow = true,
 }) => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -81,7 +83,7 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
           }`}
           aria-label="Open messages"
         >
-          💌 Gửi lời chúc ({messages.length})
+          {t("widget.buttonLabel", { count: messages.length })}
         </button>
       ) : (
         <>
@@ -90,7 +92,7 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
             {/* Header */}
             <div className="bg-linear-to-r from-rose-400 to-pink-500 text-white p-3 md:p-4 flex justify-between items-center">
               <h3 className="font-dancingScript text-xl md:text-2xl">
-                Lời chúc
+                {t("widget.title")}
               </h3>
               <button
                 onClick={() => setIsOpen(false)}
@@ -126,7 +128,7 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
                 onClick={() => setIsModalOpen(true)}
                 className="w-full bg-linear-to-r from-rose-400 to-pink-500 text-white py-2 md:py-3 rounded-lg font-quickSand font-semibold hover:from-rose-500 hover:to-pink-600 hover:shadow-lg transition-all duration-300 text-sm md:text-base cursor-pointer relative"
               >
-                Gửi lời chúc
+                {t("widget.sendWish")}
               </button>
             </div>
           </div>
@@ -143,7 +145,7 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
               >
                 <div className="flex justify-between items-center mb-6">
                   <h2 className="font-dancingScript text-3xl text-rose-600">
-                    Gửi lời chúc
+                    {t("widget.sendWish")}
                   </h2>
                   <button
                     onClick={() => setIsModalOpen(false)}
@@ -160,7 +162,10 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
                       htmlFor="name"
                       className="block font-quickSand font-semibold text-gray-700 mb-2"
                     >
-                      Tên của bạn <span className="text-rose-500">*</span>
+                      {t("widget.nameLabel")}{" "}
+                      <span className="text-rose-500">
+                        {t("widget.nameRequired")}
+                      </span>
                     </label>
                     <input
                       id="name"
@@ -168,7 +173,7 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-rose-400 focus:outline-none font-quickSand transition-colors"
-                      placeholder="Nhập tên của bạn"
+                      placeholder={t("widget.namePlaceholder")}
                       required
                     />
                   </div>
@@ -178,14 +183,17 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
                       htmlFor="content"
                       className="block font-quickSand font-semibold text-gray-700 mb-2"
                     >
-                      Lời chúc <span className="text-rose-500">*</span>
+                      {t("widget.wishLabel")}{" "}
+                      <span className="text-rose-500">
+                        {t("widget.wishRequired")}
+                      </span>
                     </label>
                     <textarea
                       id="content"
                       value={content}
                       onChange={(e) => setContent(e.target.value)}
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-rose-400 focus:outline-none font-quickSand transition-colors resize-none"
-                      placeholder="Gửi lời chúc"
+                      placeholder={t("widget.wishPlaceholder")}
                       rows={4}
                       required
                     />
@@ -196,7 +204,7 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
                     disabled={isSubmitting}
                     className="w-full bg-linear-to-r from-rose-400 to-pink-500 text-white py-3 rounded-lg font-quickSand font-semibold hover:from-rose-500 hover:to-pink-600 hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? "Đang gửi..." : "Gửi lời chúc"}
+                    {isSubmitting ? t("widget.submitting") : t("widget.submit")}
                   </button>
                 </form>
               </div>

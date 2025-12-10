@@ -1,19 +1,35 @@
 "use client";
 import Image from "next/image";
 import calendarHeart from "../_assets/images/calendar-heart.png";
+import { useTranslation } from "@/lib/LanguageProvider";
 
 export const Calendar = () => {
+  const { t } = useTranslation();
   return (
     <div className="text-center border border-white rounded-lg p-4 md:p-6">
       {/* Week Days */}
       <div className="grid grid-cols-7 gap-2 md:gap-4 pb-4 mb-4 text-white/80 font-quickSand text-xs md:text-sm border-b border-white">
-        <span className="flex items-center justify-center">T2</span>
-        <span className="flex items-center justify-center">T3</span>
-        <span className="flex items-center justify-center">T4</span>
-        <span className="flex items-center justify-center">T5</span>
-        <span className="flex items-center justify-center">T6</span>
-        <span className="flex items-center justify-center">T7</span>
-        <span className="flex items-center justify-center">CN</span>
+        <span className="flex items-center justify-center">
+          {t("calendar.weekdays.mon")}
+        </span>
+        <span className="flex items-center justify-center">
+          {t("calendar.weekdays.tue")}
+        </span>
+        <span className="flex items-center justify-center">
+          {t("calendar.weekdays.wed")}
+        </span>
+        <span className="flex items-center justify-center">
+          {t("calendar.weekdays.thu")}
+        </span>
+        <span className="flex items-center justify-center">
+          {t("calendar.weekdays.fri")}
+        </span>
+        <span className="flex items-center justify-center">
+          {t("calendar.weekdays.sat")}
+        </span>
+        <span className="flex items-center justify-center">
+          {t("calendar.weekdays.sun")}
+        </span>
       </div>
 
       {/* Dates */}
@@ -56,7 +72,7 @@ export const Calendar = () => {
 
       {/* Month */}
       <p className="text-white font-faugllin text-3xl md:text-4xl italic mt-6">
-        Tháng 1
+        {t("calendar.month")}
       </p>
     </div>
   );

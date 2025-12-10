@@ -3,8 +3,10 @@ import React from "react";
 import Image from "next/image";
 import brideImg from "@/app/_assets/images/bride-portrait.webp";
 import groomImg from "@/app/_assets/images/groom-portrait.webp";
+import { useTranslation } from "@/lib/LanguageProvider";
 
 export const BrideAndGroom = () => {
+  const { t } = useTranslation();
   return (
     <section className="min-h-screen py-8 px-4 bg-transparent overflow-hidden">
       {/* Bride Section */}
@@ -33,49 +35,35 @@ export const BrideAndGroom = () => {
               data-aos-delay="800"
             >
               <h2 className="font-dancingScript text-4xl md:text-5xl mb-4 text-[#F5EFE7]">
-                Cô Dâu
+                {t("brideAndGroom.bride.title")}
               </h2>
 
-              <div className="space-y-4 font-dancingScript">
+              <div className="space-y-4 font-quickSand ">
                 <div>
-                  <h3 className="text-xl md:text-2xl font-semibold mb-2 text-[#F5EFE7]">
-                    Hồng Viên
+                  <h3 className="text-2xl font-dancingScript md:text-xl font-semibold mb-2 text-[#F5EFE7]">
+                    {t("brideAndGroom.bride.name")}
                   </h3>
-                  <p className="text-sm md:text-base text-[#D4C5B9]">
-                    Con gái của ba <strong>Huỳnh Văn Bốn</strong>, mẹ{" "}
-                    <strong>Ngô Thị Minh</strong>
-                  </p>
                 </div>
 
                 <div className="space-y-2 text-[#D4C5B9]">
-                  <p className="text-sm md:text-base">
-                    <span className="font-semibold text-[#F5EFE7]">Là:</span> Út
-                    nữ
-                  </p>
-                  <p className="text-sm md:text-base">
-                    <span className="font-semibold text-[#F5EFE7]">Tuổi:</span>{" "}
-                    26
-                  </p>
-                  <p className="text-sm md:text-base">
-                    <span className="font-semibold text-[#F5EFE7]">
-                      Nghề nghiệp:
-                    </span>{" "}
-                    Tester
-                  </p>
-                  <p className="text-sm md:text-base">
-                    <span className="font-semibold text-[#F5EFE7]">
-                      Sở thích:
-                    </span>{" "}
-                    Làm đẹp, nấu ăn, cầu lông...
-                  </p>
+                  <p
+                    className="text-sm md:text-base"
+                    dangerouslySetInnerHTML={{
+                      __html: t("brideAndGroom.bride.info", {
+                        father: `<strong>${t(
+                          "brideAndGroom.bride.father"
+                        )}</strong>`,
+                        mother: `<strong>${t(
+                          "brideAndGroom.bride.mother"
+                        )}</strong>`,
+                      }),
+                    }}
+                  />
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-[#4a4a4a]">
                   <p className="text-sm md:text-base leading-relaxed text-[#D4C5B9] italic">
-                    "Cô dâu của chúng ta là một cô gái vui tươi, dí dỏm, luôn
-                    mang đến tiếng cười và sự ấm áp cho mọi người. Nàng yêu
-                    thích nấu ăn, làm đẹp và biết cách biến những điều nhỏ bé
-                    trong cuộc sống thành niềm vui bất tận."
+                    {t("brideAndGroom.bride.description")}
                   </p>
                 </div>
               </div>
@@ -148,49 +136,35 @@ export const BrideAndGroom = () => {
               data-aos-delay="800"
             >
               <h2 className="font-dancingScript text-4xl md:text-5xl mb-4 text-[#F5EFE7]">
-                Chú Rể
+                {t("brideAndGroom.groom.title")}
               </h2>
 
               <div className="space-y-4 font-quickSand">
                 <div>
-                  <h3 className="text-xl font-dancingScript md:text-2xl font-semibold mb-2 text-[#F5EFE7]">
-                    Thanh Phong
+                  <h3 className="text-2xl font-dancingScript md:text-4xl font-semibold mb-2 text-[#F5EFE7]">
+                    {t("brideAndGroom.groom.name")}
                   </h3>
-                  <p className="text-sm md:text-base text-[#D4C5B9]">
-                    Con trai của ba <strong>Trần Thanh Lịch</strong>, mẹ{" "}
-                    <strong>Trần Thị Thùy Linh</strong>
-                  </p>
                 </div>
 
                 <div className="space-y-2 text-[#D4C5B9]">
-                  <p className="text-sm md:text-base">
-                    <span className="font-semibold text-[#F5EFE7]">Là:</span> Út
-                    nam
-                  </p>
-                  <p className="text-sm md:text-base">
-                    <span className="font-semibold text-[#F5EFE7]">Tuổi:</span>{" "}
-                    26
-                  </p>
-                  <p className="text-sm md:text-base">
-                    <span className="font-semibold text-[#F5EFE7]">
-                      Nghề nghiệp:
-                    </span>{" "}
-                    Dev quèn
-                  </p>
-                  <p className="text-sm md:text-base">
-                    <span className="font-semibold text-[#F5EFE7]">
-                      Sở thích:
-                    </span>{" "}
-                    Cầu lông, game, guitar...
-                  </p>
+                  <p
+                    className="text-sm md:text-base"
+                    dangerouslySetInnerHTML={{
+                      __html: t("brideAndGroom.groom.info", {
+                        father: `<strong>${t(
+                          "brideAndGroom.groom.father"
+                        )}</strong>`,
+                        mother: `<strong>${t(
+                          "brideAndGroom.groom.mother"
+                        )}</strong>`,
+                      }),
+                    }}
+                  />
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-[#4a4a4a]">
                   <p className="text-sm md:text-base leading-relaxed text-[#D4C5B9] italic">
-                    "Một người đàn ông trách nhiệm, chín chắn với tính cách hài
-                    hước. Luôn nỗ lực hết mình trong công việc và quan tâm đến
-                    gia đình. Yêu thích công nghệ và luôn tìm kiếm những điều
-                    mới mẻ trong cuộc sống."
+                    {t("brideAndGroom.groom.description")}
                   </p>
                 </div>
               </div>

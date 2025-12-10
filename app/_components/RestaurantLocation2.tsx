@@ -3,8 +3,10 @@ import React from "react";
 import Image from "next/image";
 import Button from "./Button";
 import restaurantIcon from "../_assets/images/restaurant.webp";
+import { useTranslation } from "@/lib/LanguageProvider";
 
 export const RestaurantLocation2 = () => {
+  const { t } = useTranslation();
   return (
     <section
       className="flex items-center justify-center py-6 px-4 bg-transparent"
@@ -18,7 +20,7 @@ export const RestaurantLocation2 = () => {
       >
         {/* Title */}
         <h2 className="text-center font-dancingScript text-5xl sm:text-6xl mb-6 text-white">
-          Địa điểm
+          {t("location.title")}
         </h2>
 
         {/* Restaurant Icon/Illustration */}
@@ -35,18 +37,18 @@ export const RestaurantLocation2 = () => {
 
         {/* Venue Name */}
         <h3 className="text-white/80 font-quickSand text-xs sm:text-sm text-center mb-2 uppercase tracking-wider">
-          Trung Tâm Hội Nghị & Tiệc Cưới
+          {t("location.venueName")}
         </h3>
         <h3 className="text-white font-quickSand text-xl sm:text-2xl text-center mb-4 font-semibold">
-          Le Jardin
+          {t("location.venueTitle")}
         </h3>
         <h4 className="text-white font-quickSand text-base sm:text-lg text-center mb-4">
-          Sảnh FUCHSIA A5
+          {t("location.hall")}
         </h4>
 
         {/* Address */}
         <p className="text-white/90 font-quickSand text-sm sm:text-base text-center mb-6 max-w-xs">
-          195 QL13, Hiệp Bình Chánh, Thủ Đức, Thành phố Hồ Chí Minh
+          {t("location.address")}
         </p>
 
         {/* View on Map Button */}
@@ -61,7 +63,7 @@ export const RestaurantLocation2 = () => {
             variant="outlined"
             className="text-sm sm:text-base px-8"
           >
-            Xem trên bản đồ
+            {t("location.viewMap")}
           </Button>
         </a>
       </div>

@@ -5,35 +5,26 @@ import timeline2 from "../_assets/images/timeline-2.svg";
 import timeline3 from "../_assets/images/timeline-3.svg";
 import timelineArrow1 from "../_assets/images/timeline-arrow-1.svg";
 import timelineArrow2 from "../_assets/images/timeline-arrow-2.svg";
+import { useTranslation } from "@/lib/LanguageProvider";
 
 interface TimelineEvent {
-  title: string;
-  time: string;
-  description: string;
+  key: string;
   icon: any;
 }
 
 const TimeLine: React.FC = () => {
+  const { t } = useTranslation();
   const events: TimelineEvent[] = [
     {
-      title: "Đón khách",
-      time: "17:30",
-      description:
-        "Những phút giây đầu tiên thật nhẹ nhàng để mọi người chụp hình, trò chuyện và chia sẻ niềm vui cùng chúng mình.",
+      key: "welcome",
       icon: timeline1,
     },
     {
-      title: "Nghi thức báo hỷ",
-      time: "18:30",
-      description:
-        "Mọi người sẽ cùng chúng mình ghi dấu khoảnh khắc ý nghĩa, đánh dấu một chặng đường mới của hai đứa mình.",
+      key: "ceremony",
       icon: timeline2,
     },
     {
-      title: "Tiệc chung vui",
-      time: "19:00",
-      description:
-        "Cùng nhau tận hưởng những khoảnh khắc đáng nhớ nhất trong ngày, cùng nâng ly và quẩy hết mình nha!",
+      key: "party",
       icon: timeline3,
     },
   ];
@@ -42,7 +33,7 @@ const TimeLine: React.FC = () => {
     <section className="flex items-center justify-center bg-transparent">
       <div className="w-full max-w-[600px] overflow-hidden rounded-[24px] p-4 px-2 md:p-8 md:px-4">
         <h2 className="text-center text-5xl md:text-6xl font-dancingScript text-[#272727] mb-12">
-          Chương trình
+          {t("timeline.title")}
         </h2>
 
         <div className="space-y-8">
@@ -54,7 +45,7 @@ const TimeLine: React.FC = () => {
                 <div className="shrink-0 w-20 h-20 md:w-24 md:h-24 flex items-center justify-center">
                   <Image
                     src={event.icon}
-                    alt={event.title}
+                    alt={t(`timeline.events.${event.key}.title`)}
                     width={96}
                     height={96}
                     className="w-full h-full object-contain"
@@ -64,13 +55,13 @@ const TimeLine: React.FC = () => {
                 {/* Content */}
                 <div className="flex-1">
                   <h3 className="text-2xl md:text-3xl font-dancingScript text-[#272727] mb-1">
-                    {event.title}
+                    {t(`timeline.events.${event.key}.title`)}
                   </h3>
                   <p className="text-xl md:text-2xl font-dancingScript text-[#7F1023] mb-2">
-                    {event.time}
+                    {t(`timeline.events.${event.key}.time`)}
                   </p>
                   <p className="text-sm md:text-base font-quickSand text-[#666] leading-relaxed">
-                    {event.description}
+                    {t(`timeline.events.${event.key}.description`)}
                   </p>
                 </div>
               </div>

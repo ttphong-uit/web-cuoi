@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import cakeIcon from "../_assets/images/cake-1.svg";
 import backgroundHeart from "../_assets/images/background-dark-heart.svg";
+import { useTranslation } from "@/lib/LanguageProvider";
 
 interface TimeLeft {
   days: number;
@@ -12,6 +13,7 @@ interface TimeLeft {
 }
 
 export const Footer: React.FC = () => {
+  const { t } = useTranslation();
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
@@ -69,14 +71,14 @@ export const Footer: React.FC = () => {
           data-aos="fade-down"
           data-aos-delay="200"
         >
-          Ngày hai đứa về chung một nhà…
+          {t("footer.title")}
         </h2>
         <p
           className="font-quickSand text-lg md:text-xl text-[#F5EFE7]/80 mb-6"
           data-aos="fade-up"
           data-aos-delay="400"
         >
-          chỉ còn…
+          {t("footer.countdown")}
         </p>
 
         {/* Countdown Timer */}
@@ -92,7 +94,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <span className="font-quickSand text-sm md:text-base text-[#F5EFE7]/70">
-              ngày
+              {t("footer.days")}
             </span>
           </div>
 
@@ -107,7 +109,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <span className="font-quickSand text-sm md:text-base text-[#F5EFE7]/70">
-              giờ
+              {t("footer.hours")}
             </span>
           </div>
 
@@ -122,7 +124,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <span className="font-quickSand text-sm md:text-base text-[#F5EFE7]/70">
-              phút
+              {t("footer.minutes")}
             </span>
           </div>
 
@@ -137,7 +139,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <span className="font-quickSand text-sm md:text-base text-[#F5EFE7]/70">
-              giây
+              {t("footer.seconds")}
             </span>
           </div>
         </div>
@@ -149,10 +151,10 @@ export const Footer: React.FC = () => {
           data-aos-delay="1000"
         >
           <p className="font-dancingScript text-3xl md:text-4xl text-[#F5EFE7]">
-            Với tất cả yêu thương,
+            {t("footer.withLove")}
           </p>
           <p className="font-dancingScript text-3xl md:text-4xl text-[#F5EFE7]">
-            Thanh Phong & Hồng Viên!
+            {t("footer.names")}
           </p>
 
           {/* Cake Icons - Decorative corners */}

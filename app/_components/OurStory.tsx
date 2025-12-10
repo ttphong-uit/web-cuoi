@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { PolaroidCard } from "./PolaroidCard";
+import { useTranslation } from "@/lib/LanguageProvider";
 import image2016 from "@/app/_assets/images/our-story/2016.webp";
 import image2017 from "@/app/_assets/images/our-story/2017.jpg";
 import image2018 from "@/app/_assets/images/our-story/2018.jpg";
@@ -112,6 +113,7 @@ const storyYears: StoryYear[] = [
 ];
 
 export const OurStory = () => {
+  const { t } = useTranslation();
   const [journeyDuration, setJourneyDuration] = useState({
     years: 0,
     months: 0,
@@ -154,8 +156,11 @@ export const OurStory = () => {
         data-aos="fade-down"
         data-aos-duration="800"
       >
-        Hành trình {journeyDuration.years} năm {journeyDuration.months} tháng{" "}
-        {journeyDuration.days} ngày
+        {t("ourStory.title", {
+          years: journeyDuration.years,
+          months: journeyDuration.months,
+          days: journeyDuration.days,
+        })}
       </h2>
       <p
         className="text-center font-quickSand text-sm md:text-base text-[#666] mb-16 italic"
@@ -163,7 +168,7 @@ export const OurStory = () => {
         data-aos-duration="800"
         data-aos-delay="200"
       >
-        Từ ngày 21/12/2016
+        {t("ourStory.subtitle")}
       </p>
 
       {/* Timeline */}
@@ -200,10 +205,10 @@ export const OurStory = () => {
                   {/* Title and Description */}
                   <div className="text-center">
                     <h3 className="font-dancingScript text-2xl md:text-3xl text-[#333] mb-2">
-                      {story.title}
+                      {t(`ourStory.years.${story.year}.title`)}
                     </h3>
                     <p className="font-quickSand text-sm text-[#666] max-w-md mx-auto mb-4">
-                      {story.description}
+                      {t(`ourStory.years.${story.year}.description`)}
                     </p>
                   </div>
 
@@ -240,10 +245,10 @@ export const OurStory = () => {
                           data-aos-delay={Math.min(index * 50, 200)}
                         >
                           <h3 className="font-dancingScript text-3xl md:text-4xl text-[#333] mb-2">
-                            {story.title}
+                            {t(`ourStory.years.${story.year}.title`)}
                           </h3>
                           <p className="font-quickSand text-sm md:text-base text-[#666] mb-4">
-                            {story.description}
+                            {t(`ourStory.years.${story.year}.description`)}
                           </p>
                           <div className="flex justify-end">
                             <div
@@ -277,10 +282,10 @@ export const OurStory = () => {
                           data-aos-delay={Math.min(index * 50, 200)}
                         >
                           <h3 className="font-dancingScript text-3xl md:text-4xl text-[#333] mb-2">
-                            {story.title}
+                            {t(`ourStory.years.${story.year}.title`)}
                           </h3>
                           <p className="font-quickSand text-sm md:text-base text-[#666] mb-4">
-                            {story.description}
+                            {t(`ourStory.years.${story.year}.description`)}
                           </p>
                           <div className="flex justify-start">
                             <div

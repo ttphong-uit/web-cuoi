@@ -5,12 +5,14 @@ import iconPause from "../_assets/images/icon-pause.png";
 import iconPlay from "../_assets/images/icon-play.png";
 import { useMusicContext } from "../_context/MusicContext";
 import { useToggleElementByScroll } from "../_hook/useToggleElementByScroll";
+import { useTranslation } from "@/lib/LanguageProvider";
 
 type Props = {};
 
 export const SaveTheDate = (props: Props) => {
   const { toggleMusic, isPlaying, pauseMusic } = useMusicContext();
   const { isShow, sectionRef } = useToggleElementByScroll();
+  const { t } = useTranslation();
   // Handle tab visibility - pause music when tab is inactive
   useEffect(() => {
     const handleVisibilityChange = () => {
@@ -61,13 +63,13 @@ export const SaveTheDate = (props: Props) => {
             data-aos-delay="400"
           >
             <span className="text-2xl font-thin text-[#333] leading-none">
-              SAVE
+              {t("saveTheDate.save")}
             </span>
             <span className="text-[2rem] italic font-light font-faugllin text-[#999] leading-8.5 -mb-2">
-              the
+              {t("saveTheDate.the")}
             </span>
             <span className="text-2xl font-thin text-[#333] leading-none">
-              DATE
+              {t("saveTheDate.date")}
             </span>
           </div>
 
@@ -78,13 +80,13 @@ export const SaveTheDate = (props: Props) => {
             data-aos-delay="600"
           >
             <h1 className="text-[48px] sm:text-[82px] font-light italic text-[#333] leading-none">
-              Thanh Phong
+              {t("saveTheDate.groomName")}
             </h1>
             <div className="text-[36px] sm:text-[64px] font-light text-[#999] leading-none">
               &
             </div>
             <h1 className="text-[48px] sm:text-[82px] font-light italic text-[#333] leading-none">
-              Hồng Viên
+              {t("saveTheDate.brideName")}
             </h1>
           </div>
 
@@ -94,7 +96,7 @@ export const SaveTheDate = (props: Props) => {
             data-aos="fade-up"
             data-aos-delay="800"
           >
-            18.01.2026
+            {t("saveTheDate.weddingDate")}
           </div>
         </div>
       </section>

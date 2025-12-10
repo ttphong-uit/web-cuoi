@@ -2,8 +2,10 @@
 import image1 from "../_assets/images/our-album/2.jpg";
 import { PolaroidCard } from "./PolaroidCard";
 import { Calendar } from "./Calendar";
+import { useTranslation } from "@/lib/LanguageProvider";
 
 export const CalendarGroup = () => {
+  const { t } = useTranslation();
   return (
     <section
       className="flex items-center justify-center py-6 px-4 bg-transparent"
@@ -23,18 +25,14 @@ export const CalendarGroup = () => {
             data-aos="fade-down"
             data-aos-delay="200"
           >
-            Thân mời!
+            {t("calendar.title")}
           </h2>
           <p
             className="text-white/90 font-quickSand text-sm md:text-base leading-relaxed max-w-md mx-auto"
             data-aos="fade-left"
             data-aos-delay="400"
           >
-            Ngày đặc biệt này không chỉ là dấu mốc, mà còn là khởi đầu cho hành
-            trình xây dựng tổ ấm hạnh phúc 'có 1 không 2' của chúng mình! Chúng
-            mình đang háo hức cực kỳ, chỉ mong được cùng mọi người 'bung lụa' và
-            chia sẻ niềm vui lớn lao này. Rất mong được đón tiếp các bạn đến
-            chung vui trong ngày ý nghĩa này nhé!
+            {t("calendar.invitation")}
           </p>
         </div>
         {/* Calendar */}
@@ -49,7 +47,7 @@ export const CalendarGroup = () => {
         >
           <PolaroidCard
             imageSrc={image1.src}
-            text={`Some souls just understand each other.`}
+            text={t("calendar.polaroidQuote")}
           />
         </div>
       </div>

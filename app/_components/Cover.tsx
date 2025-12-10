@@ -4,6 +4,7 @@ import desktopImg from "../_assets/images/cover-bg.jpg";
 import { useAOSScroller } from "../_context/AOSScroller";
 import { useMusicContext } from "../_context/MusicContext";
 import { DoubleChevronDown } from "./DoubleChevronDown";
+import { useTranslation } from "@/lib/LanguageProvider";
 
 type CoverProps = {
   toggleShowContent?: () => void;
@@ -11,6 +12,7 @@ type CoverProps = {
 
 export const Cover = ({ toggleShowContent }: CoverProps) => {
   const handler = useMusicContext();
+  const { t } = useTranslation();
   const [hidden, setHidden] = React.useState(false);
   const [touchStart, setTouchStart] = React.useState<number | null>(null);
   const [touchEnd, setTouchEnd] = React.useState<number | null>(null);
@@ -69,23 +71,23 @@ export const Cover = ({ toggleShowContent }: CoverProps) => {
       <div className="absolute top-0 left-0 h-full w-full bg-[linear-gradient(to_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5))] will-change-transform">
         <div className=" absolute top-[10%] left-0 w-full text-center">
           <div className="text-white font-quickSand font-thin text-[18px] sm:text-[32px] tracking-[2px]">
-            From classmate to soulmate
+            {t("cover.tagline")}
           </div>
           <div className="text-white font-dancingScript text-[32px] sm:text-[72px] tracking-[2px] sm:tracking-[3px] mt-4">
-            Thanh Phong & Hồng Viên
+            {t("cover.names")}
           </div>
         </div>
         <div className="absolute bottom-[20%] left-0 w-full text-center">
           <div className=" text-white font-faugllin text-[32px] tracking-[4px]">
-            January
+            {t("cover.month")}
           </div>
           <div className=" text-white font-faugllin text-[38px] tracking-[4px]">
-            18.01.2026
+            {t("cover.date")}
           </div>
         </div>
         <div className="absolute bottom-[5%] h-[10vh] w-full">
           <div className="text-white text-center font-quickSand font-thin text-[14px] sm:text-[24px] tracking-[2px]">
-            Bấm để xem
+            {t("cover.tapToView")}
           </div>
           <DoubleChevronDown
             className="flex justify-center items-center"

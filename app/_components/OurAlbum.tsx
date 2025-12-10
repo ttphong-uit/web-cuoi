@@ -8,6 +8,7 @@ import image4 from "@/app/_assets/images/our-album/4.jpg";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Button from "./Button";
+import { useTranslation } from "@/lib/LanguageProvider";
 
 type AlbumPhoto = {
   imageSrc: string;
@@ -61,6 +62,7 @@ const getRotationClass = (index: number): string => {
 };
 
 export const OurAlbum = () => {
+  const { t } = useTranslation();
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
@@ -95,7 +97,7 @@ export const OurAlbum = () => {
         data-aos="fade-down"
         data-aos-delay="200"
       >
-        Album của "chúng mình"
+        {t("ourAlbum.title")}
       </h2>
 
       {/* Photo Grid */}
@@ -132,7 +134,7 @@ export const OurAlbum = () => {
             className="sm:min-w-[250px] hover:scale-105"
             onClick={handleViewMore}
           >
-            Xem thêm
+            {t("ourAlbum.viewMore")}
           </Button>
         </div>
       </div>

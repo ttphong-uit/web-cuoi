@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "i18next": "^25.7.2",
     "next": "^16.0.7",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
+    "react-i18next": "^16.4.0",
     "yet-another-react-lightbox": "^3.25.0"
   },
   "devDependencies": {

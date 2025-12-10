@@ -1,0 +1,155 @@
+{
+  "cover": {
+    "tagline": "From classmate to soulmate",
+    "names": "Thanh Phong & Hồng Viên",
+    "month": "January",
+    "date": "18.01.2026",
+    "tapToView": "Bấm để xem"
+  },
+  "saveTheDate": {
+    "save": "SAVE",
+    "the": "the",
+    "date": "DATE",
+    "groomName": "Thanh Phong",
+    "brideName": "Hồng Viên",
+    "weddingDate": "18.01.2026"
+  },
+  "calendar": {
+    "title": "Thân mời!",
+    "invitation": "Ngày đặc biệt này không chỉ là dấu mốc, mà còn là khởi đầu cho hành trình xây dựng tổ ấm hạnh phúc 'có 1 không 2' của chúng mình! Chúng mình đang háo hức cực kỳ, chỉ mong được cùng mọi người 'bung lụa' và chia sẻ niềm vui lớn lao này. Rất mong được đón tiếp các bạn đến chung vui trong ngày ý nghĩa này nhé!",
+    "polaroidQuote": "Some souls just understand each other.",
+    "weekdays": {
+      "mon": "T2",
+      "tue": "T3",
+      "wed": "T4",
+      "thu": "T5",
+      "fri": "T6",
+      "sat": "T7",
+      "sun": "CN"
+    },
+    "month": "Tháng 1"
+  },
+  "brideAndGroom": {
+    "bride": {
+      "title": "Cô Dâu",
+      "name": "Hồng Viên",
+      "info": "Út nữ, con gái của ba {{father}}, mẹ {{mother}}",
+      "father": "Huỳnh Văn Bốn",
+      "mother": "Ngô Thị Minh",
+      "description": "\"Một cô gái vui tươi, dí dỏm, luôn mang đến tiếng cười và sự ấm áp cho mọi người. Nàng yêu thích nấu ăn, làm đẹp và biết cách biến những điều nhỏ bé trong cuộc sống thành niềm vui bất tận.\""
+    },
+    "groom": {
+      "title": "Chú Rể",
+      "name": "Thanh Phong",
+      "info": "Út nam, Con trai của ba {{father}}, mẹ {{mother}}",
+      "father": "Trần Thanh Lịch",
+      "mother": "Trần Thị Thùy Linh",
+      "description": "\"Một người đàn ông trách nhiệm, chín chắn với tính cách hài hước. Luôn nỗ lực hết mình trong công việc và quan tâm đến gia đình. Yêu thích công nghệ và luôn tìm kiếm những điều mới mẻ trong cuộc sống.\""
+    }
+  },
+  "ourStory": {
+    "title": "Hành trình {{years}} năm {{months}} tháng {{days}} ngày",
+    "subtitle": "Từ ngày 21/12/2016",
+    "years": {
+      "2016": {
+        "title": "Khởi đầu",
+        "description": "Tụi mình quen nhau trong những năm cấp 3, khi được thầy cô xếp chỗ ngồi chung. Ai ngờ đâu, chỗ ngồi nhỏ bé ấy lại là khởi đầu cho một câu chuyện dài..."
+      },
+      "2017": {
+        "title": "Bỡ ngỡ nhưng hạnh phúc",
+        "description": "Trải qua năm đầu tiên còn bỡ ngỡ, chập chững bước vào giảng đường đại học cùng nhau. Mỗi ngày đi học đều có nhau ở bên, thế là đủ rồi."
+      },
+      "2018": {
+        "title": "Tuổi trẻ đáng nhớ",
+        "description": "Cùng tận hưởng những ngày tháng sinh viên tươi đẹp. Từ những buổi học tới đêm, những chuyến đi chơi cuối tuần, đến cả những lần cãi nhau rồi lại hoà..."
+      },
+      "2019": {
+        "title": "Yêu sâu đậm hơn",
+        "description": "Tình yêu ngày càng gắn kết, hiểu nhau hơn. Từ hai người xa lạ ngày nào, giờ đã trở thành điểm tựa vững chắc cho nhau trong cuộc sống."
+      },
+      "2020": {
+        "title": "Vượt qua sóng gió",
+        "description": "Năm của những thử thách, nhưng cũng là năm tụi mình học được cách vượt qua khó khăn bên nhau. Mỗi khó khăn qua đi, tình yêu lại thêm bền vững."
+      },
+      "2021": {
+        "title": "Trưởng thành cùng nhau",
+        "description": "Cùng nhau trưởng thành, bước vào giai đoạn đi làm, cùng chia sẻ những câu chuyện trong công việc, cuộc sống"
+      },
+      "2022": {
+        "title": "Những khoảnh khắc bình yên",
+        "description": "Tìm thấy hạnh phúc trong những điều giản dị nhất. Cùng nhau nuôi con (mèo) 'Nhẽo' và 'Cám'"
+      },
+      "2023": {
+        "title": "Định hình tương lai",
+        "description": "Năm của những chuyến đi, những khoảnh khắc chill, và cùng nhau tận hưởng cuộc sống bình yên."
+      },
+      "2024": {
+        "title": "Sẵn sàng cho bước mới",
+        "description": "Cảm nhận tình yêu đã đủ chắc chắn, đủ trưởng thành để bước vào một chương mới. Mỗi ngày trôi qua đều là sự chuẩn bị cho một quyết định quan trọng..."
+      },
+      "2025": {
+        "title": "Lời hứa trọn đời",
+        "description": "Cảm thấy tình yêu đã đủ, chú rể đã ngỏ lời cầu hôn. Và cô dâu đã gật đầu đồng ý, sẵn sàng bước vào hành trình mới với tư cách là vợ chồng."
+      },
+      "2026": {
+        "title": "Ngày về chung một nhà",
+        "description": "Ngày chúng mình chính thức về chung một nhà, cùng nhau xây dựng tổ ấm và viết tiếp câu chuyện tình yêu."
+      }
+    }
+  },
+  "timeline": {
+    "title": "Chương trình",
+    "events": {
+      "welcome": {
+        "title": "Đón khách",
+        "time": "17:30",
+        "description": "Những phút giây đầu tiên thật nhẹ nhàng để mọi người chụp hình, trò chuyện và chia sẻ niềm vui cùng chúng mình."
+      },
+      "ceremony": {
+        "title": "Nghi thức báo hỷ",
+        "time": "18:30",
+        "description": "Mọi người sẽ cùng chúng mình ghi dấu khoảnh khắc ý nghĩa, đánh dấu một chặng đường mới của hai đứa mình."
+      },
+      "party": {
+        "title": "Tiệc chung vui",
+        "time": "19:00",
+        "description": "Cùng nhau tận hưởng những khoảnh khắc đáng nhớ nhất trong ngày, cùng nâng ly và quẩy hết mình nha!"
+      }
+    }
+  },
+  "ourAlbum": {
+    "title": "Album của \"chúng mình\"",
+    "viewMore": "Xem thêm"
+  },
+  "location": {
+    "title": "Địa điểm",
+    "venueName": "Trung Tâm Hội Nghị & Tiệc Cưới",
+    "venueTitle": "Le Jardin",
+    "hall": "Sảnh FUCHSIA A5",
+    "address": "195 QL13, Hiệp Bình Chánh, Thủ Đức, Thành phố Hồ Chí Minh",
+    "viewMap": "Xem trên bản đồ"
+  },
+  "footer": {
+    "title": "Ngày hai đứa về chung một nhà…",
+    "countdown": "chỉ còn…",
+    "days": "ngày",
+    "hours": "giờ",
+    "minutes": "phút",
+    "seconds": "giây",
+    "withLove": "Với tất cả yêu thương,",
+    "names": "Thanh Phong & Hồng Viên!"
+  },
+  "widget": {
+    "buttonLabel": "💌 Gửi lời chúc ({{count}})",
+    "title": "Lời chúc",
+    "sendWish": "Gửi lời chúc",
+    "nameLabel": "Tên của bạn",
+    "nameRequired": "*",
+    "namePlaceholder": "Nhập tên của bạn",
+    "wishLabel": "Lời chúc",
+    "wishRequired": "*",
+    "wishPlaceholder": "Gửi lời chúc",
+    "submitting": "Đang gửi...",
+    "submit": "Gửi lời chúc"
+  }
+}
