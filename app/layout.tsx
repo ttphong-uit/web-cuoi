@@ -31,21 +31,31 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
   },
+  metadataBase: new URL("https://baohyphongvien.vercel.app"),
   openGraph: {
+    type: "website",
+    locale: "vi_VN",
+    url: "https://baohyphongvien.vercel.app",
+    siteName: "Thiệp cưới Thanh Phong & Hồng Viên",
     title: "Thiệp cưới Thanh Phong & Hồng Viên",
     description:
       "Mời quý vị xem thiệp báo hỷ của tụi mình nhé Thanh Phong & Hồng Viên",
     images: [
       {
-        url: "https://baohyphongvien.vercel.app/thumbnail.png",
+        url: "/thumbnail-2.png",
         width: 1200,
-        height: 675,
+        height: 630,
+        alt: "Thiệp cưới Thanh Phong & Hồng Viên",
+        type: "image/png",
       },
     ],
   },
-  other: {
-    image: "https://baohyphongvien.vercel.app/thumbnail.png",
-    thumbnail: "https://baohyphongvien.vercel.app/thumbnail.png",
+  twitter: {
+    card: "summary_large_image",
+    title: "Thiệp cưới Thanh Phong & Hồng Viên",
+    description:
+      "Mời quý vị xem thiệp báo hỷ của tụi mình nhé Thanh Phong & Hồng Viên",
+    images: ["/thumbnail-2.png"],
   },
 };
 
