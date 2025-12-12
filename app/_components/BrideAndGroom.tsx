@@ -40,7 +40,7 @@ export const BrideAndGroom = () => {
 
               <div className="space-y-4 font-quickSand ">
                 <div>
-                  <h3 className="text-2xl font-dancingScript md:text-xl font-semibold mb-2 text-[#F5EFE7]">
+                  <h3 className="text-2xl font-dancingScript md:text-4xl font-semibold mb-2 text-[#F5EFE7]">
                     {t("brideAndGroom.bride.name")}
                   </h3>
                 </div>
