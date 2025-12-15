@@ -142,7 +142,7 @@ export const OurStory = () => {
         {/* Vertical Timeline Line - Hidden on mobile */}
         <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-[#333] transform -translate-x-1/2" />
 
-        <div className="space-y-12 md:space-y-16">
+        <div className="space-y-8 md:space-y-16">
           {storyYears.map((story, index) => {
             const isLeft = index % 2 === 0;
 
@@ -205,15 +205,15 @@ export const OurStory = () => {
                       <>
                         {/* Left Side - Content */}
                         <div
-                          className="text-right pr-8"
+                          className="text-right pr-8 pt-2"
                           data-aos="fade-right"
                           data-aos-duration="600"
                           data-aos-delay={Math.min(index * 50, 200)}
                         >
-                          <h3 className="font-dancingScript text-3xl md:text-4xl text-[#333] mb-2">
+                          <h3 className="font-dancingScript text-3xl md:text-4xl text-[#333] mb-2 sm:mb-4">
                             {t(`ourStory.years.${story.year}.title`)}
                           </h3>
-                          <p className="font-quickSand text-sm md:text-base text-[#666] mb-4">
+                          <p className="font-quickSand text-sm md:text-base md:text-justify text-[#666] mb-4">
                             {t(`ourStory.years.${story.year}.description`)}
                           </p>
                           <div className="flex justify-end">
@@ -242,15 +242,15 @@ export const OurStory = () => {
 
                         {/* Right Side - Content */}
                         <div
-                          className="text-left pl-8"
+                          className="text-left pl-8 pt-2"
                           data-aos="fade-left"
                           data-aos-duration="600"
                           data-aos-delay={Math.min(index * 50, 200)}
                         >
-                          <h3 className="font-dancingScript text-3xl md:text-4xl text-[#333] mb-2">
+                          <h3 className="font-dancingScript text-3xl md:text-4xl text-[#333] mb-2 sm:mb-4">
                             {t(`ourStory.years.${story.year}.title`)}
                           </h3>
-                          <p className="font-quickSand text-sm md:text-base text-[#666] mb-4">
+                          <p className="font-quickSand text-sm md:text-base sm:text-justify text-[#666] mb-4">
                             {t(`ourStory.years.${story.year}.description`)}
                           </p>
                           <div className="flex justify-start">

@@ -16,7 +16,7 @@
   },
   "calendar": {
     "title": "Thân mời!",
-    "invitation": "Ngày đặc biệt này không chỉ là dấu mốc, mà còn là khởi đầu cho hành trình xây dựng tổ ấm hạnh phúc 'có 1 không 2' của chúng mình! Chúng mình đang háo hức cực kỳ, chỉ mong được cùng mọi người 'bung lụa' và chia sẻ niềm vui lớn lao này. Rất mong được đón tiếp các bạn đến chung vui trong ngày ý nghĩa này nhé!",
+    "invitation": "Ngày đặc biệt này không chỉ là một dấu mốc đáng nhớ, mà còn là khởi đầu cho hành trình xây dựng tổ ấm hạnh phúc của chúng mình.\n Niềm vui sẽ trọn vẹn hơn khi có sự hiện diện của gia đình, bạn bè và những người thân yêu.\n Chúng mình rất mong được đón tiếp mọi người đến chung vui và lưu giữ những khoảnh khắc ý nghĩa trong ngày trọng đại này.",
     "polaroidQuote": "Some souls just understand each other.",
     "weekdays": {
       "mon": "T2",
@@ -36,7 +36,7 @@
       "info": "Út nữ, con gái của ba {{father}}, mẹ {{mother}}",
       "father": "Huỳnh Văn Bốn",
       "mother": "Ngô Thị Minh",
-      "description": "\"Một cô gái vui tươi, dí dỏm, luôn mang đến tiếng cười và sự ấm áp cho mọi người. Nàng yêu thích nấu ăn, làm đẹp và biết cách biến những điều nhỏ bé trong cuộc sống thành niềm vui bất tận.\""
+      "description": "\"Một cô gái vui tươi, dí dỏm, luôn mang đến tiếng cười và sự ấm áp cho mọi người. Nàng yêu thích nấu ăn, làm đẹp và là người quan tâm đến mọi người theo cách rất riêng\""
     },
     "groom": {
       "title": "Chú Rể",
@@ -56,44 +56,44 @@
         "description": "Tình yêu chớm nở từ những buổi học cấp 3, khi thầy cô 'se duyên' cho hai đứa ngồi cạnh nhau. Sau 3 lần tỏ tình 'thất bại', chú rể đã được cô dâu 'bật đèn xanh' bằng cái nắm tay thật chặt trên bãi biển. Và thế là, một câu chuyện tình yêu đẹp bắt đầu!"
       },
       "2017": {
-        "title": "Bỡ ngỡ nhưng hạnh phúc",
-        "description": "Trải qua năm đầu tiên còn bỡ ngỡ, chập chững bước vào giảng đường đại học cùng nhau. Mỗi ngày đi học đều có nhau ở bên, thế là đủ rồi."
+        "title": "Năm tháng sinh viên",
+        "description": "Năm này chúng mình cùng nhau ôn thi, động viên và phấn đấu để chạm tới ngôi trường đại học mà cả hai cùng mong muốn. Và cũng là năm đầu tiên chúng mình cùng nhau chập chững bước vào giảng đường đại học."
       },
       "2018": {
-        "title": "Tuổi trẻ đáng nhớ",
-        "description": "Cùng tận hưởng những ngày tháng sinh viên tươi đẹp. Từ những buổi học tới đêm, những chuyến đi chơi cuối tuần, đến cả những lần cãi nhau rồi lại hoà..."
+        "title": "Kỷ niệm đáng nhớ",
+        "description": "Cùng nhau đi qua những ngày tháng sinh viên tươi đẹp. Từ những buổi học tới đêm, những chuyến đi chơi cuối tuần, đến cả những lần cãi nhau rồi lại hoà..."
       },
       "2019": {
-        "title": "Yêu sâu đậm hơn",
+        "title": "Gắn kết và yêu thương",
         "description": "Tình yêu ngày càng gắn kết, hiểu nhau hơn. Từ hai người xa lạ ngày nào, giờ đã trở thành điểm tựa vững chắc cho nhau trong cuộc sống."
       },
       "2020": {
-        "title": "Vượt qua sóng gió",
-        "description": "Năm của những thử thách, nhưng cũng là năm tụi mình học được cách vượt qua khó khăn bên nhau. Mỗi khó khăn qua đi, tình yêu lại thêm bền vững."
+        "title": "Thay đổi và thử thách",
+        "description": "Năm nhiều thay đổi và thử thách hơn bao giờ hết. Chúng mình học cách lắng nghe, nhường nhịn và ở bên nhau ngay cả khi mọi thứ không như mong đợi."
       },
       "2021": {
-        "title": "Trưởng thành cùng nhau",
-        "description": "Cùng nhau trưởng thành, bước vào giai đoạn đi làm, cùng chia sẻ những câu chuyện trong công việc, cuộc sống"
+        "title": "Khó khăn? Cùng vượt qua",
+        "description": "Năm đầy biến động và những khó khăn trong cuộc sống. Có những lúc chúng mình mệt mỏi và chênh vênh, nhưng vẫn chọn ở bên nhau, cùng lắng nghe và cùng vượt qua."
       },
       "2022": {
-        "title": "Những khoảnh khắc bình yên",
-        "description": "Tìm thấy hạnh phúc trong những điều giản dị nhất. Cùng nhau nuôi con (mèo) 'Nhẽo' và 'Cám'"
+        "title": "Bình yên khi có nhau",
+        "description": "Sau những khó khăn và thử thách, chúng mình trưởng thành hơn, thấu hiểu hơn và bắt đầu thấy hạnh phúc trong những điều giản dị. Cùng nhau nuôi thêm hai người bạn nhỏ là Nhẽo và Cám."
       },
       "2023": {
         "title": "Định hình tương lai",
-        "description": "Năm của những chuyến đi, những khoảnh khắc chill, và cùng nhau tận hưởng cuộc sống bình yên."
+        "description": "Cuộc sống dần ổn định, có thêm những chuyến đi chơi cùng bạn bè và những lúc thư thả bên nhau."
       },
       "2024": {
-        "title": "Sẵn sàng cho bước mới",
-        "description": "Cảm nhận tình yêu đã đủ chắc chắn, đủ trưởng thành để bước vào một chương mới. Mỗi ngày trôi qua đều là sự chuẩn bị cho một quyết định quan trọng..."
+        "title": "Yêu nhau thôi",
+        "description": "Không áp lực, không toan tính, chỉ đơn giản là yêu nhau và tận hưởng việc có nhau mỗi ngày."
       },
       "2025": {
         "title": "Lời hứa trọn đời",
-        "description": "Cảm thấy tình yêu đã đủ, chú rể đã ngỏ lời cầu hôn. Và cô dâu đã gật đầu đồng ý, sẵn sàng bước vào hành trình mới với tư cách là vợ chồng."
+        "description": "Cảm thấy tình yêu đã đủ, Phong đã ngỏ lời cầu hôn. Và Viên đã gật đầu đồng ý, sẵn sàng bước vào hành trình mới với tư cách là người một nhà."
       },
       "2026": {
-        "title": "Ngày về chung một nhà",
-        "description": "Ngày chúng mình chính thức về chung một nhà, cùng nhau xây dựng tổ ấm và viết tiếp câu chuyện tình yêu."
+        "title": "Về chung một nhà",
+        "description": "Sau nhiều năm bên nhau, chúng mình quyết định cùng bước sang một chặng đường mới và bắt đầu cuộc sống chung dưới một mái nhà."
       }
     }
   },
