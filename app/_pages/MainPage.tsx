@@ -12,6 +12,8 @@ import { SaveTheDate } from "../_components/SaveTheDate";
 import TimeLine from "../_components/TimeLine";
 import { WidgetMessage } from "../_components/WidgetMessage";
 
+import { RsvpForm } from "../_components/RsvpForm";
+
 interface IMainPageProps {}
 
 const MainPage: React.FunctionComponent<IMainPageProps> = (props) => {
@@ -25,6 +27,7 @@ const MainPage: React.FunctionComponent<IMainPageProps> = (props) => {
       <TimeLine />
       <RestaurantLocation2 />
       <OurAlbum />
+      <RsvpForm />
       <Footer />
       <WidgetMessage />
     </AppLoading>

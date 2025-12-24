@@ -1,99 +1,81 @@
 import { NextResponse } from "next/server";
 import { Message } from "@/app/_types/message";
-import fs from "fs";
-import path from "path";
+import { GoogleSpreadsheet } from "google-spreadsheet";
+import { JWT } from "google-auth-library";
 
-// Path to the JSON file that stores messages
-const messagesFilePath = path.join(process.cwd(), "data", "messages.json");
+const SHEET_ID = "1DdkM7HbhJ5xpyJDMJQJ00Pe8RMXDNs1SrDfGWLNEB1k";
+const SHEET_TAB_NAME = "Lời chúc";
 
-// Default messages
-const defaultMessages: Message[] = [
-  {
-    id: "1",
-    name: "Tuấn Anh",
-    content: "🎊 Một hành trình hạnh phúc đang chờ đón hai bạn!",
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "2",
-    name: "Ngọc Anh",
-    content: "🎉 Chúc hai bạn luôn vui vẻ, thấu hiểu và nâng đỡ nhau!",
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "3",
-    name: "Nam",
-    content: "💕💕 Chúc hai bạn trăm năm hạnh phúc!",
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "4",
-    name: "Thu Hà",
-    content: "🎊 Chúc cho tình yêu của hai bạn mỗi ngày một lớn mạnh!",
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "5",
-    name: "Trang",
-    content: "⭐ Chúc mừng hạnh phúc lứa đôi!",
-    createdAt: new Date().toISOString(),
-  },
-];
+// Define local type for this specific sheet
+type MessageRow = {
+  Tên: string;
+  "Lời chúc": string;
+  "Thời gian": string;
+};
 
-// Helper function to ensure the data directory and file exist
-function ensureDataFileExists() {
-  const dataDir = path.dirname(messagesFilePath);
+const getDoc = async () => {
+  const serviceAccountAuth = new JWT({
+    email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+    key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+  });
 
-  // Create data directory if it doesn't exist
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true });
+  const doc = new GoogleSpreadsheet(SHEET_ID, serviceAccountAuth);
+  await doc.loadInfo();
+  return doc;
+};
+
+const getSheet = async (doc: GoogleSpreadsheet) => {
+  let sheet = doc.sheetsByTitle[SHEET_TAB_NAME];
+
+  if (!sheet) {
+    sheet = await doc.addSheet({
+      title: SHEET_TAB_NAME,
+    });
   }
 
-  // Create messages.json with default messages if it doesn't exist
-  if (!fs.existsSync(messagesFilePath)) {
-    fs.writeFileSync(
-      messagesFilePath,
-      JSON.stringify(defaultMessages, null, 2),
-      "utf-8"
-    );
-  }
-}
-
-// Helper function to read messages from the JSON file
-function readMessages(): Message[] {
   try {
-    ensureDataFileExists();
-    const fileContent = fs.readFileSync(messagesFilePath, "utf-8");
-    return JSON.parse(fileContent);
-  } catch (error) {
-    console.error("Error reading messages:", error);
-    return [];
+    await sheet.loadHeaderRow();
+  } catch (err) {
+    await sheet.setHeaderRow(["Tên", "Lời chúc", "Thời gian"]);
+    await sheet.loadHeaderRow();
   }
-}
 
-// Helper function to write messages to the JSON file
-function writeMessages(messages: Message[]): void {
-  try {
-    ensureDataFileExists();
-    fs.writeFileSync(
-      messagesFilePath,
-      JSON.stringify(messages, null, 2),
-      "utf-8"
-    );
-  } catch (error) {
-    console.error("Error writing messages:", error);
-  }
-}
+  return sheet;
+};
 
 export async function GET() {
-  const messages = readMessages();
-  return NextResponse.json({ messages });
+  try {
+    const doc = await getDoc();
+    const sheet = await getSheet(doc);
+
+    const rows = await sheet.getRows<MessageRow>();
+
+    const messages: Message[] = rows.map((row, index) => ({
+      id: index.toString(), // Or use row.rowIndex if available, or generate a UUID
+      name: row.get("Tên") || "",
+      content: row.get("Lời chúc") || "",
+      createdAt: row.get("Thời gian") || "",
+    }));
+
+    // Reverse to show newest first? Or leave as is.
+    // The previous implementation read from JSON which appended, so newer at bottom?
+    // Usually UI controls order. WidgetMessage.tsx renders [...messages, ...messages] in scrolling list.
+    // Let's just return list.
+
+    return NextResponse.json(messages);
+  } catch (error) {
+    console.error("Error fetching messages from Sheet:", error);
+    return NextResponse.json({ messages: [] });
+  }
 }
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, content } = body;
+    const { name, content } = body; // createdAt from body is ignored in favor of server time or kept?
+    // User's widget sends createdAt as unix timestamp, but previous local logic generated ISO string server side.
+    // Let's stick to generating formatted string server side for the sheet.
 
     if (!name || !content) {
       return NextResponse.json(
@@ -102,19 +84,27 @@ export async function POST(request: Request) {
       );
     }
 
+    const doc = await getDoc();
+    const sheet = await getSheet(doc);
+
+    const timestamp = new Date().toLocaleString("vi-VN");
+
+    await sheet.addRow({
+      Tên: name.trim(),
+      "Lời chúc": content.trim(),
+      "Thời gian": timestamp,
+    });
+
     const newMessage: Message = {
       id: Date.now().toString(),
       name: name.trim(),
       content: content.trim(),
-      createdAt: new Date().toISOString(),
+      createdAt: timestamp,
     };
-
-    const messages = readMessages();
-    messages.push(newMessage);
-    writeMessages(messages);
 
     return NextResponse.json({ message: newMessage }, { status: 201 });
   } catch (error) {
+    console.error("Error adding message to Sheet:", error);
     return NextResponse.json(
       { error: "Failed to create message" },
       { status: 500 }
@@ -122,21 +112,9 @@ export async function POST(request: Request) {
   }
 }
 
-// DELETE endpoint to reset messages to default
 export async function DELETE() {
-  try {
-    writeMessages(defaultMessages);
-    return NextResponse.json(
-      {
-        message: "Messages reset to default successfully",
-        messages: defaultMessages,
-      },
-      { status: 200 }
-    );
-  } catch (error) {
-    return NextResponse.json(
-      { error: "Failed to reset messages" },
-      { status: 500 }
-    );
-  }
+  return NextResponse.json(
+    { error: "Delete not supported with Google Sheets" },
+    { status: 405 }
+  );
 }

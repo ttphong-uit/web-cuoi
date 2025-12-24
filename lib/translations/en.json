@@ -151,5 +151,25 @@
     "wishPlaceholder": "Write your wishes",
     "submitting": "Sending...",
     "submit": "Send wishes"
+  },
+  "rsvp": {
+    "title": "Guest RSVP",
+    "subtitle": "Please confirm your attendance by January 18th so we can prepare the best experience for you.",
+    "attendance": {
+      "title": "Wedding Attendance",
+      "yes": "Yes, I will attend!",
+      "yesPartner": "Yes, I will attend with my partner",
+      "no": "Sorry, I cannot attend"
+    },
+    "nameLabel": "Your Name",
+    "partnerLabel": "If attending with family or partner, please list their names",
+    "songRequest": {
+      "title": "Song Request",
+      "placeholder": "Enter the song name you'd like to perform..."
+    },
+    "submit": "Send RSVP",
+    "submitting": "Sending...",
+    "success": "Thank you for your response!",
+    "error": "An error occurred, please try again."
   }
 }

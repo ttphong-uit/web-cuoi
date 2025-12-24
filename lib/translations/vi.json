@@ -151,5 +151,25 @@
     "wishPlaceholder": "Gửi lời chúc",
     "submitting": "Đang gửi...",
     "submit": "Gửi lời chúc"
+  },
+  "rsvp": {
+    "title": "Phiếu Xác Nhận",
+    "subtitle": "Vui lòng xác nhận sự hiện diện của bạn trước ngày 18 tháng 01 để chúng mình có thể chuẩn bị chu đáo nhất.",
+    "attendance": {
+      "title": "Tham dự tiệc cưới",
+      "yes": "Có, mình sẽ tham dự!",
+      "yesPartner": "Có, mình tham dự cùng người thương",
+      "no": "Tiếc quá, mình không thể tham dự"
+    },
+    "nameLabel": "Tên của bạn",
+    "partnerLabel": "Nếu đi cùng người thương hoặc gia đình, bạn nhắn tên mọi người giúp mình nhé",
+    "songRequest": {
+      "title": "Đăng ký tiết mục văn nghệ",
+      "placeholder": "Nhập tên bài hát bạn muốn gửi tặng..."
+    },
+    "submit": "Gửi xác nhận",
+    "submitting": "Đang gửi...",
+    "success": "Cảm ơn bạn đã phản hồi!",
+    "error": "Có lỗi xảy ra, vui lòng thử lại."
   }
 }

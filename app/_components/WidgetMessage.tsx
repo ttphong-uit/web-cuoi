@@ -29,7 +29,7 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
 
   const fetchMessages = async () => {
     try {
-      const response = await fetch("/api/message");
+      const response = await fetch("/api/messages");
       const data = await response.json();
       setMessages(data || []);
     } catch (error) {
@@ -43,7 +43,7 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
 
     setIsSubmitting(true);
     try {
-      const response = await fetch("/api/message", {
+      const response = await fetch("/api/messages", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -106,7 +106,7 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
             {/* Message List */}
             <div className="h-[180px] md:h-[220px] overflow-hidden relative bg-white/50 p-3 md:p-4">
               <div className="animate-scroll-up space-y-2 md:space-y-3">
-                {[...messages, ...messages].map((message, index) => (
+                {messages.map((message, index) => (
                   <div
                     key={`${message.id}-${index}`}
                     className="bg-white/90 backdrop-blur-sm rounded-lg p-2 md:p-3 shadow-sm border border-rose-200 animate-fade-in"
