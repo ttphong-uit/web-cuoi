@@ -49,7 +49,6 @@ export const SaveTheDate = (props: Props) => {
                 alt={isPlaying ? "Play" : "Pause"}
                 width={60}
                 height={60}
-                placeholder="blur"
                 loading="eager"
                 className="relative z-10"
               />
@@ -117,7 +116,6 @@ export const SaveTheDate = (props: Props) => {
             alt={isPlaying ? "Play" : "Pause"}
             width={24}
             height={24}
-            placeholder="blur"
             loading="eager"
             className={`relative z-10 ${
               isShow && isPlaying ? "animate-spin" : ""

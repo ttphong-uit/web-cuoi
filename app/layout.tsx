@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
-import {
-  Shadows_Into_Light,
-  Quicksand,
-  Dancing_Script,
-} from "next/font/google";
+import { Dancing_Script, Quicksand } from "next/font/google";
 import "./globals.css";
-
-const shadowToLight = Shadows_Into_Light({
-  variable: "--font-shadowToLight",
-  subsets: ["latin"],
-  weight: "400",
-});
 
 const quickSand = Quicksand({
   variable: "--font-quickSand",
@@ -70,13 +60,6 @@ export default function RootLayout({
         {/* Preload local fonts */}
         <link
           rel="preload"
-          href="/fonts/Mallong-Regular.ttf"
-          as="font"
-          type="font/ttf"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
           href="/fonts/Faugllin-Balseyn-BF65fe58663f431.ttf"
           as="font"
           type="font/ttf"
@@ -89,17 +72,8 @@ export default function RootLayout({
           type="font/ttf"
           crossOrigin="anonymous"
         />
-        <link
-          rel="preload"
-          href="/fonts/Breathing.ttf"
-          as="font"
-          type="font/ttf"
-          crossOrigin="anonymous"
-        />
       </head>
-      <body
-        className={`${shadowToLight.variable} ${quickSand.variable} ${dancingScript.variable}`}
-      >
+      <body className={`${quickSand.variable} ${dancingScript.variable}`}>
         {children}
       </body>
     </html>

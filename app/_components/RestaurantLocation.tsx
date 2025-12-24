@@ -32,6 +32,7 @@ export const RestaurantLocation = () => {
                   alt="Decorative border frame"
                   width={171}
                   height={250}
+                  loading="eager"
                   className="w-full h-full object-contain"
                 />
               </div>
