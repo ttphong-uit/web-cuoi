@@ -73,7 +73,14 @@ export const MusicContextProvider: React.FC<React.PropsWithChildren> = (
     audio.addEventListener("loadstart", handleLoadStart);
     audio.addEventListener("loadedmetadata", handleLoadedMetadata);
 
+    // Fallback: If audio loading takes too long/fails, mark as ready after 2000ms
+    // so the app loading screen doesn't get stuck
+    const timeoutId = setTimeout(() => {
+      setAudioReady(true);
+    }, 2000);
+
     return () => {
+      clearTimeout(timeoutId);
       audio.removeEventListener("play", handlePlay);
       audio.removeEventListener("pause", handlePause);
       audio.removeEventListener("ended", handleEnded);

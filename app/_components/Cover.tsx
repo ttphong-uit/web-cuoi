@@ -6,11 +6,7 @@ import { useMusicContext } from "../_context/MusicContext";
 import { DoubleChevronDown } from "./DoubleChevronDown";
 import { useTranslation } from "@/lib/LanguageProvider";
 
-type CoverProps = {
-  toggleShowContent?: () => void;
-};
-
-export const Cover = ({ toggleShowContent }: CoverProps) => {
+export const Cover = () => {
   const handler = useMusicContext();
   const { t } = useTranslation();
   const [hidden, setHidden] = React.useState(false);
@@ -40,6 +36,9 @@ export const Cover = ({ toggleShowContent }: CoverProps) => {
       // to satisfy browser autoplay policy
       // handler.playMusic();
       // setHidden(true);
+      // if (videoFailed) {
+      //   playVideo();
+      // }
     }
   };
 

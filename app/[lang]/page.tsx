@@ -1,4 +1,5 @@
 import { MusicContextProvider } from "../_context/MusicContext";
+import { VideoContextProvider } from "../_context/VideoContext";
 import { LanguageProvider } from "@/lib/LanguageProvider";
 import MainPage from "../_pages/MainPage";
 
@@ -13,7 +14,9 @@ export default async function LangPage({ params }: LangPageProps) {
     <main>
       <LanguageProvider lang={lang}>
         <MusicContextProvider>
-          <MainPage />
+          <VideoContextProvider>
+            <MainPage />
+          </VideoContextProvider>
         </MusicContextProvider>
       </LanguageProvider>
     </main>
