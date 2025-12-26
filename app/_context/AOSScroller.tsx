@@ -4,6 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 type AOSScrollerContextType = {
   scrollContainer: HTMLElement | null;
+  scrollHeight: number | undefined;
   registerScrollFn: (fn: (event?: Event | undefined) => void) => () => void;
   registerResizeFn: (fn: (event?: Event | undefined) => void) => () => void;
   AOS: typeof AOS;
@@ -13,6 +14,7 @@ const AOSScrollerContext = React.createContext<AOSScrollerContextType>({
   scrollContainer: null,
   registerScrollFn: (fn: (event?: Event | undefined) => void) => () => {},
   registerResizeFn: (fn: (event?: Event | undefined) => void) => () => {},
+  scrollHeight: undefined,
   AOS,
 });
 
@@ -106,6 +108,7 @@ export const AOSScrollerProvider = ({
         scrollContainer: scrollContainerRef.current,
         registerScrollFn,
         registerResizeFn,
+        scrollHeight,
         AOS,
       }}
     >
