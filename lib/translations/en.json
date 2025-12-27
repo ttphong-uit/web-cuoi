@@ -1,7 +1,7 @@
 {
   "cover": {
     "tagline": "From classmate to soulmate",
-    "names": "Thanh Phong & Hong Vien",
+    "names": "Thanh Phong & Hồng Viên",
     "month": "January",
     "date": "18.01.2026",
     "tapToView": "Tap to view"
@@ -11,7 +11,7 @@
     "the": "the",
     "date": "DATE",
     "groomName": "Thanh Phong",
-    "brideName": "Hong Vien",
+    "brideName": "Hồng Viên",
     "weddingDate": "18.01.2026"
   },
   "calendar": {
@@ -32,10 +32,10 @@
   "brideAndGroom": {
     "bride": {
       "title": "The Bride",
-      "name": "Hong Vien",
+      "name": "Hồng Viên",
       "info": "Youngest daughter of Mr. {{father}} and Mrs. {{mother}}",
-      "father": "Huynh Van Bon",
-      "mother": "Ngo Thi Minh",
+      "father": "Huỳnh Văn Bốn",
+      "mother": "Ngô Thị Minh",
       "description": "\"A cheerful and witty girl who brings laughter and warmth wherever she goes. She loves cooking, self-care, and caring for others in her own special way.\""
     },
     "groom": {
