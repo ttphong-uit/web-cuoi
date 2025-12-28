@@ -1,5 +1,5 @@
 "use client";
-import image1 from "../_assets/images/our-album/album_1.jpg";
+import image2 from "../_assets/images/our-album/album_2.webp";
 import { PolaroidCard } from "./PolaroidCard";
 import { Calendar } from "./Calendar";
 import { useTranslation } from "@/lib/LanguageProvider";
@@ -46,7 +46,7 @@ export const CalendarGroup = () => {
           data-aos-delay="800"
         >
           <PolaroidCard
-            imageSrc={image1.src}
+            imageSrc={image2.src}
             text={t("calendar.polaroidQuote")}
           />
         </div>

@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Swiper, SwiperSlide, SwiperClass } from "swiper/react";
 import { Navigation, Keyboard, Virtual } from "swiper/modules";
 import Image, { StaticImageData } from "next/image";
@@ -10,38 +10,38 @@ import "swiper/css/navigation";
 import "swiper/css/virtual";
 
 import { PolaroidCard } from "./PolaroidCard";
-import image1 from "@/app/_assets/images/our-album/album_1.jpg";
-import image2 from "@/app/_assets/images/our-album/album_2.jpg";
-import image3 from "@/app/_assets/images/our-album/album_3.jpg";
-import image4 from "@/app/_assets/images/our-album/album_4.jpg";
-import image5 from "@/app/_assets/images/our-album/album_5.jpg";
-import image6 from "@/app/_assets/images/our-album/album_6.jpg";
-import image7 from "@/app/_assets/images/our-album/album_7.jpg";
-import image8 from "@/app/_assets/images/our-album/album_8.jpg";
-import image9 from "@/app/_assets/images/our-album/album_9.jpg";
-import image10 from "@/app/_assets/images/our-album/album_10.jpg";
-import image11 from "@/app/_assets/images/our-album/album_11.jpg";
-import image12 from "@/app/_assets/images/our-album/album_12.jpg";
-import image13 from "@/app/_assets/images/our-album/album_13.jpg";
-import image14 from "@/app/_assets/images/our-album/album_14.jpg";
-import image15 from "@/app/_assets/images/our-album/album_15.jpg";
-import image16 from "@/app/_assets/images/our-album/album_16.jpg";
-import image17 from "@/app/_assets/images/our-album/album_17.jpg";
-import image18 from "@/app/_assets/images/our-album/album_18.jpg";
-import image19 from "@/app/_assets/images/our-album/album_19.jpg";
-import image20 from "@/app/_assets/images/our-album/album_20.jpg";
-import image21 from "@/app/_assets/images/our-album/album_21.jpg";
-import image22 from "@/app/_assets/images/our-album/album_22.jpg";
-import image23 from "@/app/_assets/images/our-album/album_23.jpg";
-import image24 from "@/app/_assets/images/our-album/album_24.jpg";
-import image25 from "@/app/_assets/images/our-album/album_25.jpg";
-import image26 from "@/app/_assets/images/our-album/album_26.jpg";
-import image27 from "@/app/_assets/images/our-album/album_27.jpg";
-import image28 from "@/app/_assets/images/our-album/album_28.jpg";
-import image29 from "@/app/_assets/images/our-album/album_29.jpg";
-import image30 from "@/app/_assets/images/our-album/album_30.jpg";
-import image31 from "@/app/_assets/images/our-album/album_31.jpg";
-import image32 from "@/app/_assets/images/our-album/album_32.jpg";
+import image1 from "@/app/_assets/images/our-album/album_1.webp";
+import image2 from "@/app/_assets/images/our-album/album_2.webp";
+import image3 from "@/app/_assets/images/our-album/album_3.webp";
+import image4 from "@/app/_assets/images/our-album/album_4.webp";
+import image5 from "@/app/_assets/images/our-album/album_5.webp";
+import image6 from "@/app/_assets/images/our-album/album_6.webp";
+import image7 from "@/app/_assets/images/our-album/album_7.webp";
+import image8 from "@/app/_assets/images/our-album/album_8.webp";
+import image9 from "@/app/_assets/images/our-album/album_9.webp";
+import image10 from "@/app/_assets/images/our-album/album_10.webp";
+import image11 from "@/app/_assets/images/our-album/album_11.webp";
+import image12 from "@/app/_assets/images/our-album/album_12.webp";
+import image13 from "@/app/_assets/images/our-album/album_13.webp";
+import image14 from "@/app/_assets/images/our-album/album_14.webp";
+import image15 from "@/app/_assets/images/our-album/album_15.webp";
+import image16 from "@/app/_assets/images/our-album/album_16.webp";
+import image17 from "@/app/_assets/images/our-album/album_17.webp";
+import image18 from "@/app/_assets/images/our-album/album_18.webp";
+import image19 from "@/app/_assets/images/our-album/album_19.webp";
+import image20 from "@/app/_assets/images/our-album/album_20.webp";
+import image21 from "@/app/_assets/images/our-album/album_21.webp";
+import image22 from "@/app/_assets/images/our-album/album_22.webp";
+import image23 from "@/app/_assets/images/our-album/album_23.webp";
+import image24 from "@/app/_assets/images/our-album/album_24.webp";
+import image25 from "@/app/_assets/images/our-album/album_25.webp";
+import image26 from "@/app/_assets/images/our-album/album_26.webp";
+import image27 from "@/app/_assets/images/our-album/album_27.webp";
+import image28 from "@/app/_assets/images/our-album/album_28.webp";
+import image29 from "@/app/_assets/images/our-album/album_29.webp";
+import image30 from "@/app/_assets/images/our-album/album_30.webp";
+import image31 from "@/app/_assets/images/our-album/album_31.webp";
+import image32 from "@/app/_assets/images/our-album/album_32.webp";
 
 import Button from "./Button";
 import { useTranslation } from "@/lib/LanguageProvider";
@@ -113,6 +113,7 @@ const getRotationClass = (index: number): string => {
 export const OurAlbum = () => {
   const { t } = useTranslation();
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [initialSlide, setInitialSlide] = useState(0);
   const [swiper, setSwiper] = useState<SwiperClass | null>(null);
   const { scrollContainer, scrollHeight } = useAOSScroller();
 
@@ -120,7 +121,7 @@ export const OurAlbum = () => {
   const nextRef = useRef<HTMLButtonElement>(null);
 
   // Indices of photos to display in the grid
-  const displayedIndices = [4, 9, 17, 29];
+  const displayedIndices = [4, 9, 17, 24];
   const displayedPhotos = displayedIndices.map((index) => albumPhotos[index]);
 
   const handleOpenModal = () => {
@@ -137,16 +138,23 @@ export const OurAlbum = () => {
   };
 
   const openLightbox = (originalIndex: number) => {
+    setInitialSlide(originalIndex);
     handleOpenModal();
-    // With Virtual slides, we might need to be careful with slideToLoop
-    // But Swiper handles it well usually.
-    swiper?.slideToLoop(originalIndex, 0);
   };
 
   const handleViewMore = () => {
-    swiper?.slideToLoop(0, 0);
+    setInitialSlide(0);
     handleOpenModal();
   };
+
+  // Navigate to initial slide when swiper is ready
+  React.useEffect(() => {
+    if (lightboxOpen && swiper) {
+      setTimeout(() => {
+        swiper.slideToLoop(initialSlide, 0);
+      }, 100);
+    }
+  }, [lightboxOpen, swiper, initialSlide]);
 
   return (
     <>
@@ -282,6 +290,7 @@ export const OurAlbum = () => {
             onSwiper={setSwiper}
             spaceBetween={30}
             slidesPerView={1}
+            initialSlide={initialSlide}
             navigation={{
               prevEl: prevRef.current,
               nextEl: nextRef.current,
@@ -319,7 +328,6 @@ export const OurAlbum = () => {
                     onError={(e) => {
                       console.error(`Image ${index} failed to load:`, e);
                     }}
-                    quality={90}
                     priority={index === 0}
                   />
                 </div>

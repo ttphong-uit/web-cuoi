@@ -12,7 +12,7 @@ import image2022 from "@/app/_assets/images/our-story/2022.jpg";
 import image2023 from "@/app/_assets/images/our-story/2023.jpg";
 import image2024 from "@/app/_assets/images/our-story/2024.jpg";
 import image2025 from "@/app/_assets/images/our-story/2025.jpg";
-import image2026 from "@/app/_assets/images/our-album/album_30.jpg";
+import image2026 from "@/app/_assets/images/our-album/album_30.webp";
 
 type StoryYear = {
   year: string;
