@@ -42,6 +42,7 @@ import image29 from "@/app/_assets/images/our-album/album_29.webp";
 import image30 from "@/app/_assets/images/our-album/album_30.webp";
 import image31 from "@/app/_assets/images/our-album/album_31.webp";
 import image32 from "@/app/_assets/images/our-album/album_32.webp";
+import image33 from "@/app/_assets/images/our-album/album_33.webp";
 
 import Button from "./Button";
 import { useTranslation } from "@/lib/LanguageProvider";
@@ -87,6 +88,7 @@ const albumPhotos: AlbumPhoto[] = [
   { image: image30, text: "", imageAlt: "Photo 30" },
   { image: image31, text: "", imageAlt: "Photo 31" },
   { image: image32, text: "", imageAlt: "Photo 32" },
+  { image: image33, text: "", imageAlt: "Photo 32" },
 ];
 
 // Desktop only - Array of varied rotations for a more natural, scattered look

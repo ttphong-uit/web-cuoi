@@ -1,6 +1,6 @@
 {
   "cover": {
-    "tagline": "From classmate to soulmate",
+    "tagline": "From classmates to soulmates",
     "names": "Thanh Phong & Hồng Viên",
     "month": "January",
     "date": "18.01.2026",
@@ -15,8 +15,8 @@
     "weddingDate": "18.01.2026"
   },
   "calendar": {
-    "title": "You're Invited!",
-    "invitation": "This special day marks not only a beautiful milestone, but also the beginning of our journey to build a loving home together.\nThe joy would be truly complete with the presence of our family, friends, and loved ones.\nWe sincerely look forward to welcoming you to celebrate and share these meaningful moments with us.",
+    "title": "You Are Invited!",
+    "invitation": "This special day is not only a memorable milestone, but also the beginning of our journey to build a happy home together.\nOur joy will be even more complete with the presence of our family, friends, and loved ones.\nWe sincerely look forward to welcoming you to celebrate and cherish these meaningful moments with us.",
     "polaroidQuote": "Some souls just understand each other.",
     "weekdays": {
       "mon": "Mon",
@@ -36,52 +36,52 @@
       "info": "Youngest daughter of Mr. {{father}} and Mrs. {{mother}}",
       "father": "Huỳnh Văn Bốn",
       "mother": "Ngô Thị Minh",
-      "description": "\"A cheerful and witty girl who brings laughter and warmth wherever she goes. She loves cooking, self-care, and caring for others in her own special way.\""
+      "description": "\"A cheerful and witty young woman who brings laughter and warmth to everyone around her. She loves cooking, beauty, and caring for others in her own special way.\""
     },
     "groom": {
       "title": "The Groom",
       "name": "Thanh Phong",
       "info": "Youngest son of Mr. {{father}} and Mrs. {{mother}}",
-      "father": "Tran Thanh Lich",
-      "mother": "Tran Thi Thuy Linh",
-      "description": "\"A responsible and mature man with a great sense of humor. Always dedicated to his work and deeply caring toward his family. Passionate about technology and constantly seeking new experiences in life.\""
+      "father": "Trần Thanh Lịch",
+      "mother": "Trần Thị Thùy Linh",
+      "description": "\"A responsible and mature man with a great sense of humor. He always gives his best at work and deeply cares for his family. Passionate about technology and constantly seeking new experiences in life.\""
     }
   },
   "ourStory": {
-    "title": "A journey of {{years}} years {{months}} months {{days}} days",
+    "title": "Our journey of {{years}} years {{months}} months {{days}} days",
     "subtitle": "Since December 21, 2016",
     "years": {
       "2016": {
         "title": "The Beginning",
-        "description": "Love quietly blossomed during high school days, when fate — and our teachers — seated us next to each other. After three \"unsuccessful\" confessions, the groom finally received a green light with a tight hand-hold on the beach. And so, our love story began."
+        "description": "Our love blossomed during high school days, when our teachers ‘played matchmaker’ and seated us next to each other. After three ‘failed’ confessions, the groom finally received the bride’s green light with a tight hand-hold on the beach. And so, a beautiful love story began!"
       },
       "2017": {
         "title": "University Days",
-        "description": "A year of studying together, chasing the dream of entering the same university. It also marked our very first steps into college life side by side."
+        "description": "We studied together and worked hard to get into the university we both dreamed of. It was also our very first year stepping into university life side by side."
       },
       "2018": {
         "title": "Unforgettable Memories",
-        "description": "Simple dates, spontaneous photos, and endless conversations — ordinary moments that became unforgettable."
+        "description": "Casual dates, hurried photos, endless conversations — simple moments that will never be forgotten."
       },
       "2019": {
-        "title": "Growing Closer",
-        "description": "Our love grew deeper as we understood each other more. From two strangers, we slowly became each other’s strongest support in life."
+        "title": "Bonded in Love",
+        "description": "Our love grew stronger and deeper. From two strangers, we became each other’s steady support in life."
       },
       "2020": {
         "title": "Changes and Challenges",
-        "description": "A year full of changes and challenges. We learned to listen, to compromise, and to stay by each other’s side even when things didn’t go as planned."
+        "description": "A year filled with changes and challenges. We learned to listen, to compromise, and to stay together even when things didn’t go as planned."
       },
       "2021": {
         "title": "Still Together",
-        "description": "Difficult days came — and we chose to stay, to listen, and to find a way forward together."
+        "description": "Difficult days came — and we chose to stay, to listen to each other, and to find a way through together."
       },
       "2022": {
         "title": "Peace in Togetherness",
-        "description": "After many challenges, we grew more mature and found happiness in simple moments. We also welcomed two little companions into our lives: Nheo and Cam."
+        "description": "After challenges and hardships, we grew more mature and understanding, finding happiness in simple things. We also welcomed two little companions into our lives: Nhẽo and Cám."
       },
       "2023": {
         "title": "A Year of Nurturing",
-        "description": "Life became more stable, filled with trips with friends and peaceful moments spent together."
+        "description": "Life gradually became more stable, with more trips, laughter with friends, and peaceful moments together."
       },
       "2024": {
         "title": "Just Loving Each Other",
@@ -89,26 +89,26 @@
       },
       "2025": {
         "title": "A Promise for Life",
-        "description": "Feeling that our love was ready, Phong proposed — and Vien said yes, stepping into a new chapter as a family."
+        "description": "Feeling that our love was ready, Phong proposed. And Viên said yes, ready to begin a new journey as one family."
       },
       "2026": {
-        "title": "Becoming One",
-        "description": "After the proposal the year before, Vien and Phong moved in together, beginning to build a home and plan for the future."
+        "title": "Becoming One Family",
+        "description": "We officially step into a new chapter, building our home and dreams for the future together."
       }
     }
   },
   "timeline": {
-    "title": "Wedding Schedule",
+    "title": "Schedule",
     "events": {
       "welcome": {
         "title": "Welcome Reception",
         "time": "17:30",
-        "description": "A gentle start for everyone to take photos, chat, and share joyful moments with us."
+        "description": "A gentle beginning for everyone to take photos, chat, and share the joy with us."
       },
       "ceremony": {
         "title": "Wedding Ceremony",
         "time": "18:30",
-        "description": "Together, we will mark this meaningful moment — the beginning of a brand new chapter in our lives."
+        "description": "Together, we mark a meaningful moment that begins a new chapter in our lives."
       },
       "party": {
         "title": "Wedding Celebration",
@@ -131,13 +131,13 @@
   },
   "footer": {
     "title": "The day we become one…",
-    "countdown": "Only",
+    "countdown": "Only…",
     "days": "days",
     "hours": "hours",
     "minutes": "minutes",
     "seconds": "seconds",
     "withLove": "With all our love,",
-    "names": "Thanh Phong & Hong Vien!"
+    "names": "Thanh Phong & Hồng Viên!"
   },
   "widget": {
     "buttonLabel": "💌 Send your wishes ({{count}})",
@@ -154,18 +154,18 @@
   },
   "rsvp": {
     "title": "RSVP",
-    "subtitle": "Please kindly confirm your attendance before January 18 so we can prepare thoughtfully.",
+    "subtitle": "Please kindly confirm your attendance before January 18 so we can make the best arrangements.",
     "attendance": {
-      "title": "Will you attend?",
+      "title": "Wedding Attendance",
       "yes": "Yes, I will attend!",
       "yesPartner": "Yes, I will attend with my partner",
       "no": "Sorry, I can’t make it"
     },
     "nameLabel": "Your name",
-    "partnerLabel": "If you’re attending with a partner or family, please let us know their names",
+    "partnerLabel": "If you’re attending with your partner or family, please let us know their names",
     "songRequest": {
       "title": "Song Request",
-      "placeholder": "Enter a song you'd like to dedicate..."
+      "placeholder": "Enter the song you’d like to dedicate..."
     },
     "submit": "Submit RSVP",
     "submitting": "Submitting...",
