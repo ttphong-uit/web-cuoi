@@ -11,7 +11,7 @@ type Props = {};
 
 export const SaveTheDate = (props: Props) => {
   const { toggleMusic, isPlaying, pauseMusic } = useMusicContext();
-  const { isShow, sectionRef } = useToggleElementByScroll();
+  const { isShow, sectionRef } = useToggleElementByScroll({ threshold: 50 });
   const { t } = useTranslation();
   // Handle tab visibility - pause music when tab is inactive
   useEffect(() => {

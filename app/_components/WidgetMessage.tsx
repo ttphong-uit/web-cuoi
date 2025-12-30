@@ -18,8 +18,12 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
   const [name, setName] = useState("");
   const [content, setContent] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [animationKey, setAnimationKey] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const { isShow } = useToggleElementByScroll<HTMLButtonElement>({
-    threshold: 200,
+    threshold: 50,
   });
 
   // Fetch messages
@@ -36,6 +40,35 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
       console.error("Failed to fetch messages:", error);
     }
   };
+
+  const handleUserInteraction = () => {
+    // Pause animation
+    setIsPaused(true);
+
+    // Clear existing timeout
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    // Resume animation after 2 seconds of no interaction
+    timeoutRef.current = setTimeout(() => {
+      scrollRef.current?.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+      setIsPaused(false);
+      setAnimationKey((prev) => prev + 1); // Force restart animation
+    }, 3000);
+  };
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -104,21 +137,40 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
             </div>
 
             {/* Message List */}
-            <div className="h-[180px] md:h-[220px] overflow-hidden relative bg-white/50 p-3 md:p-4">
-              <div className="animate-scroll-up space-y-2 md:space-y-3">
-                {messages.map((message, index) => (
-                  <div
-                    key={`${message.id}-${index}`}
-                    className="bg-white/90 backdrop-blur-sm rounded-lg p-2 md:p-3 shadow-sm border border-rose-200 animate-fade-in"
-                  >
-                    <p className="font-quickSand text-xs md:text-sm text-gray-800">
-                      <span className="font-semibold text-rose-600">
-                        {message.name}:
-                      </span>{" "}
-                      {message.content}
-                    </p>
-                  </div>
-                ))}
+            <div
+              ref={scrollRef}
+              className="h-[220px] overflow-y-auto relative bg-white/50 p-3 md:p-4 scrollbar-thin scrollbar-thumb-rose-300 scrollbar-track-transparent"
+              onWheel={handleUserInteraction}
+              onTouchStart={handleUserInteraction}
+              onTouchMove={handleUserInteraction}
+            >
+              <div
+                key={animationKey}
+                className="space-y-2 md:space-y-3"
+                style={{
+                  animation: isPaused
+                    ? "none"
+                    : `scroll-up ${Math.max(
+                        5,
+                        messages.length
+                      )}s linear infinite`,
+                }}
+              >
+                {messages
+                  .concat(isPaused ? [] : messages)
+                  .map((message, index) => (
+                    <div
+                      key={`${message.id}-${index}`}
+                      className="bg-white/90 backdrop-blur-sm rounded-lg p-2 md:p-3 shadow-sm border border-rose-200 animate-fade-in"
+                    >
+                      <p className="font-quickSand text-xs md:text-sm text-gray-800">
+                        <span className="font-semibold text-rose-600">
+                          {message.name}:
+                        </span>{" "}
+                        {message.content}
+                      </p>
+                    </div>
+                  ))}
               </div>
             </div>
 
@@ -219,11 +271,11 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
             transform: translateY(0);
           }
           100% {
-            transform: translateY(-50%);
+            transform: translateY(calc(-50% - 4px));
           }
         }
 
-        @keyframes fade-in {
+        @keyframes fade-in
           from {
             opacity: 0;
             transform: translateY(10px);
@@ -256,7 +308,7 @@ export const WidgetMessage: React.FC<WidgetMessageProps> = ({
         }
 
         .animate-scroll-up {
-          animation: scroll-up 30s linear infinite;
+          animation: scroll-up 15s linear infinite;
         }
 
         .animate-fade-in {
